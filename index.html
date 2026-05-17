@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 
 <head>
@@ -10,52 +10,59 @@
       --carbon: #18151f;
       --ink: #221d2e;
       --muted: #6e6482;
-      --parchment: #FFF7ED;
-      --paper: #FFFFFF;
-      --paper-soft: #FFFDF8;
-      --sage: #22C55E;
-      --herbal: #16A34A;
-      --gold: #F59E0B;
-      --amber: #FBBF24;
-      --stone: #D6D3D1;
-      --line: rgba(124, 58, 237, .12);
-      --shadow: 0 2px 10px rgba(17, 17, 17, .06);
-      --shadow-soft: 0 1px 4px rgba(17, 17, 17, .05);
-      --desayuno: #FBBF24;
-      --comida: #22C55E;
-      --colacion: #F97316;
-      --cena: #8B5CF6;
+      --parchment: #fff7ed;
+      --paper: #ffffff;
+      --paper-soft: #fffdf8;
+      --sage: #22c55e;
+      --herbal: #16a34a;
+      --gold: #f59e0b;
+      --amber: #fbbf24;
+      --stone: #d6d3d1;
+      --line: rgba(124, 58, 237, 0.12);
+      --shadow: 0 2px 10px rgba(17, 17, 17, 0.06);
+      --shadow-soft: 0 1px 4px rgba(17, 17, 17, 0.05);
+      --desayuno: #fbbf24;
+      --comida: #22c55e;
+      --colacion: #f97316;
+      --cena: #8b5cf6;
       --radius: 10px;
     }
 
     * {
-      box-sizing: border-box
+      box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      font-family: Inter, Manrope, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      font-family:
+        Inter,
+        Manrope,
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Text",
+        "Segoe UI",
+        sans-serif;
       color: var(--ink);
       min-height: 100vh;
-      background: #FFF8F1;
+      background: #fff8f1;
     }
 
     button,
     input,
     select,
     textarea {
-      font: inherit
+      font: inherit;
     }
 
     button {
       cursor: pointer;
-      border: 0
+      border: 0;
     }
 
     .app {
       width: min(1500px, 100%);
       margin: auto;
-      padding: 22px
+      padding: 22px;
     }
 
     .hero {
@@ -76,7 +83,7 @@
     .brand {
       display: flex;
       gap: 14px;
-      align-items: center
+      align-items: center;
     }
 
     .logo {
@@ -88,15 +95,15 @@
       color: var(--gold);
       font-weight: 900;
       background: var(--carbon);
-      border: 1px solid rgba(200, 169, 107, .55);
+      border: 1px solid rgba(200, 169, 107, 0.55);
       font-family: Cinzel, "Cormorant Garamond", Georgia, serif;
-      letter-spacing: .08em;
+      letter-spacing: 0.08em;
     }
 
     .hero h1 {
       margin: 0;
       font-size: clamp(1.45rem, 3vw, 2.15rem);
-      letter-spacing: -.035em;
+      letter-spacing: -0.035em;
       line-height: 1;
       font-family: Cinzel, "Cormorant Garamond", Georgia, serif;
       font-weight: 500;
@@ -106,14 +113,14 @@
     .hero p {
       margin: 6px 0 0;
       color: var(--muted);
-      font-size: .92rem
+      font-size: 0.92rem;
     }
 
     .hero-actions {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      justify-content: flex-end
+      justify-content: flex-end;
     }
 
     .btn {
@@ -124,30 +131,30 @@
       border: 1px solid var(--line);
       box-shadow: none;
       font-weight: 750;
-      transition: .18s ease;
+      transition: 0.18s ease;
     }
 
     .btn:hover {
       background: #fff1d6;
-      transform: translateY(-1px)
+      transform: translateY(-1px);
     }
 
     .btn.primary {
-      background: #7C3AED;
+      background: #7c3aed;
       color: #fff;
-      border-color: #7C3AED
+      border-color: #7c3aed;
     }
 
     .btn.colorful {
-      background: #F97316;
+      background: #f97316;
       color: #fff;
-      border-color: #F97316
+      border-color: #f97316;
     }
 
     .btn.danger {
       background: #ead8cf;
       color: #7c2d22;
-      border-color: #d6b8aa
+      border-color: #d6b8aa;
     }
 
     .layout {
@@ -155,7 +162,7 @@
       grid-template-columns: 360px 1fr;
       gap: 18px;
       margin-top: 18px;
-      align-items: start
+      align-items: start;
     }
 
     .panel,
@@ -171,29 +178,29 @@
       position: sticky;
       top: 116px;
       max-height: calc(100vh - 136px);
-      overflow: auto
+      overflow: auto;
     }
 
     .panel h2,
     .schedule-wrap h2 {
       margin: 0;
       font-size: 1.12rem;
-      letter-spacing: -.02em;
+      letter-spacing: -0.02em;
       font-family: Cinzel, "Cormorant Garamond", Georgia, serif;
       font-weight: 500;
     }
 
     .panel-sub {
       color: var(--muted);
-      font-size: .84rem;
+      font-size: 0.84rem;
       margin: 5px 0 14px;
-      line-height: 1.35
+      line-height: 1.35;
     }
 
     .search-row {
       display: grid;
       gap: 10px;
-      margin-bottom: 10px
+      margin-bottom: 10px;
     }
 
     .input,
@@ -210,14 +217,14 @@
     .input:focus,
     .select:focus {
       border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(200, 169, 107, .18)
+      box-shadow: 0 0 0 3px rgba(200, 169, 107, 0.18);
     }
 
     .chips {
       display: flex;
       gap: 7px;
       flex-wrap: wrap;
-      margin: 12px 0
+      margin: 12px 0;
     }
 
     .chip {
@@ -225,45 +232,45 @@
       background: var(--paper-soft);
       border: 1px solid var(--line);
       padding: 8px 10px;
-      font-size: .76rem;
+      font-size: 0.76rem;
       font-weight: 750;
       color: var(--herbal);
     }
 
     .chip.active {
-      background: #7C3AED;
+      background: #7c3aed;
       color: #fff;
-      border-color: #7C3AED
+      border-color: #7c3aed;
     }
 
     .recipe-list {
       display: grid;
       gap: 10px;
-      margin-top: 12px
+      margin-top: 12px;
     }
 
     .recipe-card {
       background: var(--paper-soft);
-      border: 1px solid rgba(62, 90, 76, .18);
+      border: 1px solid rgba(62, 90, 76, 0.18);
       border-radius: 8px;
       padding: 13px;
       box-shadow: none;
-      transition: .18s ease;
+      transition: 0.18s ease;
       position: relative;
       overflow: hidden;
     }
 
     .recipe-card:hover {
-      background: #FFF4E6;
-      border-color: rgba(249, 115, 22, .35);
-      transform: translateY(-1px)
+      background: #fff4e6;
+      border-color: rgba(249, 115, 22, 0.35);
+      transform: translateY(-1px);
     }
 
     .recipe-top {
       display: flex;
       justify-content: space-between;
       gap: 10px;
-      align-items: flex-start
+      align-items: flex-start;
     }
 
     .recipe-title {
@@ -271,7 +278,7 @@
       font-size: 1.08rem;
       font-weight: 650;
       color: var(--carbon);
-      letter-spacing: -.02em;
+      letter-spacing: -0.02em;
       line-height: 1.12;
     }
 
@@ -281,79 +288,79 @@
       border-radius: 3px;
       flex: 0 0 12px;
       margin-top: 2px;
-      border: 1px solid rgba(0, 0, 0, .14)
+      border: 1px solid rgba(0, 0, 0, 0.14);
     }
 
     .recipe-ingredients {
-      font-size: .81rem;
+      font-size: 0.81rem;
       color: var(--muted);
       margin: 8px 0 10px;
-      line-height: 1.34
+      line-height: 1.34;
     }
 
     .tag-row,
     .slot-tags {
       display: flex;
       gap: 5px;
-      flex-wrap: wrap
+      flex-wrap: wrap;
     }
 
     .tag {
-      font-size: .66rem;
+      font-size: 0.66rem;
       font-weight: 800;
       background: #eadfce;
       color: #3a3a3c;
       border-radius: 4px;
       padding: 5px 7px;
       text-transform: uppercase;
-      letter-spacing: .02em;
+      letter-spacing: 0.02em;
     }
 
     .tag.protein {
-      background: #DCFCE7;
-      color: #15803D
+      background: #dcfce7;
+      color: #15803d;
     }
 
     .tag.speed {
-      background: #FEF3C7;
-      color: #B45309
+      background: #fef3c7;
+      color: #b45309;
     }
 
     .tag.prep {
-      background: #FEE2E2;
-      color: #B91C1C
+      background: #fee2e2;
+      color: #b91c1c;
     }
 
     .tag.air {
-      background: #E0E7FF;
-      color: #4338CA
+      background: #e0e7ff;
+      color: #4338ca;
     }
 
     .card-actions {
       display: flex;
       gap: 7px;
-      margin-top: 11px
+      margin-top: 11px;
     }
 
     .mini-btn {
       border-radius: 5px;
-      background: #7C3AED;
+      background: #7c3aed;
       color: #fff;
       font-weight: 800;
       padding: 8px 10px;
-      font-size: .78rem;
-      flex: 1
+      font-size: 0.78rem;
+      flex: 1;
     }
 
     .mini-btn.ghost {
       background: var(--paper);
       color: var(--ink);
-      border: 1px solid var(--line)
+      border: 1px solid var(--line);
     }
 
     .schedule-wrap {
       padding: 17px;
-      overflow: hidden
+      overflow: hidden;
     }
 
     .schedule-head {
@@ -362,33 +369,33 @@
       justify-content: space-between;
       gap: 10px;
       margin-bottom: 15px;
-      flex-wrap: wrap
+      flex-wrap: wrap;
     }
 
     .legend {
       display: flex;
       gap: 8px;
-      flex-wrap: wrap
+      flex-wrap: wrap;
     }
 
     .legend span {
       display: flex;
       align-items: center;
       gap: 6px;
-      font-size: .76rem;
+      font-size: 0.76rem;
       font-weight: 800;
       color: #3a3a3c;
       background: var(--paper-soft);
       border: 1px solid var(--line);
       padding: 8px 10px;
-      border-radius: 5px
+      border-radius: 5px;
     }
 
     .legend i {
       display: block;
       width: 10px;
       height: 10px;
-      border-radius: 2px
+      border-radius: 2px;
     }
 
     .mobile-days {
@@ -396,7 +403,7 @@
       gap: 8px;
       overflow: auto;
       padding-bottom: 10px;
-      margin-bottom: 10px
+      margin-bottom: 10px;
     }
 
     .day-tab {
@@ -405,13 +412,13 @@
       padding: 10px 13px;
       font-weight: 800;
       background: var(--paper-soft);
-      border: 1px solid var(--line)
+      border: 1px solid var(--line);
     }
 
     .day-tab.active {
-      background: #7C3AED;
+      background: #7c3aed;
       color: #fff;
-      border-color: #7C3AED
+      border-color: #7c3aed;
     }
 
     .schedule {
@@ -428,25 +435,25 @@
       border-right: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
       padding: 10px;
-      background: var(--paper-soft)
+      background: var(--paper-soft);
     }
 
     .cell:nth-child(8n) {
-      border-right: 0
+      border-right: 0;
     }
 
     .head-cell {
       min-height: auto;
-      background: #7C3AED;
+      background: #7c3aed;
       color: #fff;
       font-weight: 850;
       text-align: center;
       padding: 13px 8px;
-      font-size: .74rem;
+      font-size: 0.74rem;
       text-transform: uppercase;
-      letter-spacing: .08em;
-      border-right: 1px solid rgba(245, 233, 215, .12);
-      border-bottom: 1px solid var(--line)
+      letter-spacing: 0.08em;
+      border-right: 1px solid rgba(245, 233, 215, 0.12);
+      border-bottom: 1px solid var(--line);
     }
 
     .meal-cell {
@@ -454,52 +461,52 @@
       place-items: center;
       font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: .04em;
-      font-size: .72rem;
+      letter-spacing: 0.04em;
+      font-size: 0.72rem;
       color: var(--carbon);
-      background: var(--paper)
+      background: var(--paper);
     }
 
     .meal-cell.desayuno {
-      background: #FDE68A
+      background: #fde68a;
     }
 
     .meal-cell.comida {
-      background: #BBF7D0
+      background: #bbf7d0;
     }
 
     .meal-cell.colacion {
-      background: #FDBA74
+      background: #fdba74;
     }
 
     .meal-cell.cena {
-      background: #DDD6FE
+      background: #ddd6fe;
     }
 
     .slot {
       min-height: 96px;
       border-radius: 6px;
-      border: 1.5px dashed rgba(62, 90, 76, .28);
+      border: 1.5px dashed rgba(62, 90, 76, 0.28);
       background: var(--paper);
       padding: 9px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: 6px;
-      transition: .15s ease
+      transition: 0.15s ease;
     }
 
     .slot:hover,
     .slot.selected {
-      border-color: #7C3AED;
-      box-shadow: 0 0 0 3px rgba(124, 58, 237, .12)
+      border-color: #7c3aed;
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
     }
 
     .slot.empty {
       text-align: center;
       color: #86806f;
       font-weight: 750;
-      font-size: .78rem
+      font-size: 0.78rem;
     }
 
     .slot-filled {
@@ -508,36 +515,36 @@
       justify-content: space-between;
       align-items: flex-start;
       text-align: left;
-      box-shadow: none
+      box-shadow: none;
     }
 
     .slot-title {
       font-weight: 850;
       line-height: 1.08;
-      letter-spacing: -.02em;
-      font-size: .89rem
+      letter-spacing: -0.02em;
+      font-size: 0.89rem;
     }
 
     .slot-tags .tag {
-      font-size: .57rem;
+      font-size: 0.57rem;
       padding: 4px 5px;
-      background: rgba(245, 233, 215, .80)
+      background: rgba(245, 233, 215, 0.8);
     }
 
     .slot-tools {
       display: flex;
       gap: 6px;
-      width: 100%
+      width: 100%;
     }
 
     .slot-tools button {
       border-radius: 4px;
       padding: 6px 8px;
-      font-size: .69rem;
+      font-size: 0.69rem;
       font-weight: 800;
-      background: #F5F3FF;
-      color: #5B21B6;
-      border: 1px solid #DDD6FE
+      background: #f5f3ff;
+      color: #5b21b6;
+      border: 1px solid #ddd6fe;
     }
 
     .drawer {
@@ -547,46 +554,46 @@
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: 10px;
-      box-shadow: 0 6px 24px rgba(17, 17, 17, .14);
+      box-shadow: 0 6px 24px rgba(17, 17, 17, 0.14);
       padding: 18px;
       z-index: 40;
       transform: translateY(20px);
       opacity: 0;
       pointer-events: none;
-      transition: .18s ease
+      transition: 0.18s ease;
     }
 
     .drawer.open {
       transform: translateY(0);
       opacity: 1;
-      pointer-events: auto
+      pointer-events: auto;
     }
 
     .drawer h3 {
       margin: 0 0 8px;
       font-size: 1.2rem;
-      letter-spacing: -.03em;
+      letter-spacing: -0.03em;
       font-family: Cinzel, "Cormorant Garamond", Georgia, serif;
-      font-weight: 500
+      font-weight: 500;
     }
 
     .drawer p {
       margin: 0 0 12px;
       color: var(--muted);
-      line-height: 1.45
+      line-height: 1.45;
     }
 
     .drawer-actions {
       display: flex;
       gap: 8px;
-      flex-wrap: wrap
+      flex-wrap: wrap;
     }
 
     textarea.export-box {
       height: 190px;
       resize: vertical;
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: .8rem
+      font-size: 0.8rem;
     }
 
     .toast {
@@ -594,26 +601,26 @@
       left: 50%;
       bottom: 18px;
       transform: translateX(-50%) translateY(20px);
-      background: #7C3AED;
+      background: #7c3aed;
       color: #fff;
       border-radius: 6px;
       padding: 11px 16px;
       font-weight: 800;
       opacity: 0;
       pointer-events: none;
-      transition: .18s ease;
+      transition: 0.18s ease;
       z-index: 60;
-      box-shadow: 0 4px 18px rgba(17, 17, 17, .18)
+      box-shadow: 0 4px 18px rgba(17, 17, 17, 0.18);
     }
 
     .toast.show {
       opacity: 1;
-      transform: translateX(-50%) translateY(0)
+      transform: translateX(-50%) translateY(0);
     }
 
-    @media (max-width:980px) {
+    @media (max-width: 980px) {
       .app {
-        padding: 12px
+        padding: 12px;
       }
 
       .hero {
@@ -621,103 +628,103 @@
         top: auto;
         grid-template-columns: 1fr;
         padding: 16px;
-        border-radius: 10px
+        border-radius: 10px;
       }
 
       .hero-actions {
-        justify-content: flex-start
+        justify-content: flex-start;
       }
 
       .layout {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
       }
 
       .panel {
         position: relative;
         top: auto;
         max-height: none;
-        order: 2
+        order: 2;
       }
 
       .schedule-wrap {
         order: 1;
         padding: 14px;
-        border-radius: 10px
+        border-radius: 10px;
       }
 
       .mobile-days {
-        display: flex
+        display: flex;
       }
 
       .schedule {
-        grid-template-columns: 86px 1fr
+        grid-template-columns: 86px 1fr;
       }
 
       .cell {
-        min-height: 112px
+        min-height: 112px;
       }
 
       .head-cell.day-header {
-        display: none
+        display: none;
       }
 
       .hidden-mobile-day {
-        display: none
+        display: none;
       }
     }
 
-    @media (max-width:560px) {
+    @media (max-width: 560px) {
       .brand {
-        align-items: flex-start
+        align-items: flex-start;
       }
 
       .logo {
         width: 46px;
         height: 46px;
-        border-radius: 7px
+        border-radius: 7px;
       }
 
       .hero h1 {
-        font-size: 1.35rem
+        font-size: 1.35rem;
       }
 
       .hero p {
-        font-size: .84rem
+        font-size: 0.84rem;
       }
 
       .btn {
         padding: 10px 12px;
-        font-size: .82rem
+        font-size: 0.82rem;
       }
 
       .legend span {
-        font-size: .68rem;
-        padding: 7px 8px
+        font-size: 0.68rem;
+        padding: 7px 8px;
       }
 
       .schedule {
         grid-template-columns: 76px 1fr;
-        border-radius: 8px
+        border-radius: 8px;
       }
 
       .cell {
         padding: 8px;
-        min-height: 108px
+        min-height: 108px;
       }
 
       .meal-cell {
-        font-size: .64rem;
+        font-size: 0.64rem;
         writing-mode: vertical-rl;
-        transform: rotate(180deg)
+        transform: rotate(180deg);
       }
 
       .slot-title {
-        font-size: .86rem
+        font-size: 0.86rem;
       }
 
       .panel {
         padding: 14px;
-        border-radius: 10px
+        border-radius: 10px;
       }
     }
   </style>
@@ -730,12 +737,17 @@
         <div class="logo">G</div>
         <div>
           <h1>Grimorio</h1>
-          <p>Tu libro personal de rituales culinarios: recetas, semana y lista de compras.</p>
+          <p>
+            Tu libro personal de rituales culinarios: recetas, semana y lista
+            de compras.
+          </p>
         </div>
       </div>
       <div class="hero-actions">
         <button class="btn primary" id="autoFillBtn">Invocar semana</button>
-        <button class="btn colorful" id="shoppingBtn">Copiar lista de compras</button>
+        <button class="btn colorful" id="shoppingBtn">
+          Copiar lista de compras
+        </button>
         <button class="btn" id="exportBtn">Exportar JSON</button>
         <button class="btn" id="importBtn">Importar</button>
         <button class="btn danger" id="clearBtn">Limpiar</button>
@@ -745,7 +757,10 @@
     <section class="layout">
       <aside class="panel">
         <h2>Códice de recetas</h2>
-        <p class="panel-sub">Arrastra o asigna cartas al ritual semanal. Todo se guarda localmente.</p>
+        <p class="panel-sub">
+          Arrastra o asigna cartas al ritual semanal. Todo se guarda
+          localmente.
+        </p>
         <div class="search-row">
           <input class="input" id="searchInput" placeholder="Buscar en el códice..." />
           <select class="select" id="typeFilter">
@@ -764,13 +779,15 @@
         <div class="schedule-head">
           <div>
             <h2>Ritual Semanal</h2>
-            <p class="panel-sub" id="selectedHint">Elige un espacio del ritual para asignar una carta culinaria.</p>
+            <p class="panel-sub" id="selectedHint">
+              Elige un espacio del ritual para asignar una carta culinaria.
+            </p>
           </div>
           <div class="legend">
-            <span><i style="background:var(--desayuno)"></i>Desayuno</span>
-            <span><i style="background:var(--comida)"></i>Comida</span>
-            <span><i style="background:var(--colacion)"></i>Colación</span>
-            <span><i style="background:var(--cena)"></i>Cena</span>
+            <span><i style="background: var(--desayuno)"></i>Desayuno</span>
+            <span><i style="background: var(--comida)"></i>Comida</span>
+            <span><i style="background: var(--colacion)"></i>Colación</span>
+            <span><i style="background: var(--cena)"></i>Cena</span>
           </div>
         </div>
         <div class="mobile-days" id="mobileDays"></div>
@@ -792,106 +809,870 @@
 
   <script>
     const RECIPES_DB = [
-      { id: 'des-001', name: 'Huevo a la mexicana', type: 'desayuno', ingredients: ['Tortilla de maíz', 'Huevo entero', 'Claras', 'Jitomate', 'Cebolla', 'Chile serrano', 'Aguacate'], tags: ['huevo', 'rapida'] },
-      { id: 'des-002', name: 'Chilaquiles verdes con pollo', type: 'desayuno', ingredients: ['Totopos horneados', 'Pechuga de pollo', 'Tomate verde', 'Aguacate', 'Brócoli', 'Salsa verde'], tags: ['pollo', 'requiere preparacion'] },
-      { id: 'des-003', name: 'Huevos rancheros con frijoles', type: 'desayuno', ingredients: ['Tortilla de nopal', 'Huevo', 'Frijoles refritos', 'Queso panela', 'Jitomate', 'Cebolla'], tags: ['huevo', 'rapida'] },
-      { id: 'des-004', name: 'Quesadillas de atún tipo marlín', type: 'desayuno', ingredients: ['Tortilla de maíz', 'Atún en agua', 'Queso Oaxaca light', 'Aguacate', 'Jitomate', 'Cebolla', 'Chipotle'], tags: ['atun', 'rapida'] },
-      { id: 'des-005', name: 'Bowl de atún fresco', type: 'desayuno', ingredients: ['Arroz cocido', 'Medallón de atún', 'Garbanzo', 'Aguacate', 'Pepino', 'Zanahoria', 'Germen de alfalfa'], tags: ['atun', 'requiere preparacion'] },
-      { id: 'des-006', name: 'Omelette de pollo y calabacita', type: 'desayuno', ingredients: ['Huevo', 'Pechuga de pollo', 'Calabacita', 'Cebolla', 'Galleta salma', 'Manzana'], tags: ['pollo', 'huevo', 'rapida'] },
-      { id: 'des-007', name: 'Bowl de huevo con elote', type: 'desayuno', ingredients: ['Elote', 'Huevo', 'Aguacate', 'Tomate cherry', 'Limón', 'Aceite de oliva'], tags: ['huevo', 'rapida'] },
-      { id: 'des-008', name: 'Sándwich de atún y aguacate', type: 'desayuno', ingredients: ['Pan integral', 'Atún', 'Aguacate', 'Jitomate', 'Mostaza', 'Lechuga'], tags: ['atun', 'rapida'] },
-      { id: 'des-009', name: 'Enfrijoladas de queso fresco', type: 'desayuno', ingredients: ['Tortilla de maíz', 'Frijol cocido', 'Queso panela', 'Crema', 'Cebolla', 'Lechuga'], tags: ['rapida'] },
-      { id: 'des-010', name: 'Pollo con brócoli en airfryer', type: 'desayuno', ingredients: ['Pechuga de pollo', 'Brócoli', 'Tortilla de maíz', 'Frijol cocido', 'Aceite en spray'], tags: ['pollo', 'airfryer'] },
-      { id: 'com-001', name: 'Tacos de tilapia con aguacate y col', type: 'comida', ingredients: ['Tortilla de maíz', 'Pescado blanco', 'Aguacate', 'Col morada', 'Salsa de jitomate', 'Limón'], tags: ['pescado', 'rapida'] },
-      { id: 'com-002', name: 'Flautas de pollo en airfryer', type: 'comida', ingredients: ['Tortilla de maíz', 'Pechuga de pollo', 'Guacamole', 'Sopa de verduras'], tags: ['pollo', 'airfryer'] },
-      { id: 'com-003', name: 'Ensalada de coditos con pollo', type: 'comida', ingredients: ['Pasta cocida', 'Pechuga de pollo', 'Pechuga de pavo', 'Brócoli', 'Zanahoria', 'Mayonesa'], tags: ['pollo', 'requiere preparacion'] },
-      { id: 'com-004', name: 'Arrachera en salsa de poblano', type: 'comida', ingredients: ['Arrachera de res', 'Tortilla de nopal', 'Queso panela', 'Jitomate', 'Chile poblano', 'Cebolla'], tags: ['res', 'requiere preparacion'] },
-      { id: 'com-005', name: 'Brochetas de pescado', type: 'comida', ingredients: ['Pescado blanco', 'Arroz cocido', 'Aceite en spray', 'Verduras', 'Limón'], tags: ['pescado', 'requiere preparacion'] },
-      { id: 'com-006', name: 'Pollo a la piña', type: 'comida', ingredients: ['Arroz integral', 'Pechuga de pollo', 'Piña', 'Pimiento', 'Aguacate', 'Aceite de oliva'], tags: ['pollo', 'requiere preparacion'] },
-      { id: 'com-007', name: 'Bistec adobado con nopal', type: 'comida', ingredients: ['Res sin grasa', 'Arroz', 'Nopal', 'Jitomate', 'Achiote', 'Cebolla', 'Aguacate'], tags: ['res', 'requiere preparacion'] },
-      { id: 'com-008', name: 'Rollos de pollo con espinaca y ricotta', type: 'comida', ingredients: ['Pechuga de pollo', 'Queso ricotta', 'Espinaca', 'Tortilla de maíz', 'Sopa de verduras'], tags: ['pollo', 'requiere preparacion'] },
-      { id: 'com-009', name: 'Tacos de pechuga con guacamole', type: 'comida', ingredients: ['Tortilla de maíz', 'Pechuga de pollo', 'Guacamole', 'Chayote', 'Verduras'], tags: ['pollo', 'rapida'] },
-      { id: 'com-010', name: 'Albóndigas de carne', type: 'comida', ingredients: ['Res molida', 'Galleta salma', 'Aguacate', 'Mantequilla', 'Verduras'], tags: ['res', 'requiere preparacion'] },
-      { id: 'col-001', name: 'Batido con proteína y plátano', type: 'colacion', ingredients: ['Plátano', 'Crema de cacahuate', 'Bebida vegetal sin azúcar', 'Proteína'], tags: ['rapida'] },
-      { id: 'col-002', name: 'Avena cocida con manzana y pasitas', type: 'colacion', ingredients: ['Avena', 'Manzana', 'Pasitas', 'Canela', 'Proteína', 'Edulcorante'], tags: ['rapida'] },
-      { id: 'col-003', name: 'Toast de fresa, yogurt y crema de cacahuate', type: 'colacion', ingredients: ['Pan integral', 'Fresa', 'Yogurt griego', 'Crema de cacahuate', 'Nuez'], tags: ['rapida'] },
-      { id: 'col-004', name: 'Galletas de avena y plátano', type: 'colacion', ingredients: ['Avena', 'Plátano', 'Nuez', 'Canela', 'Proteína'], tags: ['requiere preparacion'] },
-      { id: 'col-005', name: 'Ceviche de mango', type: 'colacion', ingredients: ['Galleta salma', 'Mango', 'Cacahuate', 'Chile en polvo', 'Limón', 'Cebolla morada'], tags: ['rapida'] },
-      { id: 'col-006', name: 'Brochetas de primavera con dip dulce', type: 'colacion', ingredients: ['Sandía', 'Piña', 'Crema de cacahuate', 'Yogurt griego', 'Proteína'], tags: ['requiere preparacion'] },
-      { id: 'col-007', name: 'Smoothie de fresa con avena', type: 'colacion', ingredients: ['Avena', 'Plátano', 'Fresa', 'Semilla de girasol', 'Yogurt griego', 'Vainilla'], tags: ['rapida'] },
-      { id: 'col-008', name: 'Yogurt con papaya y granola', type: 'colacion', ingredients: ['Yogurt griego', 'Papaya', 'Granola', 'Nuez', 'Canela'], tags: ['rapida'] },
-      { id: 'cen-001', name: 'Wrap de lechuga y atún', type: 'cena', ingredients: ['Atún en agua', 'Lechuga', 'Zanahoria', 'Pimiento', 'Mayonesa', 'Galleta salma'], tags: ['atun', 'rapida'] },
-      { id: 'cen-002', name: 'Atún express con galleta salada', type: 'cena', ingredients: ['Atún', 'Galletas saladas', 'Elote', 'Mayonesa', 'Verduras picadas'], tags: ['atun', 'rapida'] },
-      { id: 'cen-003', name: 'Ensalada fresca de atún', type: 'cena', ingredients: ['Atún', 'Galleta salma', 'Aguacate', 'Zanahoria', 'Lechuga', 'Limón'], tags: ['atun', 'rapida'] },
-      { id: 'cen-004', name: 'Teriyaki de soya y vegetales', type: 'cena', ingredients: ['Fideo cocido', 'Frijol de soya', 'Pechuga de pollo', 'Champiñón', 'Ejote', 'Salsa soya', 'Jengibre'], tags: ['pollo', 'requiere preparacion'] },
-      { id: 'cen-005', name: 'Ramen de pavo y huevo', type: 'cena', ingredients: ['Fideos de arroz', 'Pechuga de pavo', 'Huevo', 'Cebollita cambray', 'Zanahoria', 'Alga nori'], tags: ['huevo', 'requiere preparacion'] },
-      { id: 'cen-006', name: 'Tacos ligeros de pescado', type: 'cena', ingredients: ['Tortilla de maíz', 'Pescado blanco', 'Col', 'Aguacate', 'Limón', 'Salsa'], tags: ['pescado', 'rapida'] },
-      { id: 'cen-007', name: 'Claras con frijoles refritos caseros', type: 'cena', ingredients: ['Claras', 'Huevo', 'Frijoles refritos', 'Tortilla de maíz', 'Zanahoria'], tags: ['huevo', 'rapida'] },
-      { id: 'cen-008', name: 'Sándwich de queso y espinaca', type: 'cena', ingredients: ['Pan integral', 'Queso mozzarella bajo en grasa', 'Espinaca', 'Aguacate', 'Pepino', 'Apio'], tags: ['rapida'] }
+      {
+        id: "des-001",
+        name: "Huevo a la mexicana",
+        type: "desayuno",
+        ingredients: [
+          "Tortilla de maíz",
+          "Huevo entero",
+          "Claras",
+          "Jitomate",
+          "Cebolla",
+          "Chile serrano",
+          "Aguacate",
+        ],
+        tags: ["huevo", "rapida"],
+      },
+      {
+        id: "des-002",
+        name: "Chilaquiles verdes con pollo",
+        type: "desayuno",
+        ingredients: [
+          "Totopos horneados",
+          "Pechuga de pollo",
+          "Tomate verde",
+          "Aguacate",
+          "Brócoli",
+          "Salsa verde",
+        ],
+        tags: ["pollo", "requiere preparacion"],
+      },
+      {
+        id: "des-003",
+        name: "Huevos rancheros con frijoles",
+        type: "desayuno",
+        ingredients: [
+          "Tortilla de nopal",
+          "Huevo",
+          "Frijoles refritos",
+          "Queso panela",
+          "Jitomate",
+          "Cebolla",
+        ],
+        tags: ["huevo", "rapida"],
+      },
+      {
+        id: "des-004",
+        name: "Quesadillas de atún tipo marlín",
+        type: "desayuno",
+        ingredients: [
+          "Tortilla de maíz",
+          "Atún en agua",
+          "Queso Oaxaca light",
+          "Aguacate",
+          "Jitomate",
+          "Cebolla",
+          "Chipotle",
+        ],
+        tags: ["atun", "rapida"],
+      },
+      {
+        id: "des-005",
+        name: "Bowl de atún fresco",
+        type: "desayuno",
+        ingredients: [
+          "Arroz cocido",
+          "Medallón de atún",
+          "Garbanzo",
+          "Aguacate",
+          "Pepino",
+          "Zanahoria",
+          "Germen de alfalfa",
+        ],
+        tags: ["atun", "requiere preparacion"],
+      },
+      {
+        id: "des-006",
+        name: "Omelette de pollo y calabacita",
+        type: "desayuno",
+        ingredients: [
+          "Huevo",
+          "Pechuga de pollo",
+          "Calabacita",
+          "Cebolla",
+          "Galleta salma",
+          "Manzana",
+        ],
+        tags: ["pollo", "huevo", "rapida"],
+      },
+      {
+        id: "des-007",
+        name: "Bowl de huevo con elote",
+        type: "desayuno",
+        ingredients: [
+          "Elote",
+          "Huevo",
+          "Aguacate",
+          "Tomate cherry",
+          "Limón",
+          "Aceite de oliva",
+        ],
+        tags: ["huevo", "rapida"],
+      },
+      {
+        id: "des-008",
+        name: "Sándwich de atún y aguacate",
+        type: "desayuno",
+        ingredients: [
+          "Pan integral",
+          "Atún",
+          "Aguacate",
+          "Jitomate",
+          "Mostaza",
+          "Lechuga",
+        ],
+        tags: ["atun", "rapida"],
+      },
+      {
+        id: "des-009",
+        name: "Enfrijoladas de queso fresco",
+        type: "desayuno",
+        ingredients: [
+          "Tortilla de maíz",
+          "Frijol cocido",
+          "Queso panela",
+          "Crema",
+          "Cebolla",
+          "Lechuga",
+        ],
+        tags: ["rapida"],
+      },
+      {
+        id: "des-010",
+        name: "Pollo con brócoli en airfryer",
+        type: "desayuno",
+        ingredients: [
+          "Pechuga de pollo",
+          "Brócoli",
+          "Tortilla de maíz",
+          "Frijol cocido",
+          "Aceite en spray",
+        ],
+        tags: ["pollo", "airfryer"],
+      },
+      {
+        id: "com-001",
+        name: "Tacos de tilapia con aguacate y col",
+        type: "comida",
+        ingredients: [
+          "Tortilla de maíz",
+          "Pescado blanco",
+          "Aguacate",
+          "Col morada",
+          "Salsa de jitomate",
+          "Limón",
+        ],
+        tags: ["pescado", "rapida"],
+      },
+      {
+        id: "com-002",
+        name: "Flautas de pollo en airfryer",
+        type: "comida",
+        ingredients: [
+          "Tortilla de maíz",
+          "Pechuga de pollo",
+          "Guacamole",
+          "Sopa de verduras",
+        ],
+        tags: ["pollo", "airfryer"],
+      },
+      {
+        id: "com-003",
+        name: "Ensalada de coditos con pollo",
+        type: "comida",
+        ingredients: [
+          "Pasta cocida",
+          "Pechuga de pollo",
+          "Pechuga de pavo",
+          "Brócoli",
+          "Zanahoria",
+          "Mayonesa",
+        ],
+        tags: ["pollo", "requiere preparacion"],
+      },
+      {
+        id: "com-004",
+        name: "Arrachera en salsa de poblano",
+        type: "comida",
+        ingredients: [
+          "Arrachera de res",
+          "Tortilla de nopal",
+          "Queso panela",
+          "Jitomate",
+          "Chile poblano",
+          "Cebolla",
+        ],
+        tags: ["res", "requiere preparacion"],
+      },
+      {
+        id: "com-005",
+        name: "Brochetas de pescado",
+        type: "comida",
+        ingredients: [
+          "Pescado blanco",
+          "Arroz cocido",
+          "Aceite en spray",
+          "Verduras",
+          "Limón",
+        ],
+        tags: ["pescado", "requiere preparacion"],
+      },
+      {
+        id: "com-006",
+        name: "Pollo a la piña",
+        type: "comida",
+        ingredients: [
+          "Arroz integral",
+          "Pechuga de pollo",
+          "Piña",
+          "Pimiento",
+          "Aguacate",
+          "Aceite de oliva",
+        ],
+        tags: ["pollo", "requiere preparacion"],
+      },
+      {
+        id: "com-007",
+        name: "Bistec adobado con nopal",
+        type: "comida",
+        ingredients: [
+          "Res sin grasa",
+          "Arroz",
+          "Nopal",
+          "Jitomate",
+          "Achiote",
+          "Cebolla",
+          "Aguacate",
+        ],
+        tags: ["res", "requiere preparacion"],
+      },
+      {
+        id: "com-008",
+        name: "Rollos de pollo con espinaca y ricotta",
+        type: "comida",
+        ingredients: [
+          "Pechuga de pollo",
+          "Queso ricotta",
+          "Espinaca",
+          "Tortilla de maíz",
+          "Sopa de verduras",
+        ],
+        tags: ["pollo", "requiere preparacion"],
+      },
+      {
+        id: "com-009",
+        name: "Tacos de pechuga con guacamole",
+        type: "comida",
+        ingredients: [
+          "Tortilla de maíz",
+          "Pechuga de pollo",
+          "Guacamole",
+          "Chayote",
+          "Verduras",
+        ],
+        tags: ["pollo", "rapida"],
+      },
+      {
+        id: "com-010",
+        name: "Albóndigas de carne",
+        type: "comida",
+        ingredients: [
+          "Res molida",
+          "Galleta salma",
+          "Aguacate",
+          "Mantequilla",
+          "Verduras",
+        ],
+        tags: ["res", "requiere preparacion"],
+      },
+      {
+        id: "col-001",
+        name: "Batido con proteína y plátano",
+        type: "colacion",
+        ingredients: [
+          "Plátano",
+          "Crema de cacahuate",
+          "Bebida vegetal sin azúcar",
+          "Proteína",
+        ],
+        tags: ["rapida"],
+      },
+      {
+        id: "col-002",
+        name: "Avena cocida con manzana y pasitas",
+        type: "colacion",
+        ingredients: [
+          "Avena",
+          "Manzana",
+          "Pasitas",
+          "Canela",
+          "Proteína",
+          "Edulcorante",
+        ],
+        tags: ["rapida"],
+      },
+      {
+        id: "col-003",
+        name: "Toast de fresa, yogurt y crema de cacahuate",
+        type: "colacion",
+        ingredients: [
+          "Pan integral",
+          "Fresa",
+          "Yogurt griego",
+          "Crema de cacahuate",
+          "Nuez",
+        ],
+        tags: ["rapida"],
+      },
+      {
+        id: "col-004",
+        name: "Galletas de avena y plátano",
+        type: "colacion",
+        ingredients: ["Avena", "Plátano", "Nuez", "Canela", "Proteína"],
+        tags: ["requiere preparacion"],
+      },
+      {
+        id: "col-005",
+        name: "Ceviche de mango",
+        type: "colacion",
+        ingredients: [
+          "Galleta salma",
+          "Mango",
+          "Cacahuate",
+          "Chile en polvo",
+          "Limón",
+          "Cebolla morada",
+        ],
+        tags: ["rapida"],
+      },
+      {
+        id: "col-006",
+        name: "Brochetas de primavera con dip dulce",
+        type: "colacion",
+        ingredients: [
+          "Sandía",
+          "Piña",
+          "Crema de cacahuate",
+          "Yogurt griego",
+          "Proteína",
+        ],
+        tags: ["requiere preparacion"],
+      },
+      {
+        id: "col-007",
+        name: "Smoothie de fresa con avena",
+        type: "colacion",
+        ingredients: [
+          "Avena",
+          "Plátano",
+          "Fresa",
+          "Semilla de girasol",
+          "Yogurt griego",
+          "Vainilla",
+        ],
+        tags: ["rapida"],
+      },
+      {
+        id: "col-008",
+        name: "Yogurt con papaya y granola",
+        type: "colacion",
+        ingredients: ["Yogurt griego", "Papaya", "Granola", "Nuez", "Canela"],
+        tags: ["rapida"],
+      },
+      {
+        id: "cen-001",
+        name: "Wrap de lechuga y atún",
+        type: "cena",
+        ingredients: [
+          "Atún en agua",
+          "Lechuga",
+          "Zanahoria",
+          "Pimiento",
+          "Mayonesa",
+          "Galleta salma",
+        ],
+        tags: ["atun", "rapida"],
+      },
+      {
+        id: "cen-002",
+        name: "Atún express con galleta salada",
+        type: "cena",
+        ingredients: [
+          "Atún",
+          "Galletas saladas",
+          "Elote",
+          "Mayonesa",
+          "Verduras picadas",
+        ],
+        tags: ["atun", "rapida"],
+      },
+      {
+        id: "cen-003",
+        name: "Ensalada fresca de atún",
+        type: "cena",
+        ingredients: [
+          "Atún",
+          "Galleta salma",
+          "Aguacate",
+          "Zanahoria",
+          "Lechuga",
+          "Limón",
+        ],
+        tags: ["atun", "rapida"],
+      },
+      {
+        id: "cen-004",
+        name: "Teriyaki de soya y vegetales",
+        type: "cena",
+        ingredients: [
+          "Fideo cocido",
+          "Frijol de soya",
+          "Pechuga de pollo",
+          "Champiñón",
+          "Ejote",
+          "Salsa soya",
+          "Jengibre",
+        ],
+        tags: ["pollo", "requiere preparacion"],
+      },
+      {
+        id: "cen-005",
+        name: "Ramen de pavo y huevo",
+        type: "cena",
+        ingredients: [
+          "Fideos de arroz",
+          "Pechuga de pavo",
+          "Huevo",
+          "Cebollita cambray",
+          "Zanahoria",
+          "Alga nori",
+        ],
+        tags: ["huevo", "requiere preparacion"],
+      },
+      {
+        id: "cen-006",
+        name: "Tacos ligeros de pescado",
+        type: "cena",
+        ingredients: [
+          "Tortilla de maíz",
+          "Pescado blanco",
+          "Col",
+          "Aguacate",
+          "Limón",
+          "Salsa",
+        ],
+        tags: ["pescado", "rapida"],
+      },
+      {
+        id: "cen-007",
+        name: "Claras con frijoles refritos caseros",
+        type: "cena",
+        ingredients: [
+          "Claras",
+          "Huevo",
+          "Frijoles refritos",
+          "Tortilla de maíz",
+          "Zanahoria",
+        ],
+        tags: ["huevo", "rapida"],
+      },
+      {
+        id: "cen-008",
+        name: "Sándwich de queso y espinaca",
+        type: "cena",
+        ingredients: [
+          "Pan integral",
+          "Queso mozzarella bajo en grasa",
+          "Espinaca",
+          "Aguacate",
+          "Pepino",
+          "Apio",
+        ],
+        tags: ["rapida"],
+      },
     ];
 
-    const DAYS = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
-    const MEALS = [{ key: 'desayuno', label: 'Desayuno' }, { key: 'comida', label: 'Comida' }, { key: 'colacion', label: 'Colación' }, { key: 'cena', label: 'Cena' }];
-    const TAGS = ['pollo', 'res', 'cerdo', 'atun', 'pescado', 'huevo', 'rapida', 'requiere preparacion', 'airfryer'];
-    const PROTEIN_TAGS = ['pollo', 'res', 'cerdo', 'atun', 'pescado', 'huevo'];
-    const STORAGE_KEY = 'menu_modular_semanal_v2';
-    let weeklyMenu = loadMenu(), selectedSlot = null, activeTag = 'all', activeMobileDay = 0;
+    const DAYS = [
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes",
+      "Sábado",
+      "Domingo",
+    ];
+    const MEALS = [
+      { key: "desayuno", label: "Desayuno" },
+      { key: "comida", label: "Comida" },
+      { key: "colacion", label: "Colación" },
+      { key: "cena", label: "Cena" },
+    ];
+    const TAGS = [
+      "pollo",
+      "res",
+      "cerdo",
+      "atun",
+      "pescado",
+      "huevo",
+      "rapida",
+      "requiere preparacion",
+      "airfryer",
+    ];
+    const PROTEIN_TAGS = [
+      "pollo",
+      "res",
+      "cerdo",
+      "atun",
+      "pescado",
+      "huevo",
+    ];
+    const STORAGE_KEY = "menu_modular_semanal_v2";
+    let weeklyMenu = loadMenu(),
+      selectedSlot = null,
+      activeTag = "all",
+      activeMobileDay = 0;
 
-    const scheduleEl = document.getElementById('schedule'), recipeListEl = document.getElementById('recipeList'), searchInput = document.getElementById('searchInput'), typeFilter = document.getElementById('typeFilter'), tagFilters = document.getElementById('tagFilters'), selectedHint = document.getElementById('selectedHint'), drawer = document.getElementById('drawer'), drawerTitle = document.getElementById('drawerTitle'), drawerText = document.getElementById('drawerText'), drawerPrimary = document.getElementById('drawerPrimary'), drawerSecondary = document.getElementById('drawerSecondary'), jsonBox = document.getElementById('jsonBox'), mobileDays = document.getElementById('mobileDays');
+    const scheduleEl = document.getElementById("schedule"),
+      recipeListEl = document.getElementById("recipeList"),
+      searchInput = document.getElementById("searchInput"),
+      typeFilter = document.getElementById("typeFilter"),
+      tagFilters = document.getElementById("tagFilters"),
+      selectedHint = document.getElementById("selectedHint"),
+      drawer = document.getElementById("drawer"),
+      drawerTitle = document.getElementById("drawerTitle"),
+      drawerText = document.getElementById("drawerText"),
+      drawerPrimary = document.getElementById("drawerPrimary"),
+      drawerSecondary = document.getElementById("drawerSecondary"),
+      jsonBox = document.getElementById("jsonBox"),
+      mobileDays = document.getElementById("mobileDays");
 
-    function emptyMenu() { return DAYS.reduce((acc, day) => { acc[day] = MEALS.reduce((m, meal) => ({ ...m, [meal.key]: null }), {}); return acc; }, {}) }
-    function loadMenu() { try { const stored = JSON.parse(localStorage.getItem(STORAGE_KEY)); return stored && typeof stored === 'object' ? { ...emptyMenu(), ...stored } : emptyMenu() } catch (e) { return emptyMenu() } }
-    function saveMenu() { localStorage.setItem(STORAGE_KEY, JSON.stringify(weeklyMenu)); showToast('Menú guardado') }
-    function typeColor(type) { return getComputedStyle(document.documentElement).getPropertyValue('--' + type).trim() }
-    function recipeById(id) { return RECIPES_DB.find(r => r.id === id) }
-    function tagClass(tag) { if (PROTEIN_TAGS.includes(tag)) return 'protein'; if (tag === 'rapida') return 'speed'; if (tag === 'requiere preparacion') return 'prep'; if (tag === 'airfryer') return 'air'; return '' }
-    function labelTag(tag) { return tag === 'requiere preparacion' ? 'prep' : tag }
+    function emptyMenu() {
+      return DAYS.reduce((acc, day) => {
+        acc[day] = MEALS.reduce(
+          (m, meal) => ({ ...m, [meal.key]: null }),
+          {},
+        );
+        return acc;
+      }, {});
+    }
+    function loadMenu() {
+      try {
+        const stored = JSON.parse(localStorage.getItem(STORAGE_KEY));
+        return stored && typeof stored === "object"
+          ? { ...emptyMenu(), ...stored }
+          : emptyMenu();
+      } catch (e) {
+        return emptyMenu();
+      }
+    }
+    function saveMenu() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(weeklyMenu));
+      showToast("Menú guardado");
+    }
+    function typeColor(type) {
+      return getComputedStyle(document.documentElement)
+        .getPropertyValue("--" + type)
+        .trim();
+    }
+    function recipeById(id) {
+      return RECIPES_DB.find((r) => r.id === id);
+    }
+    function tagClass(tag) {
+      if (PROTEIN_TAGS.includes(tag)) return "protein";
+      if (tag === "rapida") return "speed";
+      if (tag === "requiere preparacion") return "prep";
+      if (tag === "airfryer") return "air";
+      return "";
+    }
+    function labelTag(tag) {
+      return tag === "requiere preparacion" ? "prep" : tag;
+    }
 
-    function renderMobileDays() { mobileDays.innerHTML = DAYS.map((day, i) => `<button class="day-tab ${i === activeMobileDay ? 'active' : ''}" data-day-index="${i}">${day}</button>`).join(''); mobileDays.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => { activeMobileDay = Number(btn.dataset.dayIndex); renderSchedule(); renderMobileDays() })) }
+    function renderMobileDays() {
+      mobileDays.innerHTML = DAYS.map(
+        (day, i) =>
+          `<button class="day-tab ${i === activeMobileDay ? "active" : ""}" data-day-index="${i}">${day}</button>`,
+      ).join("");
+      mobileDays.querySelectorAll("button").forEach((btn) =>
+        btn.addEventListener("click", () => {
+          activeMobileDay = Number(btn.dataset.dayIndex);
+          renderSchedule();
+          renderMobileDays();
+        }),
+      );
+    }
     function renderSchedule() {
-      const mobile = window.matchMedia('(max-width: 980px)').matches; scheduleEl.innerHTML = '<div class="head-cell">Tiempo</div>';
-      DAYS.forEach((day, i) => scheduleEl.insertAdjacentHTML('beforeend', `<div class="head-cell day-header ${mobile && i !== activeMobileDay ? 'hidden-mobile-day' : ''}">${day}</div>`));
-      MEALS.forEach(meal => { scheduleEl.insertAdjacentHTML('beforeend', `<div class="cell meal-cell ${meal.key}">${meal.label}</div>`); DAYS.forEach((day, i) => { const recipe = recipeById(weeklyMenu[day]?.[meal.key]); scheduleEl.insertAdjacentHTML('beforeend', `<div class="cell ${mobile && i !== activeMobileDay ? 'hidden-mobile-day' : ''}">${slotTemplate(day, meal, recipe)}</div>`) }) });
-      scheduleEl.querySelectorAll('[data-slot]').forEach(slot => slot.addEventListener('click', () => selectSlot(slot.dataset.day, slot.dataset.meal)));
-      scheduleEl.querySelectorAll('[data-remove]').forEach(btn => btn.addEventListener('click', e => { e.stopPropagation(); weeklyMenu[btn.dataset.day][btn.dataset.meal] = null; saveMenu(); renderSchedule() }));
-      scheduleEl.querySelectorAll('[data-random]').forEach(btn => btn.addEventListener('click', e => { e.stopPropagation(); weeklyMenu[btn.dataset.day][btn.dataset.meal] = randomRecipe(btn.dataset.meal).id; saveMenu(); renderSchedule() }));
+      const mobile = window.matchMedia("(max-width: 980px)").matches;
+      scheduleEl.innerHTML = '<div class="head-cell">Tiempo</div>';
+      DAYS.forEach((day, i) =>
+        scheduleEl.insertAdjacentHTML(
+          "beforeend",
+          `<div class="head-cell day-header ${mobile && i !== activeMobileDay ? "hidden-mobile-day" : ""}">${day}</div>`,
+        ),
+      );
+      MEALS.forEach((meal) => {
+        scheduleEl.insertAdjacentHTML(
+          "beforeend",
+          `<div class="cell meal-cell ${meal.key}">${meal.label}</div>`,
+        );
+        DAYS.forEach((day, i) => {
+          const recipe = recipeById(weeklyMenu[day]?.[meal.key]);
+          scheduleEl.insertAdjacentHTML(
+            "beforeend",
+            `<div class="cell ${mobile && i !== activeMobileDay ? "hidden-mobile-day" : ""}">${slotTemplate(day, meal, recipe)}</div>`,
+          );
+        });
+      });
+      scheduleEl
+        .querySelectorAll("[data-slot]")
+        .forEach((slot) =>
+          slot.addEventListener("click", () =>
+            selectSlot(slot.dataset.day, slot.dataset.meal),
+          ),
+        );
+      scheduleEl.querySelectorAll("[data-remove]").forEach((btn) =>
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          weeklyMenu[btn.dataset.day][btn.dataset.meal] = null;
+          saveMenu();
+          renderSchedule();
+        }),
+      );
+      scheduleEl.querySelectorAll("[data-random]").forEach((btn) =>
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          weeklyMenu[btn.dataset.day][btn.dataset.meal] = randomRecipe(
+            btn.dataset.meal,
+          ).id;
+          saveMenu();
+          renderSchedule();
+        }),
+      );
     }
     function slotTemplate(day, meal, recipe) {
-      const isSelected = selectedSlot?.day === day && selectedSlot?.meal === meal.key;
-      if (!recipe) return `<div class="slot empty ${isSelected ? 'selected' : ''}" data-slot data-day="${day}" data-meal="${meal.key}"><span>+ Agregar</span><small>${meal.label}</small></div>`;
-      return `<div class="slot slot-filled ${isSelected ? 'selected' : ''}" data-slot data-day="${day}" data-meal="${meal.key}" style="background:${typeColor(recipe.type)}22;border-left:4px solid ${typeColor(recipe.type)}"><div><div class="slot-title">${recipe.name}</div><div class="slot-tags">${recipe.tags.map(t => `<span class="tag ${tagClass(t)}">${labelTag(t)}</span>`).join('')}</div></div><div class="slot-tools"><button data-random data-day="${day}" data-meal="${meal.key}">Cambiar</button><button data-remove data-day="${day}" data-meal="${meal.key}">Quitar</button></div></div>`;
+      const isSelected =
+        selectedSlot?.day === day && selectedSlot?.meal === meal.key;
+      if (!recipe)
+        return `<div class="slot empty ${isSelected ? "selected" : ""}" data-slot data-day="${day}" data-meal="${meal.key}"><span>+ Agregar</span><small>${meal.label}</small></div>`;
+      return `<div class="slot slot-filled ${isSelected ? "selected" : ""}" data-slot data-day="${day}" data-meal="${meal.key}" style="background:${typeColor(recipe.type)}22;border-left:4px solid ${typeColor(recipe.type)}"><div><div class="slot-title">${recipe.name}</div><div class="slot-tags">${recipe.tags.map((t) => `<span class="tag ${tagClass(t)}">${labelTag(t)}</span>`).join("")}</div></div><div class="slot-tools"><button data-random data-day="${day}" data-meal="${meal.key}">Cambiar</button><button data-remove data-day="${day}" data-meal="${meal.key}">Quitar</button></div></div>`;
     }
-    function selectSlot(day, meal) { selectedSlot = { day, meal }; typeFilter.value = meal; selectedHint.textContent = `Seleccionado: ${day} · ${MEALS.find(m => m.key === meal).label}`; renderSchedule(); renderRecipes() }
-    function renderTagFilters() { tagFilters.innerHTML = `<button class="chip ${activeTag === 'all' ? 'active' : ''}" data-tag="all">Todas</button>` + TAGS.map(tag => `<button class="chip ${activeTag === tag ? 'active' : ''}" data-tag="${tag}">${labelTag(tag)}</button>`).join(''); tagFilters.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => { activeTag = btn.dataset.tag; renderTagFilters(); renderRecipes() })) }
+    function selectSlot(day, meal) {
+      selectedSlot = { day, meal };
+      typeFilter.value = meal;
+      selectedHint.textContent = `Seleccionado: ${day} · ${MEALS.find((m) => m.key === meal).label}`;
+      renderSchedule();
+      renderRecipes();
+    }
+    function renderTagFilters() {
+      tagFilters.innerHTML =
+        `<button class="chip ${activeTag === "all" ? "active" : ""}" data-tag="all">Todas</button>` +
+        TAGS.map(
+          (tag) =>
+            `<button class="chip ${activeTag === tag ? "active" : ""}" data-tag="${tag}">${labelTag(tag)}</button>`,
+        ).join("");
+      tagFilters.querySelectorAll("button").forEach((btn) =>
+        btn.addEventListener("click", () => {
+          activeTag = btn.dataset.tag;
+          renderTagFilters();
+          renderRecipes();
+        }),
+      );
+    }
     function renderRecipes() {
-      const q = searchInput.value.trim().toLowerCase(), type = typeFilter.value;
-      const filtered = RECIPES_DB.filter(recipe => { const blob = [recipe.name, recipe.type, ...recipe.ingredients, ...recipe.tags].join(' ').toLowerCase(); return (type === 'all' || recipe.type === type) && (activeTag === 'all' || recipe.tags.includes(activeTag)) && (!q || blob.includes(q)) });
-      recipeListEl.innerHTML = filtered.map(recipe => `<article class="recipe-card"><div class="recipe-top"><div class="recipe-title">${recipe.name}</div><span class="type-dot" style="background:${typeColor(recipe.type)}"></span></div><div class="recipe-ingredients">${recipe.ingredients.slice(0, 6).join(' · ')}</div><div class="tag-row">${recipe.tags.map(t => `<span class="tag ${tagClass(t)}">${labelTag(t)}</span>`).join('')}</div><div class="card-actions"><button class="mini-btn" data-assign="${recipe.id}">Asignar</button><button class="mini-btn ghost" data-preview="${recipe.id}">Ver</button></div></article>`).join('') || `<div class="recipe-card"><strong>No encontré recetas.</strong><p class="panel-sub">Prueba con otro filtro o búsqueda.</p></div>`;
-      recipeListEl.querySelectorAll('[data-assign]').forEach(btn => btn.addEventListener('click', () => assignRecipe(btn.dataset.assign))); recipeListEl.querySelectorAll('[data-preview]').forEach(btn => btn.addEventListener('click', () => openRecipe(btn.dataset.preview)));
+      const q = searchInput.value.trim().toLowerCase(),
+        type = typeFilter.value;
+      const filtered = RECIPES_DB.filter((recipe) => {
+        const blob = [
+          recipe.name,
+          recipe.type,
+          ...recipe.ingredients,
+          ...recipe.tags,
+        ]
+          .join(" ")
+          .toLowerCase();
+        return (
+          (type === "all" || recipe.type === type) &&
+          (activeTag === "all" || recipe.tags.includes(activeTag)) &&
+          (!q || blob.includes(q))
+        );
+      });
+      recipeListEl.innerHTML =
+        filtered
+          .map(
+            (recipe) =>
+              `<article class="recipe-card"><div class="recipe-top"><div class="recipe-title">${recipe.name}</div><span class="type-dot" style="background:${typeColor(recipe.type)}"></span></div><div class="recipe-ingredients">${recipe.ingredients.slice(0, 6).join(" · ")}</div><div class="tag-row">${recipe.tags.map((t) => `<span class="tag ${tagClass(t)}">${labelTag(t)}</span>`).join("")}</div><div class="card-actions"><button class="mini-btn" data-assign="${recipe.id}">Asignar</button><button class="mini-btn ghost" data-preview="${recipe.id}">Ver</button></div></article>`,
+          )
+          .join("") ||
+        `<div class="recipe-card"><strong>No encontré recetas.</strong><p class="panel-sub">Prueba con otro filtro o búsqueda.</p></div>`;
+      recipeListEl
+        .querySelectorAll("[data-assign]")
+        .forEach((btn) =>
+          btn.addEventListener("click", () =>
+            assignRecipe(btn.dataset.assign),
+          ),
+        );
+      recipeListEl
+        .querySelectorAll("[data-preview]")
+        .forEach((btn) =>
+          btn.addEventListener("click", () =>
+            openRecipe(btn.dataset.preview),
+          ),
+        );
     }
-    function assignRecipe(recipeId) { const recipe = recipeById(recipeId); if (!recipe) return; if (!selectedSlot) { const firstDay = DAYS[activeMobileDay] || DAYS[0]; selectedSlot = { day: firstDay, meal: recipe.type } } if (selectedSlot.meal !== recipe.type && !confirm(`Esta receta es de ${recipe.type}. ¿Asignarla de todos modos a ${selectedSlot.meal}?`)) return; weeklyMenu[selectedSlot.day][selectedSlot.meal] = recipe.id; saveMenu(); renderSchedule() }
-    function openRecipe(recipeId) { const recipe = recipeById(recipeId); drawerTitle.textContent = recipe.name; drawerText.innerHTML = `<strong>${recipe.type.toUpperCase()}</strong><br>${recipe.ingredients.join(' · ')}<br><br>${recipe.tags.map(t => '#' + labelTag(t)).join(' ')}`; jsonBox.style.display = 'none'; drawerPrimary.textContent = 'Asignar al espacio seleccionado'; drawerPrimary.onclick = () => { assignRecipe(recipe.id); closeDrawer() }; drawerSecondary.textContent = 'Cerrar'; drawerSecondary.onclick = closeDrawer; drawer.classList.add('open') }
-    function closeDrawer() { drawer.classList.remove('open'); jsonBox.style.display = 'block' }
-    function randomRecipe(type) { const pool = RECIPES_DB.filter(r => r.type === type); return pool[Math.floor(Math.random() * pool.length)] }
-    function autoFill() { DAYS.forEach(day => MEALS.forEach(meal => weeklyMenu[day][meal.key] = randomRecipe(meal.key).id)); saveMenu(); renderSchedule() }
+    function assignRecipe(recipeId) {
+      const recipe = recipeById(recipeId);
+      if (!recipe) return;
+      if (!selectedSlot) {
+        const firstDay = DAYS[activeMobileDay] || DAYS[0];
+        selectedSlot = { day: firstDay, meal: recipe.type };
+      }
+      if (
+        selectedSlot.meal !== recipe.type &&
+        !confirm(
+          `Esta receta es de ${recipe.type}. ¿Asignarla de todos modos a ${selectedSlot.meal}?`,
+        )
+      )
+        return;
+      weeklyMenu[selectedSlot.day][selectedSlot.meal] = recipe.id;
+      saveMenu();
+      renderSchedule();
+    }
+    function openRecipe(recipeId) {
+      const recipe = recipeById(recipeId);
+      drawerTitle.textContent = recipe.name;
+      drawerText.innerHTML = `<strong>${recipe.type.toUpperCase()}</strong><br>${recipe.ingredients.join(" · ")}<br><br>${recipe.tags.map((t) => "#" + labelTag(t)).join(" ")}`;
+      jsonBox.style.display = "none";
+      drawerPrimary.textContent = "Asignar al espacio seleccionado";
+      drawerPrimary.onclick = () => {
+        assignRecipe(recipe.id);
+        closeDrawer();
+      };
+      drawerSecondary.textContent = "Cerrar";
+      drawerSecondary.onclick = closeDrawer;
+      drawer.classList.add("open");
+    }
+    function closeDrawer() {
+      drawer.classList.remove("open");
+      jsonBox.style.display = "block";
+    }
+    function randomRecipe(type) {
+      const pool = RECIPES_DB.filter((r) => r.type === type);
+      return pool[Math.floor(Math.random() * pool.length)];
+    }
+    function autoFill() {
+      DAYS.forEach((day) =>
+        MEALS.forEach(
+          (meal) => (weeklyMenu[day][meal.key] = randomRecipe(meal.key).id),
+        ),
+      );
+      saveMenu();
+      renderSchedule();
+    }
     function buildShoppingList() {
-      const counts = {}, used = [];
-      DAYS.forEach(day => MEALS.forEach(meal => { const recipe = recipeById(weeklyMenu[day]?.[meal.key]); if (recipe) { used.push(`${day} - ${meal.label}: ${recipe.name}`); recipe.ingredients.forEach(item => { counts[item] = (counts[item] || 0) + 1 }) } }));
-      const ingredients = Object.entries(counts).sort((a, b) => a[0].localeCompare(b[0], 'es')).map(([name, count]) => `☐ ${name}${count > 1 ? `  x${count}` : ''}`).join('\n');
-      return `GRIMORIO — LISTA DE COMPRAS\n\nINGREDIENTES\n${ingredients || 'No hay recetas programadas.'}\n\nMENÚ PROGRAMADO\n${used.join('\n') || 'Sin platillos programados.'}`;
+      const counts = {},
+        used = [];
+      DAYS.forEach((day) =>
+        MEALS.forEach((meal) => {
+          const recipe = recipeById(weeklyMenu[day]?.[meal.key]);
+          if (recipe) {
+            used.push(`${day} - ${meal.label}: ${recipe.name}`);
+            recipe.ingredients.forEach((item) => {
+              counts[item] = (counts[item] || 0) + 1;
+            });
+          }
+        }),
+      );
+      const ingredients = Object.entries(counts)
+        .sort((a, b) => a[0].localeCompare(b[0], "es"))
+        .map(([name, count]) => `☐ ${name}${count > 1 ? `  x${count}` : ""}`)
+        .join("\n");
+      return `GRIMORIO — LISTA DE COMPRAS\n\nINGREDIENTES\n${ingredients || "No hay recetas programadas."}\n\nMENÚ PROGRAMADO\n${used.join("\n") || "Sin platillos programados."}`;
     }
-    async function copyShoppingList() { const text = buildShoppingList(); await navigator.clipboard.writeText(text); showToast('Lista de compras copiada') }
-    function showToast(msg) { const toast = document.getElementById('toast'); toast.textContent = msg; toast.classList.add('show'); clearTimeout(showToast.timer); showToast.timer = setTimeout(() => toast.classList.remove('show'), 1300) }
-    function exportJSON() { drawerTitle.textContent = 'Exportar planeación JSON'; drawerText.textContent = 'Copia este JSON para respaldar o mover tu menú semanal.'; jsonBox.style.display = 'block'; jsonBox.value = JSON.stringify(weeklyMenu, null, 2); drawerPrimary.textContent = 'Copiar'; drawerPrimary.onclick = async () => { await navigator.clipboard.writeText(jsonBox.value); showToast('JSON copiado') }; drawerSecondary.textContent = 'Cerrar'; drawerSecondary.onclick = closeDrawer; drawer.classList.add('open') }
-    function importJSON() { drawerTitle.textContent = 'Importar planeación JSON'; drawerText.textContent = 'Pega un JSON compatible para reemplazar la planeación actual.'; jsonBox.style.display = 'block'; jsonBox.value = ''; drawerPrimary.textContent = 'Importar'; drawerPrimary.onclick = () => { try { weeklyMenu = { ...emptyMenu(), ...JSON.parse(jsonBox.value) }; saveMenu(); renderSchedule(); closeDrawer(); showToast('Planeación importada') } catch (e) { alert('JSON inválido') } }; drawerSecondary.textContent = 'Cerrar'; drawerSecondary.onclick = closeDrawer; drawer.classList.add('open') }
+    async function copyShoppingList() {
+      const text = buildShoppingList();
+      await navigator.clipboard.writeText(text);
+      showToast("Lista de compras copiada");
+    }
+    function showToast(msg) {
+      const toast = document.getElementById("toast");
+      toast.textContent = msg;
+      toast.classList.add("show");
+      clearTimeout(showToast.timer);
+      showToast.timer = setTimeout(
+        () => toast.classList.remove("show"),
+        1300,
+      );
+    }
+    function exportJSON() {
+      drawerTitle.textContent = "Exportar planeación JSON";
+      drawerText.textContent =
+        "Copia este JSON para respaldar o mover tu menú semanal.";
+      jsonBox.style.display = "block";
+      jsonBox.value = JSON.stringify(weeklyMenu, null, 2);
+      drawerPrimary.textContent = "Copiar";
+      drawerPrimary.onclick = async () => {
+        await navigator.clipboard.writeText(jsonBox.value);
+        showToast("JSON copiado");
+      };
+      drawerSecondary.textContent = "Cerrar";
+      drawerSecondary.onclick = closeDrawer;
+      drawer.classList.add("open");
+    }
+    function importJSON() {
+      drawerTitle.textContent = "Importar planeación JSON";
+      drawerText.textContent =
+        "Pega un JSON compatible para reemplazar la planeación actual.";
+      jsonBox.style.display = "block";
+      jsonBox.value = "";
+      drawerPrimary.textContent = "Importar";
+      drawerPrimary.onclick = () => {
+        try {
+          weeklyMenu = { ...emptyMenu(), ...JSON.parse(jsonBox.value) };
+          saveMenu();
+          renderSchedule();
+          closeDrawer();
+          showToast("Planeación importada");
+        } catch (e) {
+          alert("JSON inválido");
+        }
+      };
+      drawerSecondary.textContent = "Cerrar";
+      drawerSecondary.onclick = closeDrawer;
+      drawer.classList.add("open");
+    }
 
-    document.getElementById('autoFillBtn').addEventListener('click', autoFill);
-    document.getElementById('shoppingBtn').addEventListener('click', copyShoppingList);
-    document.getElementById('exportBtn').addEventListener('click', exportJSON);
-    document.getElementById('importBtn').addEventListener('click', importJSON);
-    document.getElementById('clearBtn').addEventListener('click', () => { if (confirm('¿Limpiar todo el menú semanal?')) { weeklyMenu = emptyMenu(); saveMenu(); selectedSlot = null; selectedHint.textContent = 'Toca un espacio para asignar una receta.'; renderSchedule() } });
-    searchInput.addEventListener('input', renderRecipes); typeFilter.addEventListener('change', renderRecipes); window.addEventListener('resize', () => { renderSchedule(); renderMobileDays() });
-    renderMobileDays(); renderTagFilters(); renderSchedule(); renderRecipes();
+    document
+      .getElementById("autoFillBtn")
+      .addEventListener("click", autoFill);
+    document
+      .getElementById("shoppingBtn")
+      .addEventListener("click", copyShoppingList);
+    document
+      .getElementById("exportBtn")
+      .addEventListener("click", exportJSON);
+    document
+      .getElementById("importBtn")
+      .addEventListener("click", importJSON);
+    document.getElementById("clearBtn").addEventListener("click", () => {
+      if (confirm("¿Limpiar todo el menú semanal?")) {
+        weeklyMenu = emptyMenu();
+        saveMenu();
+        selectedSlot = null;
+        selectedHint.textContent = "Toca un espacio para asignar una receta.";
+        renderSchedule();
+      }
+    });
+    searchInput.addEventListener("input", renderRecipes);
+    typeFilter.addEventListener("change", renderRecipes);
+    window.addEventListener("resize", () => {
+      renderSchedule();
+      renderMobileDays();
+    });
+    renderMobileDays();
+    renderTagFilters();
+    renderSchedule();
+    renderRecipes();
   </script>
 </body>
 
