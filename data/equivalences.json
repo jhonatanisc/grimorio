@@ -1,0 +1,2752 @@
+{
+  "1-1-2-porcion-grasa": {
+    "name": "1 1/2 porción grasa",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-2-cebolla-blanca": {
+    "name": "1/2 cebolla blanca",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-2-porcion-cereal": {
+    "name": "1/2 porción cereal",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-2-porcion-cereal-paciente-corre": {
+    "name": "1/2 porción cereal Paciente: Corre",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-2-porcion-fruta": {
+    "name": "1/2 porción fruta",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-2-porcion-grasa": {
+    "name": "1/2 porción grasa",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-2-porcion-lacteo": {
+    "name": "1/2 porción lácteo",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-2-scoop-falcon-performance": {
+    "name": "1/2 scoop Falcon performance",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-2c-de-yogurt": {
+    "name": "1-2c de yogurt",
+    "category": "lacteos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-4-cebolla-blanca": {
+    "name": "1/4 cebolla blanca",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-4-de-cebolla": {
+    "name": "1/4 de cebolla",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-4-tza-de-lechada-de-almendras": {
+    "name": "1/4 tza de lechada de almendras",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-cda-de-consome-en-polvo-salsa-bufalo": {
+    "name": "1 cda de consomé en polvo Salsa búfalo",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-cda-de-salsa-de-soya": {
+    "name": "1 cda de salsa de soya",
+    "category": "leguminosas",
+    "proteinType": "vegetal",
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-cdita-de-ajo-en-polvo": {
+    "name": "1 cdita de ajo en polvo",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-cdita-de-albahaca": {
+    "name": "1 cdita de albahaca",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-cdita-de-extracto-de-vainilla": {
+    "name": "1 cdita de extracto de vainilla",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-cdita-de-pimienta-con-limon": {
+    "name": "1 cdita de pimienta con limón",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-cdita-paprika": {
+    "name": "1 cdita paprika",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-cdta-de-vinagre-balsamico": {
+    "name": "1 cdta de vinagre balsámico",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-diente-de-ajo": {
+    "name": "1 diente de ajo",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-porcion-cereal": {
+    "name": "1 porción cereal",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-porcion-fruta": {
+    "name": "1 porción fruta",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-porcion-lacteo": {
+    "name": "1 porción lácteo",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-porcion-leguminosa": {
+    "name": "1 porción leguminosa",
+    "category": "leguminosas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "1-porcion-verdura": {
+    "name": "1 porción verdura",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "10-disparos-de-1-seg-aceite-en-spray": {
+    "name": "10 disparos de 1 seg Aceite en spray",
+    "category": "grasas-y-semillas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "2-cdas-de-leche": {
+    "name": "2 cdas de leche",
+    "category": "lacteos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "2-chiles-guajillo": {
+    "name": "2 chiles guajillo",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "2-claras-de-huevo": {
+    "name": "2 claras de huevo",
+    "category": "proteinas",
+    "proteinType": "huevo",
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "3-rebanadas-queso-mozzarella-bajo-en-grasa": {
+    "name": "3 rebanadas Queso mozzarella bajo en grasa",
+    "category": "proteinas",
+    "proteinType": "queso",
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "5-disparos-de-1-seg-aceite-en-spray": {
+    "name": "5 disparos de 1 seg Aceite en spray",
+    "category": "grasas-y-semillas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "6-rebanadas-jamon-bajo-en-grasa": {
+    "name": "6 rebanadas Jamón bajo en grasa",
+    "category": "proteinas",
+    "proteinType": "pavo",
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "aceite-de-aguacate": {
+    "name": "Aceite de aguacate",
+    "category": "grasas-y-semillas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "cucharadita",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "aceite-de-ajonjoli": {
+    "name": "Aceite de ajonjolí",
+    "category": "grasas-y-semillas",
+    "proteinType": null,
+    "portion": {
+      "amount": 2.0,
+      "unit": "cucharadita",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "aceite-de-oliva": {
+    "name": "Aceite de oliva",
+    "category": "grasas-y-semillas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "cucharadita",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "aceite-vegetal": {
+    "name": "Aceite vegetal",
+    "category": "grasas-y-semillas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "cucharadita",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "achiote": {
+    "name": "Achiote",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "agua-natural": {
+    "name": "Agua natural",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "aguacate": {
+    "name": "Aguacate",
+    "category": "grasas-y-semillas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "ajo": {
+    "name": "Ajo",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "ajo-en-polvo-al-gusto": {
+    "name": "Ajo en polvo",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "ajo-en-polvo-cucharadita": {
+    "name": "Ajo en polvo",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "cucharadita",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "almendra": {
+    "name": "Almendra",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 5.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "almendra-fileteada": {
+    "name": "Almendra fileteada",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "amaranto-natural": {
+    "name": "Amaranto natural",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "apio": {
+    "name": "Apio",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 3.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "arandano-azul": {
+    "name": "Arándano azul",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "arrachera-de-res": {
+    "name": "Arrachera de res",
+    "category": "proteinas",
+    "proteinType": "res",
+    "portion": {
+      "amount": 90.0,
+      "unit": "g",
+      "grams": 90.0
+    },
+    "includeInShoppingList": true
+  },
+  "arroz-cocido": {
+    "name": "Arroz cocido",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "arroz-integral-cocido": {
+    "name": "Arroz integral cocido",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "atun-en-agua": {
+    "name": "Atún en agua",
+    "category": "proteinas",
+    "proteinType": "atun",
+    "portion": {
+      "amount": 1.0,
+      "unit": "lata",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "atun-en-lata": {
+    "name": "Atún en lata",
+    "category": "proteinas",
+    "proteinType": "atun",
+    "portion": {
+      "amount": 1.0,
+      "unit": "lata",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "avena-en-hojuela-cruda": {
+    "name": "Avena en hojuela cruda",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "barra-de-avena-frutos-rojos": {
+    "name": "Barra de avena frutos rojos",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "bistec-bola": {
+    "name": "Bistec bola",
+    "category": "proteinas",
+    "proteinType": "res",
+    "portion": {
+      "amount": 25.0,
+      "unit": "g",
+      "grams": 25.0
+    },
+    "includeInShoppingList": true
+  },
+  "brocoli-cocido": {
+    "name": "Brócoli cocido",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "brocoli-cocido-salsa-verde": {
+    "name": "Brócoli cocido Salsa verde",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "cacahuate": {
+    "name": "Cacahuate",
+    "category": "grasas-y-semillas",
+    "proteinType": null,
+    "portion": {
+      "amount": 7.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "cacahuate-con-cascara": {
+    "name": "Cacahuate con cascara",
+    "category": "grasas-y-semillas",
+    "proteinType": null,
+    "portion": {
+      "amount": 6.0,
+      "unit": "g",
+      "grams": 6.0
+    },
+    "includeInShoppingList": true
+  },
+  "calabacita": {
+    "name": "Calabacita",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "calabacita-perejil-picado-albahaca-picada": {
+    "name": "Calabacita Perejil picado Albahaca picada",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "camaron-mediano": {
+    "name": "Camarón mediano",
+    "category": "proteinas",
+    "proteinType": "pescado",
+    "portion": {
+      "amount": 24.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "canela": {
+    "name": "Canela",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "canela-en-polvo": {
+    "name": "Canela en polvo",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "canela-en-polvo-al-gusto-leche": {
+    "name": "Canela en polvo al gusto Leche",
+    "category": "lacteos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "canela-en-polvo-stevia-splenda-opcional": {
+    "name": "Canela en polvo Stevia/ splenda (opcional)",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "canela-en-polvo-un-chorrito-de-vainilla": {
+    "name": "Canela en polvo Un chorrito de vainilla",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "canela-leche-vegetal-sin-azucar": {
+    "name": "Canela Leche vegetal sin azucar",
+    "category": "lacteos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "canela-mantequilla": {
+    "name": "Canela Mantequilla",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "carne-molida-de-pavo": {
+    "name": "Carne molida de pavo",
+    "category": "proteinas",
+    "proteinType": "pavo",
+    "portion": {
+      "amount": 45.0,
+      "unit": "g",
+      "grams": 45.0
+    },
+    "includeInShoppingList": true
+  },
+  "cebolla-al-gusto": {
+    "name": "Cebolla",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "cebolla-taza": {
+    "name": "Cebolla",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "cebolla-morada": {
+    "name": "Cebolla morada",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "cebolla-salsa-de-soya": {
+    "name": "Cebolla Salsa de soya",
+    "category": "leguminosas",
+    "proteinType": "vegetal",
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "cebolla-y-ajo": {
+    "name": "Cebolla y ajo",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "cebolla-y-cilantro": {
+    "name": "Cebolla y cilantro",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "cebollita-cambray": {
+    "name": "Cebollita cambray",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 3.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "champinon-crudo": {
+    "name": "Champiñon crudo",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "chayote": {
+    "name": "Chayote",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "chicharo-cocido-sin-vaina": {
+    "name": "Chícharo cocido sin vaina",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "chile-chipotle": {
+    "name": "Chile chipotle",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "chile-chipotle-para-la-salsa": {
+    "name": "Chile chipotle para la salsa",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "chile-en-polvo": {
+    "name": "Chile en polvo",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "chile-en-polvo-y-limon": {
+    "name": "Chile en polvo y limón",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "chile-guajillo": {
+    "name": "Chile guajillo",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "chile-picante": {
+    "name": "Chile picante",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "chile-poblano": {
+    "name": "Chile poblano",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "chile-quebrado": {
+    "name": "Chile quebrado",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "chile-serrano": {
+    "name": "Chile serrano",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "chile-serrano-chipotle": {
+    "name": "Chile serrano Chipotle",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "chile-serrano-opcional": {
+    "name": "Chile serrano, opcional",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "chocolate-sin-azucar": {
+    "name": "Chocolate sin azúcar",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 3.8,
+      "unit": "g",
+      "grams": 3.8
+    },
+    "includeInShoppingList": true
+  },
+  "chuleta-de-cerdo": {
+    "name": "Chuleta de cerdo",
+    "category": "proteinas",
+    "proteinType": "cerdo",
+    "portion": {
+      "amount": 180.0,
+      "unit": "g",
+      "grams": 180.0
+    },
+    "includeInShoppingList": true
+  },
+  "chuleta-de-cerdo-perejil-y-sal-aceite-en-spray": {
+    "name": "Chuleta de cerdo Perejil y sal Aceite en spray",
+    "category": "proteinas",
+    "proteinType": "cerdo",
+    "portion": {
+      "amount": 135.0,
+      "unit": "g",
+      "grams": 135.0
+    },
+    "includeInShoppingList": true
+  },
+  "cilantro": {
+    "name": "Cilantro",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "cilantro-picado": {
+    "name": "Cilantro picado",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "clara-de-huevo": {
+    "name": "Clara de huevo",
+    "category": "proteinas",
+    "proteinType": "huevo",
+    "portion": {
+      "amount": 4.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "col-cruda": {
+    "name": "Col cruda",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "col-morada-cruda-picada": {
+    "name": "Col morada cruda picada",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "col-morada-cruda-picada-salsa-de-jitomate": {
+    "name": "Col morada cruda picada Salsa de jitomate",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 2.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "coliflor-cocida": {
+    "name": "Coliflor cocida",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "crema": {
+    "name": "Crema",
+    "category": "lacteos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "crema-de-almendra-natural": {
+    "name": "Crema de almendra natural",
+    "category": "lacteos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "crema-de-cacahuate-natural": {
+    "name": "Crema de cacahuate natural",
+    "category": "lacteos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "crema-de-cacahuate-natural-bebida-vegetal-sin-azucar": {
+    "name": "Crema de cacahuate natural Bebida vegetal sin azúcar",
+    "category": "lacteos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "croutones": {
+    "name": "Croutones",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "edulcorante-artificial-estevia-o-splenda": {
+    "name": "Edulcorante artificial [estevia o splenda]",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "edulcorante-artificial-natural-splenda-monk-fruit": {
+    "name": "Edulcorante artificial/natural (splenda/monk fruit)",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "edulcorante-sin-calorias": {
+    "name": "Edulcorante sin calorías",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "ejote-cocido": {
+    "name": "Ejote cocido",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "ejote-cocido-salsa-soya-jengibre": {
+    "name": "Ejote cocido Salsa soya Jengibre",
+    "category": "leguminosas",
+    "proteinType": "vegetal",
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "elote": {
+    "name": "Elote",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "elote-amarillo-desgranado": {
+    "name": "Elote amarillo desgranado",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "esparrago": {
+    "name": "Espárrago",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 6.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "espinaca": {
+    "name": "Espinaca",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 2.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "espinaca-cruda-picada-oregano": {
+    "name": "Espinaca cruda picada Orégano",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 4.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "fideo-cocido": {
+    "name": "Fideo cocido",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "fideos-chinos-de-arroz": {
+    "name": "Fideos chinos de arroz",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 40.0,
+      "unit": "g",
+      "grams": 40.0
+    },
+    "includeInShoppingList": true
+  },
+  "frambuesa": {
+    "name": "Frambuesa",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "fresa-rebanada": {
+    "name": "Fresa rebanada",
+    "category": "proteinas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "frijol-cocido": {
+    "name": "Frijol cocido",
+    "category": "leguminosas",
+    "proteinType": "vegetal",
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "frijol-de-soya-cocido": {
+    "name": "Frijol de soya cocido",
+    "category": "leguminosas",
+    "proteinType": "vegetal",
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "frijoles-refritos-caseros": {
+    "name": "Frijoles refritos caseros",
+    "category": "leguminosas",
+    "proteinType": "vegetal",
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "galleta-salma": {
+    "name": "Galleta salma",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 2.0,
+      "unit": "paquete",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "galletas-habaneras": {
+    "name": "Galletas habaneras",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 8.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "galletas-marias": {
+    "name": "Galletas marías",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 5.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "galletas-saladas": {
+    "name": "Galletas saladas",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 2.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "garbanzo-cocido": {
+    "name": "Garbanzo cocido",
+    "category": "leguminosas",
+    "proteinType": "vegetal",
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "germen-de-alfalfa-crudo": {
+    "name": "Germen de alfalfa crudo",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "germen-de-alfalfa-crudo-ajonjoli": {
+    "name": "Germen de alfalfa crudo Ajonjolí",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 2.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "germen-de-soya-cocido": {
+    "name": "Germen de soya cocido",
+    "category": "leguminosas",
+    "proteinType": "vegetal",
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "granola": {
+    "name": "Granola",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 3.0,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "guacamole": {
+    "name": "Guacamole",
+    "category": "grasas-y-semillas",
+    "proteinType": null,
+    "portion": {
+      "amount": 3.0,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "guayaba": {
+    "name": "Guayaba",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "harina-de-avena": {
+    "name": "Harina de avena",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 4.0,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "hojas-crudas-de-lasagna": {
+    "name": "Hojas crudas de lasagna",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 40.0,
+      "unit": "g",
+      "grams": 40.0
+    },
+    "includeInShoppingList": true
+  },
+  "huevo-entero": {
+    "name": "Huevo entero",
+    "category": "proteinas",
+    "proteinType": "huevo",
+    "portion": {
+      "amount": 2.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "hummus-de-garbanzo": {
+    "name": "Hummus de garbanzo",
+    "category": "leguminosas",
+    "proteinType": "vegetal",
+    "portion": {
+      "amount": 1,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "jicama-picada": {
+    "name": "Jicama picada",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "jitomate": {
+    "name": "Jitomate",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "jugo-de-limon": {
+    "name": "Jugo de limón",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 2.0,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "kiwi": {
+    "name": "Kiwi",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "leche": {
+    "name": "Leche",
+    "category": "lacteos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "leche-descremada": {
+    "name": "Leche descremada",
+    "category": "lacteos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "leche-descremada-huevo": {
+    "name": "Leche descremada Huevo",
+    "category": "proteinas",
+    "proteinType": "huevo",
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "leche-descremada-mermelada-sin-azucar": {
+    "name": "Leche descremada Mermelada sin azúcar",
+    "category": "lacteos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "leche-deslactosada-light": {
+    "name": "Leche deslactosada light",
+    "category": "lacteos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "leche-deslactosada-light-chocolate-amargo-sin-azucar": {
+    "name": "Leche deslactosada light Chocolate amargo sin azúcar",
+    "category": "lacteos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "lechuga": {
+    "name": "Lechuga",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 3.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "lechuga-espinaca": {
+    "name": "Lechuga Espinaca",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "lechuga-huevo": {
+    "name": "Lechuga Huevo",
+    "category": "proteinas",
+    "proteinType": "huevo",
+    "portion": {
+      "amount": 2.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "limon-al-gusto": {
+    "name": "Limón (al gusto)",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "limon-pieza": {
+    "name": "Limón",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 4.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "limon-salsa-picante-mostaza-jitomate": {
+    "name": "Limón Salsa picante Mostaza Jitomate",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "machaca-de-res": {
+    "name": "Machaca de res",
+    "category": "proteinas",
+    "proteinType": "res",
+    "portion": {
+      "amount": 15.0,
+      "unit": "g",
+      "grams": 15.0
+    },
+    "includeInShoppingList": true
+  },
+  "mandarina": {
+    "name": "Mandarina",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "mango-ataulfo": {
+    "name": "Mango ataúlfo",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "mango-petacon": {
+    "name": "Mango petacón",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "mango-picado": {
+    "name": "Mango picado",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "mantequilla-de-vaca": {
+    "name": "Mantequilla de vaca",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "cucharadita",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "manzana": {
+    "name": "Manzana",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "mayonesa": {
+    "name": "Mayonesa",
+    "category": "grasas-y-semillas",
+    "proteinType": null,
+    "portion": {
+      "amount": 2.0,
+      "unit": "cucharadita",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "medallon-de-atun": {
+    "name": "Medallón de atún",
+    "category": "proteinas",
+    "proteinType": "atun",
+    "portion": {
+      "amount": 90.0,
+      "unit": "g",
+      "grams": 90.0
+    },
+    "includeInShoppingList": true
+  },
+  "melon-picado": {
+    "name": "Melón picado",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "mix-de-vegetales-verdes": {
+    "name": "Mix de vegetales verdes",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "mix-de-vegetales-verdes-salsa-verde": {
+    "name": "Mix de vegetales verdes Salsa verde",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "moras": {
+    "name": "Moras",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "naranja": {
+    "name": "Naranja",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 2.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "nopal-cocido": {
+    "name": "Nopal cocido",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "nuez": {
+    "name": "Nuez",
+    "category": "grasas-y-semillas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "mitad",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "oregano-seco": {
+    "name": "Orégano seco",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "cucharadita",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "pan-integral": {
+    "name": "Pan integral",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 2.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "pan-integral-tostado": {
+    "name": "Pan integral tostado",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 2.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "pan-molido": {
+    "name": "Pan molido",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 2.0,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "papa-cocida": {
+    "name": "Papa cocida",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "papaya-picada": {
+    "name": "Papaya picada",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "pasitas": {
+    "name": "Pasitas",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 5.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "pasta-cocida": {
+    "name": "Pasta cocida",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "pasta-integral-cocida": {
+    "name": "Pasta integral cocida",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "pechuga-de-pavo-horneada": {
+    "name": "Pechuga de pavo horneada",
+    "category": "proteinas",
+    "proteinType": "pavo",
+    "portion": {
+      "amount": 2.0,
+      "unit": "rebanada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "pechuga-de-pollo": {
+    "name": "Pechuga de pollo",
+    "category": "proteinas",
+    "proteinType": "pollo",
+    "portion": {
+      "amount": 90.0,
+      "unit": "g",
+      "grams": 90.0
+    },
+    "includeInShoppingList": true
+  },
+  "pechuga-de-pollo-deshebrada": {
+    "name": "Pechuga de pollo deshebrada",
+    "category": "proteinas",
+    "proteinType": "pollo",
+    "portion": {
+      "amount": 80.0,
+      "unit": "g",
+      "grams": 80.0
+    },
+    "includeInShoppingList": true
+  },
+  "pechuga-de-pollo-molida": {
+    "name": "Pechuga de pollo molida",
+    "category": "proteinas",
+    "proteinType": "pollo",
+    "portion": {
+      "amount": 105.0,
+      "unit": "g",
+      "grams": 105.0
+    },
+    "includeInShoppingList": true
+  },
+  "pepino-rebanado": {
+    "name": "Pepino rebanado",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "pepita-de-calabaza": {
+    "name": "Pepita de calabaza",
+    "category": "grasas-y-semillas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "pera": {
+    "name": "Pera",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "pescado-blanco": {
+    "name": "Pescado blanco",
+    "category": "proteinas",
+    "proteinType": "pescado",
+    "portion": {
+      "amount": 140.0,
+      "unit": "g",
+      "grams": 140.0
+    },
+    "includeInShoppingList": true
+  },
+  "pierna-de-pollo-sin-piel": {
+    "name": "Pierna de pollo sin piel",
+    "category": "proteinas",
+    "proteinType": "pollo",
+    "portion": {
+      "amount": 1.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "pimienta": {
+    "name": "Pimienta",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": false
+  },
+  "pimienta-sazonador-de-verduras-espinacas": {
+    "name": "Pimienta Sazonador de verduras Espinacas",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "pimienta-y-cebollin": {
+    "name": "Pimienta y cebollin",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "pimiento-de-color": {
+    "name": "Pimiento de color",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "pimiento-de-color-lechuga-pimiento-verde-y-rojo": {
+    "name": "Pimiento de color Lechuga Pimiento verde y rojo",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 2.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "pina-picada": {
+    "name": "Piña picada",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "platano": {
+    "name": "Plátano",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "queso-cottage": {
+    "name": "Queso cottage",
+    "category": "proteinas",
+    "proteinType": "queso",
+    "portion": {
+      "amount": 3.0,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "queso-crema": {
+    "name": "Queso crema",
+    "category": "proteinas",
+    "proteinType": "queso",
+    "portion": {
+      "amount": 1,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "queso-fresco": {
+    "name": "Queso fresco",
+    "category": "proteinas",
+    "proteinType": "queso",
+    "portion": {
+      "amount": 80.0,
+      "unit": "g",
+      "grams": 80.0
+    },
+    "includeInShoppingList": true
+  },
+  "queso-fresco-de-cabra": {
+    "name": "Queso fresco de cabra",
+    "category": "proteinas",
+    "proteinType": "queso",
+    "portion": {
+      "amount": 90.0,
+      "unit": "g",
+      "grams": 90.0
+    },
+    "includeInShoppingList": true
+  },
+  "queso-manchego": {
+    "name": "Queso manchego",
+    "category": "proteinas",
+    "proteinType": "queso",
+    "portion": {
+      "amount": 25.0,
+      "unit": "g",
+      "grams": 25.0
+    },
+    "includeInShoppingList": true
+  },
+  "queso-oaxaca-light": {
+    "name": "Queso oaxaca light",
+    "category": "proteinas",
+    "proteinType": "queso",
+    "portion": {
+      "amount": 45.0,
+      "unit": "g",
+      "grams": 45.0
+    },
+    "includeInShoppingList": true
+  },
+  "queso-panela": {
+    "name": "Queso panela",
+    "category": "proteinas",
+    "proteinType": "queso",
+    "portion": {
+      "amount": 120.0,
+      "unit": "g",
+      "grams": 120.0
+    },
+    "includeInShoppingList": true
+  },
+  "queso-ricotta-bajo-en-grasa": {
+    "name": "Queso ricotta bajo en grasa",
+    "category": "proteinas",
+    "proteinType": "queso",
+    "portion": {
+      "amount": 6.0,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "quinoa-cruda": {
+    "name": "Quinoa cruda",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 20.0,
+      "unit": "g",
+      "grams": 20.0
+    },
+    "includeInShoppingList": true
+  },
+  "requeson": {
+    "name": "Requesón",
+    "category": "proteinas",
+    "proteinType": "queso",
+    "portion": {
+      "amount": 3.0,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "res-molida-magra": {
+    "name": "Res molida magra",
+    "category": "proteinas",
+    "proteinType": "res",
+    "portion": {
+      "amount": 105.0,
+      "unit": "g",
+      "grams": 105.0
+    },
+    "includeInShoppingList": true
+  },
+  "res-sin-grasa": {
+    "name": "Res sin grasa",
+    "category": "proteinas",
+    "proteinType": "res",
+    "portion": {
+      "amount": 120.0,
+      "unit": "g",
+      "grams": 120.0
+    },
+    "includeInShoppingList": true
+  },
+  "sal": {
+    "name": "Sal",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": false
+  },
+  "sal-al-gusto": {
+    "name": "Sal (al gusto)",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "sal-chipotle": {
+    "name": "Sal Chipotle",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "sal-mostaza-vinagre-de-manzana": {
+    "name": "Sal Mostaza Vinagre de manzana",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "sal-oregano": {
+    "name": "Sal Orégano",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "sal-y-pimienta": {
+    "name": "Sal y pimienta",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "sal-y-pimienta-al-gusto": {
+    "name": "Sal y pimienta (al gusto)",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "sal-y-pimienta-al-gusto-palillos-o-hilo-de-cocina-para-cerrar-los-rollos": {
+    "name": "Sal y pimienta al gusto Palillos o hilo de cocina para cerrar los rollos",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "sal-y-pimienta-alga-nori": {
+    "name": "Sal y pimienta Alga nori",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "sal-y-pimienta-oregano": {
+    "name": "Sal y pimienta Orégano",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "salsa-de-soya": {
+    "name": "Salsa de soya",
+    "category": "leguminosas",
+    "proteinType": "vegetal",
+    "portion": {
+      "amount": 1.0,
+      "unit": "cucharadita",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "sandia-picada": {
+    "name": "Sandía picada",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "semilla-de-chia-cucharada": {
+    "name": "Semilla de chía",
+    "category": "grasas-y-semillas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "semilla-de-chia-g": {
+    "name": "Semilla de chía",
+    "category": "grasas-y-semillas",
+    "proteinType": null,
+    "portion": {
+      "amount": 6.0,
+      "unit": "g",
+      "grams": 6.0
+    },
+    "includeInShoppingList": true
+  },
+  "semilla-de-girasol": {
+    "name": "Semilla de girasol",
+    "category": "grasas-y-semillas",
+    "proteinType": null,
+    "portion": {
+      "amount": 2.0,
+      "unit": "cucharadita",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "semilla-de-linaza": {
+    "name": "Semilla de linaza",
+    "category": "grasas-y-semillas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "sopa-de-verduras": {
+    "name": "Sopa de verduras",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "sustituto-lacteo-de-almendra": {
+    "name": "Sustituto lácteo de almendra",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "tomate-cherry-jitomate-cherry": {
+    "name": "Tomate cherry / jitomate cherry",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 12.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "tomate-jitomate-mostaza-lechuga": {
+    "name": "Tomate / jitomate Mostaza Lechuga",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 3.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "tomate-verde": {
+    "name": "Tomate verde",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 5.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "tortilla-de-harina": {
+    "name": "Tortilla de harina",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "tortilla-de-maiz": {
+    "name": "Tortilla de maíz",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 2.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "tortilla-de-nopal": {
+    "name": "Tortilla de nopal",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 6.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "tortitas-de-arroz": {
+    "name": "Tortitas de arroz",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "tortitas-de-arroz-inflado-integral": {
+    "name": "Tortitas de arroz inflado integral",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 4.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "tostadas-horneadas": {
+    "name": "Tostadas horneadas",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 4.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "totopos-horneados": {
+    "name": "Totopos horneados",
+    "category": "cereales-y-tuberculos",
+    "proteinType": null,
+    "portion": {
+      "amount": 30.0,
+      "unit": "g",
+      "grams": 30.0
+    },
+    "includeInShoppingList": true
+  },
+  "uva": {
+    "name": "Uva",
+    "category": "frutas",
+    "proteinType": null,
+    "portion": {
+      "amount": 9.0,
+      "unit": "pieza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "vainilla": {
+    "name": "Vainilla",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "al gusto",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "verdura": {
+    "name": "Verdura",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 2.0,
+      "unit": "porcion",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "verduras-picadas": {
+    "name": "Verduras picadas",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "vinagreta": {
+    "name": "Vinagreta",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "yogurt-griego-natural-sin-azucar": {
+    "name": "Yogurt griego natural sin azúcar",
+    "category": "lacteos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "yogurt-griego-natural-sin-azucar-extracto-de-vainilla": {
+    "name": "Yogurt griego natural sin azúcar Extracto de vainilla",
+    "category": "lacteos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "yogurt-griego-natural-sin-azucar-sobre-de-gelatina-sabor-fresa-sin-azucar": {
+    "name": "Yogurt griego natural sin azúcar Sobre de gelatina sabor fresa sin azúcar",
+    "category": "proteinas",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "yogurt-griego-sin-azucar-palos-de-brochetas": {
+    "name": "Yogurt griego sin azúcar Palos de brochetas",
+    "category": "lacteos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "cucharada",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "zanahoria-cruda-picada-rallada": {
+    "name": "Zanahoria cruda picada/rallada",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1.0,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "zanahoria-cruda-picada-rallada-extracto-de-vainilla-stevia": {
+    "name": "Zanahoria cruda picada/rallada Extracto de vainilla Stevia",
+    "category": "despensa",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "zanahoria-cruda-picada-rallada-jengibre-diente-de-ajo-vinagre-de-arroz-salsa-soya": {
+    "name": "Zanahoria cruda picada/rallada Jengibre Diente de ajo Vinagre de arroz Salsa soya",
+    "category": "cereales-y-tuberculos",
+    "proteinType": "vegetal",
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "zanahoria-cruda-picada-rallada-yogurt-griego": {
+    "name": "Zanahoria cruda picada/rallada Yogurt griego",
+    "category": "lacteos",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  },
+  "zarzamora": {
+    "name": "Zarzamora",
+    "category": "verduras",
+    "proteinType": null,
+    "portion": {
+      "amount": 1,
+      "unit": "taza",
+      "grams": null
+    },
+    "includeInShoppingList": true
+  }
+}

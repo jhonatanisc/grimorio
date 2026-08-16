@@ -1,0 +1,690 @@
+:root {
+  --ink: #17211e;
+  --muted: #56635f;
+  --paper: #ffffff;
+  --soft: #f5f7f3;
+  --line: #d7dfda;
+  --primary: #173f35;
+  --accent: #d97706;
+  --danger: #a12b23;
+  --shadow: 0 1px 2px #102a2314, 0 12px 32px #102a230a;
+  background: #edf2ee;
+  color: var(--ink);
+  font-size: 16px;
+}
+body {
+  background: radial-gradient(circle at 0 0, #dce9df 0, transparent 28rem), #edf2ee;
+  line-height: 1.5;
+}
+.app {
+  width: min(1680px, 100%);
+  padding: 16px;
+}
+.hero {
+  top: 8px;
+  padding: 12px 16px;
+  border-color: #c9d5ce;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px #173f3512;
+}
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--primary);
+  color: #fff7d6;
+  font-family: ui-serif, Georgia, serif;
+}
+.brand h1 {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 1.35rem;
+  letter-spacing: -0.025em;
+}
+.brand p {
+  font-size: 0.82rem;
+}
+.hero-actions {
+  gap: 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.ritual-primary,
+.ritual-utilities {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.ritual-primary {
+  padding: 4px;
+  border: 1px solid #d3ddd7;
+  border-radius: 14px;
+  background: #f2f6f3;
+}
+.ritual-utilities {
+  padding-left: 8px;
+  border-left: 1px solid var(--line);
+}
+.ritual-action {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 12px;
+  color: var(--ink);
+  background: transparent;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease,
+    color 0.15s ease;
+}
+.ritual-action:hover {
+  background: #e5eee9;
+  transform: translateY(-1px);
+}
+.ritual-action:active {
+  transform: translateY(1px);
+}
+.ritual-action:focus-visible {
+  outline-color: #ffc65c;
+}
+.ritual-main {
+  padding: 6px 10px 6px 7px;
+  background: transparent;
+}
+.ritual-icon {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #e2ebe6;
+}
+.ritual-icon svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ritual-shopping {
+  color: #fff;
+  background: var(--primary);
+  box-shadow: 0 4px 12px #173f3526;
+}
+.ritual-shopping:hover {
+  background: #24584a;
+}
+.ritual-shopping .ritual-icon {
+  background: #ffffff18;
+}
+.ritual-week .ritual-icon {
+  color: #9a5a00;
+  background: #fff0c7;
+}
+.ritual-recipes .ritual-icon {
+  color: #286049;
+  background: #dff1e7;
+}
+.ritual-tool {
+  padding: 5px 7px;
+  color: var(--muted);
+  background: transparent;
+}
+.ritual-tool .ritual-icon {
+  width: 28px;
+  height: 28px;
+  flex-basis: 28px;
+  border-radius: 8px;
+}
+.ritual-tool .ritual-icon svg {
+  width: 17px;
+  height: 17px;
+}
+.ritual-clear {
+  color: var(--danger);
+}
+.btn,
+.icon-btn,
+.chip,
+.day-tab {
+  min-height: 44px;
+  border-color: #c7d2cc;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  font-weight: 750;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+.btn:hover,
+.chip:hover,
+.day-tab:hover {
+  border-color: #79958a;
+  background: #f4f8f5;
+  filter: none;
+}
+.btn.primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.btn.quiet {
+  border-color: transparent;
+  background: transparent;
+  color: var(--muted);
+}
+.btn.compact {
+  min-height: 40px;
+  padding: 8px 11px;
+}
+.icon-action {
+  min-width: 44px;
+  padding-inline: 12px;
+  font-size: 1.05rem;
+}
+.hero-actions .icon-action {
+  width: 46px;
+  padding-inline: 0;
+}
+.layout {
+  grid-template-columns: minmax(0, 1fr) 390px;
+  gap: 16px;
+  margin-top: 16px;
+}
+.panel,
+.schedule-wrap {
+  border-color: #cbd6d0;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+.schedule-wrap {
+  grid-column: 1;
+  grid-row: 1;
+  padding: 20px;
+}
+.panel {
+  grid-column: 2;
+  grid-row: 1;
+  top: 86px;
+  max-height: calc(100vh - 102px);
+  padding: 18px;
+}
+.eyebrow {
+  display: block;
+  margin-bottom: 3px;
+  color: #4f6d61;
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.panel h2,
+.schedule-wrap h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: -0.025em;
+}
+.selection-status {
+  margin: 5px 0 0;
+  padding: 8px 11px;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  background: #fff8e8;
+  color: #5b4211;
+  font-size: 0.86rem;
+  font-weight: 650;
+}
+.search-row {
+  grid-template-columns: 1fr 120px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--soft);
+}
+.search-control {
+  position: relative;
+  display: block;
+}
+.search-control .input {
+  padding-right: 42px;
+}
+.clear-search {
+  position: absolute;
+  inset: 4px 4px 4px auto;
+  width: 36px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+}
+.input,
+.select {
+  min-height: 44px;
+  border: 1px solid #b8c7bf;
+  border-radius: 9px;
+  color: var(--ink);
+}
+.chips {
+  flex-wrap: nowrap;
+  margin: 10px 0 14px;
+  padding-bottom: 4px;
+  overflow-x: auto;
+}
+.chip {
+  flex: 0 0 auto;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: #305348;
+  font-size: 0.78rem;
+}
+.chip.active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+.recipe-list {
+  gap: 8px;
+}
+.recipe-card {
+  padding: 13px;
+  border-color: #d2ddd6;
+  border-radius: 12px;
+  background: #fff;
+}
+.recipe-card:has([data-assign]:focus-visible) {
+  outline: 3px solid #e5a21a;
+  outline-offset: 2px;
+}
+.recipe-title {
+  font-family: inherit;
+  font-size: 0.98rem;
+  line-height: 1.3;
+}
+.recipe-ingredients {
+  margin: 8px 0;
+  line-height: 1.45;
+}
+.tag {
+  border: 1px solid #c3dfcf;
+  border-radius: 999px;
+  background: #eaf6ee;
+  color: #245b3c;
+}
+.card-actions {
+  display: flex;
+  margin-top: 12px;
+}
+.card-actions .icon-action {
+  flex: 1;
+}
+.schedule {
+  grid-template-columns: 86px repeat(7, minmax(112px, 1fr));
+  border-color: #cbd6d0;
+  border-radius: 12px;
+}
+.head-cell {
+  padding: 13px 6px;
+  background: var(--primary);
+  font-size: 0.7rem;
+}
+.cell {
+  min-height: 124px;
+  padding: 7px;
+  border-color: #dce4df;
+  background: #fbfcfa;
+}
+.meal-cell {
+  color: #29443b;
+  font-size: 0.68rem;
+}
+.meal-cell.desayuno {
+  background: #fff2c2;
+}
+.meal-cell.comida {
+  background: #dff3e4;
+}
+.meal-cell.colacion {
+  background: #ffe5cf;
+}
+.meal-cell.cena {
+  background: #e9e4f8;
+}
+.slot {
+  min-height: 108px;
+  border: 2px dashed #b7c7be;
+  border-radius: 10px;
+  color: #53645e;
+  cursor: pointer;
+}
+.slot:hover {
+  border-color: #527466;
+  background: #f1f7f3;
+}
+.slot.selected {
+  border-color: var(--accent);
+  background: #fffbeb;
+  box-shadow: 0 0 0 3px #d9770628;
+}
+.slot-title {
+  color: var(--ink);
+  line-height: 1.25;
+}
+.slot-tools button {
+  min-width: 36px;
+  min-height: 36px;
+  color: var(--primary);
+  background: #edf4f0;
+}
+.drawer {
+  border-left: 1px solid #bdcac3;
+  box-shadow: -20px 0 70px #0d2d2440;
+}
+.drawer-head {
+  position: sticky;
+  top: -20px;
+  z-index: 4;
+  padding: 12px 0;
+  background: #fff;
+}
+.manager-card,
+.shopping-item {
+  border-color: #ccd8d1;
+  background: #fff;
+}
+.shopping-item-head {
+  min-height: 54px;
+  background: #eef5f0;
+}
+.quantity-badge {
+  background: var(--primary);
+}
+@media (max-width: 1240px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .schedule-wrap,
+  .panel {
+    grid-column: 1;
+  }
+  .schedule-wrap {
+    grid-row: 1;
+  }
+  .panel {
+    grid-row: 2;
+    position: relative;
+    top: 0;
+    max-height: none;
+    display: block;
+  }
+  .mobile-days {
+    display: flex;
+  }
+  .schedule {
+    grid-template-columns: 88px 1fr;
+  }
+  .head-cell {
+    display: none;
+  }
+  .hidden-mobile-day {
+    display: none;
+  }
+}
+@media (max-width: 760px) {
+  :root {
+    font-size: 17px;
+  }
+  body {
+    background: #f4f6f3;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .app {
+    padding: 0 0 calc(88px + env(safe-area-inset-bottom));
+  }
+  .hero {
+    position: relative;
+    top: 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-width: 0 0 1px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .brand p {
+    display: none;
+  }
+  .brand {
+    flex: 1;
+    min-width: 0;
+  }
+  .hero-actions {
+    display: contents;
+  }
+  .ritual-primary {
+    position: fixed;
+    z-index: 25;
+    inset: auto 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    padding: 7px 10px calc(7px + env(safe-area-inset-bottom));
+    border: 0;
+    border-top: 1px solid #cbd6d0;
+    border-radius: 0;
+    background: #ffffffed;
+    box-shadow: 0 -10px 30px #173f3514;
+    backdrop-filter: blur(14px);
+  }
+  .ritual-utilities {
+    flex: 0 0 auto;
+    gap: 2px;
+    padding: 0;
+    border: 0;
+  }
+  .ritual-action {
+    justify-content: center;
+  }
+  .ritual-main {
+    min-height: 58px;
+    flex-direction: column;
+    gap: 2px;
+    padding: 5px;
+    background: transparent;
+  }
+  .ritual-shopping {
+    color: var(--primary);
+    background: #e4f0e9;
+    box-shadow: none;
+  }
+  .ritual-shopping:hover {
+    background: #d8e9df;
+  }
+  .ritual-shopping .ritual-icon {
+    background: var(--primary);
+    color: #fff;
+  }
+  .ritual-main .ritual-icon {
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
+  }
+  .ritual-label {
+    line-height: 1;
+  }
+  .ritual-tool {
+    width: 38px;
+    min-height: 40px;
+    padding: 2px;
+    background: transparent;
+  }
+  .ritual-tool .ritual-icon {
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
+  }
+  .ritual-tool .ritual-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+  .schedule-wrap,
+  .panel {
+    padding: 14px 10px;
+    border-width: 0 0 1px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .layout {
+    gap: 10px;
+    margin-top: 0;
+  }
+  .schedule-head {
+    align-items: flex-start;
+    padding: 2px 2px 8px;
+  }
+  .schedule-head > div,
+  .schedule-wrap,
+  .panel {
+    width: 100%;
+    min-width: 0;
+  }
+  .selection-status {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 8px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .mobile-days {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    margin: 0 -10px 10px;
+    padding: 9px 10px;
+    background: #f4f6f3ed;
+    backdrop-filter: blur(8px);
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+  .mobile-days::-webkit-scrollbar {
+    display: none;
+  }
+  .day-tab {
+    min-width: 92px;
+    scroll-snap-align: start;
+  }
+  .schedule {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+  .meal-cell {
+    min-height: 36px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 10px 10px 0 0;
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+  .schedule .cell:not(.meal-cell) {
+    margin-top: -8px;
+    padding: 0;
+    border: 0;
+    border-radius: 0 0 12px 12px;
+    background: transparent;
+  }
+  .cell {
+    min-height: 0;
+    border: 0;
+  }
+  .slot {
+    min-height: 94px;
+    border-radius: 0 0 12px 12px;
+  }
+  .slot.empty {
+    min-height: 70px;
+  }
+  .slot-tools button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .search-row {
+    grid-template-columns: 1fr;
+  }
+  .panel-heading {
+    align-items: flex-start;
+  }
+  .chips {
+    margin-right: -10px;
+    padding-right: 10px;
+  }
+  .recipe-card [data-edit],
+  .recipe-card [data-delete] {
+    display: none;
+  }
+  .recipe-card {
+    padding: 14px;
+  }
+  .recipe-title {
+    font-size: 1rem;
+  }
+  .drawer {
+    width: 100%;
+    padding: 16px 12px;
+    border: 0;
+  }
+  .drawer-head {
+    top: -16px;
+  }
+  .drawer-actions {
+    position: sticky;
+    bottom: -16px;
+    z-index: 5;
+    margin: 18px -12px -16px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    background: #fff;
+    border-top: 1px solid var(--line);
+  }
+  .drawer-actions .btn {
+    flex: 1;
+  }
+  .manager-toolbar,
+  .shopping-toolbar {
+    top: 48px;
+  }
+}
+@media (prefers-contrast: more) {
+  :root {
+    --line: #697a72;
+    --muted: #37453f;
+  }
+  .btn,
+  .input,
+  .select,
+  .chip,
+  .slot,
+  .recipe-card {
+    border-width: 2px;
+  }
+}
