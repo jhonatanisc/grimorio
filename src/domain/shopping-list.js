@@ -7,21 +7,32 @@ export function collectShoppingItems(menu, recipes, equivalences, servings = 1) 
       for (const item of recipe?.ingredients ?? []) {
         const ingredient = equivalences[item.ingredientId];
         if (!ingredient?.includeInShoppingList) continue;
-        const key = `${item.ingredientId}:${ingredient.portion}`;
+        const portion = normalizePortion(ingredient.portion);
+        const key = `${item.ingredientId}:${portion.unit}`;
         const current = totals.get(key) ?? {
           id: item.ingredientId,
           name: ingredient.name,
           category: ingredient.category,
-          unit: ingredient.portion,
+          unit: portion.unit,
           quantity: 0,
         };
-        current.quantity += item.portions * servings;
+        current.quantity += item.portions * portion.amount * servings;
         totals.set(key, current);
       }
     }
   return [...totals.values()].sort(
     (a, b) => a.category.localeCompare(b.category, "es") || a.name.localeCompare(b.name, "es"),
   );
+}
+
+export function normalizePortion(portion) {
+  if (portion && typeof portion === "object") {
+    return {
+      amount: Number.isFinite(portion.amount) ? portion.amount : 1,
+      unit: String(portion.unit || "porción"),
+    };
+  }
+  return { amount: 1, unit: String(portion || "porción") };
 }
 
 export function formatQuantity(value) {

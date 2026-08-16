@@ -20,15 +20,15 @@ describe("lista de compras", () => {
       huevo: {
         name: "Huevo",
         category: "proteínas",
-        portion: "pieza",
+        portion: { amount: 2, unit: "pieza", grams: null },
         includeInShoppingList: true,
       },
       sal: { name: "Sal", category: "básicos", portion: "pizca", includeInShoppingList: false },
     };
     const items = collectShoppingItems(menu, recipes, eq, 2);
     expect(items).toEqual([
-      { id: "huevo", name: "Huevo", category: "proteínas", unit: "pieza", quantity: 8 },
+      { id: "huevo", name: "Huevo", category: "proteínas", unit: "pieza", quantity: 16 },
     ]);
-    expect(shoppingListText(items)).toContain("Huevo — 8 × pieza");
+    expect(shoppingListText(items)).toContain("Huevo — 16 × pieza");
   });
 });

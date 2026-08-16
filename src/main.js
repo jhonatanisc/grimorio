@@ -4,7 +4,12 @@ import equivalences from "../data/equivalences.json";
 import { DAYS, MEALS, PROTEINS } from "./domain/constants.js";
 import { assignRecipe, createEmptyMenu, fillMenu, removeRecipe } from "./domain/menu.js";
 import { filterRecipes, makeRecipeId, validateRecipe } from "./domain/recipes.js";
-import { collectShoppingItems, formatQuantity, shoppingListText } from "./domain/shopping-list.js";
+import {
+  collectShoppingItems,
+  formatQuantity,
+  normalizePortion,
+  shoppingListText,
+} from "./domain/shopping-list.js";
 import { exportState, loadState, parseState, saveState } from "./services/storage.js";
 import { createDrawer } from "./ui/drawer.js";
 import { readRecipeForm, renderRecipeForm } from "./ui/recipe-form.js";
@@ -213,7 +218,14 @@ function previewRecipe(id) {
   const recipe = byId(id);
   drawer.show({
     heading: recipe.name,
-    content: `<p><strong>${recipe.prepTime} min · ${escapeHtml(recipe.speed)} · ${escapeHtml(recipe.heaviness)}</strong></p><h3>Ingredientes</h3><ul>${recipe.ingredients.map((x) => `<li>${escapeHtml(ingredientName(x))}: ${formatQuantity(x.portions)} × ${escapeHtml(equivalences[x.ingredientId]?.portion ?? "porción")}</li>`).join("")}</ul><h3>Preparación</h3><ol>${recipe.instructions.map((x) => `<li>${escapeHtml(x)}</li>`).join("") || "<li>Sin instrucciones.</li>"}</ol>`,
+    content: `<p><strong>${recipe.prepTime} min · ${escapeHtml(recipe.speed)} · ${escapeHtml(recipe.heaviness)}</strong></p><h3>Ingredientes</h3><ul>${recipe.ingredients
+      .map((x) => {
+        const portion = normalizePortion(equivalences[x.ingredientId]?.portion);
+        return `<li>${escapeHtml(ingredientName(x))}: ${formatQuantity(x.portions * portion.amount)} × ${escapeHtml(portion.unit)}</li>`;
+      })
+      .join(
+        "",
+      )}</ul><h3>Preparación</h3><ol>${recipe.instructions.map((x) => `<li>${escapeHtml(x)}</li>`).join("") || "<li>Sin instrucciones.</li>"}</ol>`,
     primaryLabel: "Asignar",
     onPrimary: () => {
       assign(id);
@@ -334,7 +346,7 @@ $("#autoFillBtn").onclick = () => {
 $("#shoppingBtn").onclick = openShopping;
 $("#newRecipeBtn").onclick = () => openRecipeForm();
 $("#recipesBtn").onclick = () =>
-  openJson("Catálogo personalizado", JSON.stringify(state.customRecipes, null, 2));
+  openJson("Catálogo de recetas", JSON.stringify(recipes(), null, 2));
 $("#exportBtn").onclick = () => openJson("Exportar Grimorio", exportState(state));
 $("#importBtn").onclick = () => openJson("Importar Grimorio", "", true);
 $("#clearBtn").onclick = () => {
