@@ -558,6 +558,17 @@ label > span {
   background: #fff;
   border-bottom: 1px solid var(--line);
 }
+.manager-filters {
+  display: contents;
+}
+.manager-filters summary {
+  display: none;
+}
+.manager-filter-fields {
+  display: grid;
+  grid-template-columns: 180px 160px;
+  gap: 10px;
+}
 .manager-count {
   margin: 0;
   color: var(--muted);
@@ -682,6 +693,22 @@ label > span {
   .manager-toolbar,
   .manager-card {
     grid-template-columns: 1fr;
+  }
+  .manager-filters {
+    display: block;
+  }
+  .manager-filters summary {
+    display: block;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    color: var(--primary);
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .manager-filter-fields {
+    grid-template-columns: 1fr;
+    margin-top: 10px;
   }
   .recipe-form .wide {
     grid-column: auto;

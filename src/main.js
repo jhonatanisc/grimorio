@@ -27,7 +27,6 @@ const elements = {
   schedule: $("#schedule"),
   recipeList: $("#recipeList"),
   search: $("#searchInput"),
-  type: $("#typeFilter"),
   tags: $("#tagFilters"),
   hint: $("#selectedHint"),
   mobileDays: $("#mobileDays"),
@@ -156,7 +155,6 @@ function renderSchedule() {
         return;
       }
       selectedSlot = { day, meal };
-      elements.type.value = meal;
       elements.hint.textContent = `Seleccionado: ${day} · ${MEALS.find((x) => x.key === meal).label}`;
       renderSchedule();
       renderRecipes();
@@ -184,7 +182,7 @@ function renderFilters() {
 function renderRecipes() {
   const filtered = filterRecipes(recipes(), {
     query: elements.search.value,
-    meal: elements.type.value,
+    meal: selectedSlot?.meal ?? "all",
     protein: activeProtein,
     favorites: state.favorites,
   });
@@ -229,7 +227,6 @@ function assign(id) {
     const nextSlot = findNextEmptySlot(state.menu, selectedSlot);
     if (nextSlot) {
       selectedSlot = nextSlot;
-      elements.type.value = nextSlot.meal;
       elements.hint.textContent = `Siguiente: ${nextSlot.day} · ${MEALS.find(({ key }) => key === nextSlot.meal).label}`;
     }
     commit(nextSlot ? "Receta asignada · elige la siguiente" : "Receta asignada");
@@ -311,6 +308,7 @@ function openRecipeManager() {
   const search = $("#managerSearch");
   const meal = $("#managerMeal");
   const origin = $("#managerOrigin");
+  const filters = $(".manager-filters");
   const list = $("#managerList");
   const count = $("#managerCount");
   const refresh = () => {
@@ -357,8 +355,8 @@ function openRecipeManager() {
   search.oninput = refresh;
   meal.onchange = refresh;
   origin.onchange = refresh;
+  if (matchMedia("(max-width:760px)").matches) filters.open = false;
   refresh();
-  search.focus();
 }
 function deleteRecipe(id) {
   if (!confirm("¿Eliminar esta receta personalizada?")) return;
@@ -490,7 +488,6 @@ elements.clearSearch.onclick = () => {
   renderRecipes();
   elements.search.focus();
 };
-elements.type.onchange = renderRecipes;
 addEventListener("resize", renderSchedule);
 
 if ("serviceWorker" in navigator)
