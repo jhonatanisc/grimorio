@@ -37,3 +37,13 @@ export function fillMenu(recipes, random = Math.random) {
     }
   return menu;
 }
+
+export function findNextEmptySlot(menu, current) {
+  const slots = DAYS.flatMap((day) => MEAL_KEYS.map((meal) => ({ day, meal })));
+  const start = slots.findIndex(({ day, meal }) => day === current.day && meal === current.meal);
+  for (let offset = 1; offset <= slots.length; offset += 1) {
+    const slot = slots[(start + offset) % slots.length];
+    if (!menu[slot.day][slot.meal]) return slot;
+  }
+  return null;
+}

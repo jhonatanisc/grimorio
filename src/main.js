@@ -3,7 +3,13 @@ import "./styles/redesign.css";
 import baseRecipes from "../data/recipes.json";
 import equivalences from "../data/equivalences.json";
 import { DAYS, MEALS, PROTEINS } from "./domain/constants.js";
-import { assignRecipe, createEmptyMenu, fillMenu, removeRecipe } from "./domain/menu.js";
+import {
+  assignRecipe,
+  createEmptyMenu,
+  fillMenu,
+  findNextEmptySlot,
+  removeRecipe,
+} from "./domain/menu.js";
 import { filterRecipes, makeRecipeId, validateRecipe } from "./domain/recipes.js";
 import {
   collectShoppingItems,
@@ -212,11 +218,18 @@ function assign(id) {
   try {
     snapshot();
     state.menu = assignRecipe(state.menu, selectedSlot.day, selectedSlot.meal, recipe);
-    commit("Receta asignada");
+    const nextSlot = findNextEmptySlot(state.menu, selectedSlot);
+    if (nextSlot) {
+      selectedSlot = nextSlot;
+      elements.type.value = nextSlot.meal;
+      elements.hint.textContent = `Siguiente: ${nextSlot.day} · ${MEALS.find(({ key }) => key === nextSlot.meal).label}`;
+    }
+    commit(nextSlot ? "Receta asignada · elige la siguiente" : "Receta asignada");
   } catch (error) {
     notify(error.message);
   }
 }
+
 function previewRecipe(id) {
   const recipe = byId(id);
   drawer.show({

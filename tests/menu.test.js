@@ -3,6 +3,7 @@ import {
   assignRecipe,
   createEmptyMenu,
   fillMenu,
+  findNextEmptySlot,
   normalizeMenu,
   removeRecipe,
 } from "../src/domain/menu.js";
@@ -38,6 +39,14 @@ describe("menú semanal", () => {
       comida: "lunch",
       colacion: "snack",
       cena: "one",
+    });
+  });
+  it("avanza al siguiente espacio vacío para agilizar la captura móvil", () => {
+    const menu = createEmptyMenu();
+    menu.Lunes.desayuno = "one";
+    expect(findNextEmptySlot(menu, { day: "Lunes", meal: "desayuno" })).toEqual({
+      day: "Lunes",
+      meal: "comida",
     });
   });
 });
