@@ -13,6 +13,7 @@ import {
 import { exportState, loadState, parseState, saveState } from "./services/storage.js";
 import { createDrawer } from "./ui/drawer.js";
 import { readRecipeForm, renderRecipeForm } from "./ui/recipe-form.js";
+import { recipeManagerTemplate, renderManagerList } from "./ui/recipe-manager.js";
 
 const $ = (selector) => document.querySelector(selector);
 const elements = {
@@ -45,7 +46,11 @@ let selectedSlot = null;
 let activeProtein = "all";
 let mobileDay = 0;
 let undoState = null;
-const recipes = () => [...baseRecipes, ...state.customRecipes];
+const recipes = () => [
+  ...new Map(
+    [...baseRecipes, ...state.customRecipes].map((recipe) => [recipe.id, recipe]),
+  ).values(),
+];
 const byId = (id) => recipes().find((recipe) => recipe.id === id);
 const ingredientName = ({ ingredientId }) => equivalences[ingredientId]?.name ?? ingredientId;
 
@@ -170,7 +175,7 @@ function renderRecipes() {
     filtered
       .map(
         (recipe) =>
-          `<article class="recipe-card"><div class="recipe-top"><span class="recipe-title">${escapeHtml(recipe.name)}</span><button class="btn compact favorite" data-favorite="${recipe.id}" aria-label="${state.favorites.includes(recipe.id) ? "Quitar de favoritas" : "Marcar favorita"}">${state.favorites.includes(recipe.id) ? "★" : "☆"}</button></div><div class="recipe-ingredients">${recipe.ingredients.slice(0, 5).map(ingredientName).map(escapeHtml).join(" · ")}</div><div class="tag-row">${recipe.proteinTypes.map((x) => `<span class="tag">${escapeHtml(x)}</span>`).join("")}</div><div class="card-actions"><button class="btn compact" data-preview="${recipe.id}">Ver</button><button class="btn compact primary" data-assign="${recipe.id}">Asignar</button>${recipe.id.startsWith("custom-") ? `<button class="btn compact" data-edit="${recipe.id}">Editar</button><button class="btn compact danger" data-delete="${recipe.id}">Eliminar</button>` : `<button class="btn compact" data-duplicate="${recipe.id}">Duplicar</button>`}</div></article>`,
+          `<article class="recipe-card"><div class="recipe-top"><span class="recipe-title">${escapeHtml(recipe.name)}</span><button class="btn compact favorite" data-favorite="${recipe.id}" aria-label="${state.favorites.includes(recipe.id) ? "Quitar de favoritas" : "Marcar favorita"}">${state.favorites.includes(recipe.id) ? "★" : "☆"}</button></div><div class="recipe-ingredients">${recipe.ingredients.slice(0, 5).map(ingredientName).map(escapeHtml).join(" · ")}</div><div class="tag-row">${recipe.proteinTypes.map((x) => `<span class="tag">${escapeHtml(x)}</span>`).join("")}</div><div class="card-actions"><button class="btn compact" data-preview="${recipe.id}">Ver</button><button class="btn compact primary" data-assign="${recipe.id}">Asignar</button><button class="btn compact" data-edit="${recipe.id}">Editar</button>${recipe.id.startsWith("custom-") ? `<button class="btn compact danger" data-delete="${recipe.id}">Eliminar</button>` : ""}</div></article>`,
       )
       .join("") || "<p>No hay recetas que coincidan.</p>";
   elements.recipeList.querySelectorAll("[data-favorite]").forEach(
@@ -192,11 +197,6 @@ function renderRecipes() {
   elements.recipeList
     .querySelectorAll("[data-edit]")
     .forEach((button) => (button.onclick = () => openRecipeForm(byId(button.dataset.edit))));
-  elements.recipeList
-    .querySelectorAll("[data-duplicate]")
-    .forEach(
-      (button) => (button.onclick = () => openRecipeForm(byId(button.dataset.duplicate), true)),
-    );
   elements.recipeList
     .querySelectorAll("[data-delete]")
     .forEach((button) => (button.onclick = () => deleteRecipe(button.dataset.delete)));
@@ -233,7 +233,7 @@ function previewRecipe(id) {
     },
   });
 }
-function openRecipeForm(source = null, duplicate = false) {
+function openRecipeForm(source = null, duplicate = false, onSaved = null) {
   renderRecipeForm(elements.form, source, equivalences);
   const existing = source && !duplicate ? source.id : null;
   drawer.show({
@@ -256,13 +256,78 @@ function openRecipeForm(source = null, duplicate = false) {
         return;
       }
       snapshot();
-      state.customRecipes = existing
-        ? state.customRecipes.map((x) => (x.id === existing ? recipe : x))
+      const alreadyCustomized = state.customRecipes.some((item) => item.id === id);
+      state.customRecipes = alreadyCustomized
+        ? state.customRecipes.map((item) => (item.id === id ? recipe : item))
         : [...state.customRecipes, recipe];
       commit("Receta guardada");
       drawer.hide();
+      onSaved?.();
     },
   });
+}
+
+function restoreRecipe(id) {
+  const original = baseRecipes.find((recipe) => recipe.id === id);
+  if (!original || !confirm("¿Restaurar la versión incluida de esta receta?")) return;
+  snapshot();
+  state.customRecipes = state.customRecipes.filter((recipe) => recipe.id !== id);
+  commit("Receta restaurada");
+  openRecipeManager();
+}
+
+function openRecipeManager() {
+  drawer.show({
+    heading: "Mis recetas",
+    variant: "wide",
+    content: recipeManagerTemplate(),
+    primaryLabel: "+ Nueva receta",
+    onPrimary: () => openRecipeForm(null, false, openRecipeManager),
+  });
+  const search = $("#managerSearch");
+  const meal = $("#managerMeal");
+  const origin = $("#managerOrigin");
+  const list = $("#managerList");
+  const count = $("#managerCount");
+  const refresh = () => {
+    const customizedIds = new Set(state.customRecipes.map((recipe) => recipe.id));
+    const query = search.value.trim().toLocaleLowerCase("es");
+    const filtered = recipes().filter((recipe) => {
+      const text = [recipe.name, ...recipe.proteinTypes].join(" ").toLocaleLowerCase("es");
+      const custom = customizedIds.has(recipe.id);
+      return (
+        (!query || text.includes(query)) &&
+        (meal.value === "all" || recipe.mealTypes.includes(meal.value)) &&
+        (origin.value === "all" || (origin.value === "custom" ? custom : !custom))
+      );
+    });
+    count.textContent = `${filtered.length} de ${recipes().length} recetas`;
+    renderManagerList(list, filtered, customizedIds, state.favorites);
+    list
+      .querySelectorAll("[data-manager-preview]")
+      .forEach((button) => (button.onclick = () => previewRecipe(button.dataset.managerPreview)));
+    list
+      .querySelectorAll("[data-manager-edit]")
+      .forEach(
+        (button) =>
+          (button.onclick = () =>
+            openRecipeForm(byId(button.dataset.managerEdit), false, openRecipeManager)),
+      );
+    list
+      .querySelectorAll("[data-manager-restore]")
+      .forEach((button) => (button.onclick = () => restoreRecipe(button.dataset.managerRestore)));
+    list.querySelectorAll("[data-manager-delete]").forEach((button) => {
+      button.onclick = () => {
+        deleteRecipe(button.dataset.managerDelete);
+        openRecipeManager();
+      };
+    });
+  };
+  search.oninput = refresh;
+  meal.onchange = refresh;
+  origin.onchange = refresh;
+  refresh();
+  search.focus();
 }
 function deleteRecipe(id) {
   if (!confirm("¿Eliminar esta receta personalizada?")) return;
@@ -365,8 +430,7 @@ $("#autoFillBtn").onclick = () => {
 };
 $("#shoppingBtn").onclick = openShopping;
 $("#newRecipeBtn").onclick = () => openRecipeForm();
-$("#recipesBtn").onclick = () =>
-  openJson("Catálogo de recetas", JSON.stringify(recipes(), null, 2));
+$("#recipesBtn").onclick = openRecipeManager;
 $("#exportBtn").onclick = () => openJson("Exportar Grimorio", exportState(state));
 $("#importBtn").onclick = () => openJson("Importar Grimorio", "", true);
 $("#clearBtn").onclick = () => {

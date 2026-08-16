@@ -384,6 +384,30 @@ label > span {
 .recipe-form .wide {
   grid-column: 1/-1;
 }
+.recipe-form fieldset {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.recipe-form legend {
+  padding: 0 5px;
+  font-weight: 800;
+}
+.field-help {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.ingredient-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 110px auto;
+  gap: 8px;
+  align-items: end;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
 .check-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -519,6 +543,76 @@ label > span {
 .shopping-usages small {
   color: var(--muted);
 }
+.recipe-manager {
+  display: grid;
+  gap: 14px;
+}
+.manager-toolbar {
+  position: sticky;
+  top: -20px;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) 180px 160px;
+  gap: 10px;
+  padding: 14px 0;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+.manager-count {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+.manager-list {
+  display: grid;
+  gap: 10px;
+}
+.manager-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--soft);
+}
+.manager-card h3,
+.manager-card p {
+  margin: 0 0 6px;
+}
+.manager-card-title,
+.manager-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.manager-card-title > span {
+  color: #b45309;
+}
+.manager-card-actions {
+  justify-content: flex-end;
+}
+.origin-badge {
+  padding: 5px 7px;
+  border-radius: 999px;
+  background: #e7e5e4;
+  color: #57534e;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+.origin-badge.custom {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+.manager-empty {
+  padding: 24px;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  text-align: center;
+  color: var(--muted);
+}
 .toast {
   position: fixed;
   z-index: 60;
@@ -584,7 +678,9 @@ label > span {
     font-size: 0.82rem;
   }
   .search-row,
-  .recipe-form {
+  .recipe-form,
+  .manager-toolbar,
+  .manager-card {
     grid-template-columns: 1fr;
   }
   .recipe-form .wide {
@@ -617,6 +713,15 @@ label > span {
   .shopping-usages li > span:nth-child(2) {
     grid-column: 1 / -1;
     grid-row: 2;
+  }
+  .ingredient-row {
+    grid-template-columns: 1fr 100px;
+  }
+  .ingredient-row button {
+    grid-column: 1 / -1;
+  }
+  .manager-card-actions {
+    justify-content: flex-start;
   }
 }
 @media (prefers-reduced-motion: reduce) {
