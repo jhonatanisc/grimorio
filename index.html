@@ -21,61 +21,74 @@
           </div>
         </div>
         <nav class="hero-actions" aria-label="Acciones del menú">
-          <button
-            class="ritual-action ritual-main ritual-week"
-            id="autoFillBtn"
-            aria-label="Crear semana automáticamente"
-          >
-            <span class="ritual-icon" aria-hidden="true"
-              ><svg viewBox="0 0 24 24">
-                <path
-                  d="M7 3v3m10-3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Zm4 8h2m2 0h2m-6 4h2m2 0h2"
-                /></svg></span
-            ><span class="ritual-label">Semana</span>
-          </button>
-          <button
-            class="ritual-action ritual-main ritual-shopping"
-            id="shoppingBtn"
-            aria-label="Abrir lista de compras"
-          >
-            <span class="ritual-icon" aria-hidden="true"
-              ><svg viewBox="0 0 24 24">
-                <path d="M6 8h12l1 13H5L6 8Zm3 0a3 3 0 0 1 6 0m-5 6 1.5 1.5L15 12" /></svg></span
-            ><span class="ritual-label">Compras</span>
-          </button>
-          <button
-            class="ritual-action ritual-main ritual-recipes"
-            id="recipesBtn"
-            aria-label="Administrar mis recetas"
-          >
-            <span class="ritual-icon" aria-hidden="true"
-              ><svg viewBox="0 0 24 24">
-                <path
-                  d="M4 5a3 3 0 0 1 3-2h5v17H7a3 3 0 0 0-3 2V5Zm16 0a3 3 0 0 0-3-2h-5v17h5a3 3 0 0 1 3 2V5Z"
-                /></svg></span
-            ><span class="ritual-label">Recetas</span>
-          </button>
-          <span class="action-separator" aria-hidden="true"></span>
-          <button class="ritual-action ritual-tool" id="exportBtn" aria-label="Exportar planeación">
-            <span class="ritual-icon" aria-hidden="true"
-              ><svg viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M5 14v7h14v-7" /></svg></span
-            ><span class="ritual-label">Exportar</span>
-          </button>
-          <button class="ritual-action ritual-tool" id="importBtn" aria-label="Importar planeación">
-            <span class="ritual-icon" aria-hidden="true"
-              ><svg viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M5 14v7h14v-7" /></svg></span
-            ><span class="ritual-label">Importar</span>
-          </button>
-          <button
-            class="ritual-action ritual-tool ritual-clear"
-            id="clearBtn"
-            aria-label="Limpiar menú semanal"
-          >
-            <span class="ritual-icon" aria-hidden="true"
-              ><svg viewBox="0 0 24 24">
-                <path d="M4 7h16M9 7V4h6v3m-8 0 1 14h8l1-14M10 11v6m4-6v6" /></svg></span
-            ><span class="ritual-label">Limpiar</span>
-          </button>
+          <div class="ritual-primary">
+            <button
+              class="ritual-action ritual-main ritual-week"
+              id="autoFillBtn"
+              aria-label="Crear semana automáticamente"
+            >
+              <span class="ritual-icon" aria-hidden="true"
+                ><svg viewBox="0 0 24 24">
+                  <path
+                    d="M7 3v3m10-3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Zm4 8h2m2 0h2m-6 4h2m2 0h2"
+                  /></svg></span
+              ><span class="ritual-label">Semana</span>
+            </button>
+            <button
+              class="ritual-action ritual-main ritual-shopping"
+              id="shoppingBtn"
+              aria-label="Abrir lista de compras"
+            >
+              <span class="ritual-icon" aria-hidden="true"
+                ><svg viewBox="0 0 24 24">
+                  <path d="M6 8h12l1 13H5L6 8Zm3 0a3 3 0 0 1 6 0m-5 6 1.5 1.5L15 12" /></svg></span
+              ><span class="ritual-label">Compras</span>
+            </button>
+            <button
+              class="ritual-action ritual-main ritual-recipes"
+              id="recipesBtn"
+              aria-label="Administrar mis recetas"
+            >
+              <span class="ritual-icon" aria-hidden="true"
+                ><svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 5a3 3 0 0 1 3-2h5v17H7a3 3 0 0 0-3 2V5Zm16 0a3 3 0 0 0-3-2h-5v17h5a3 3 0 0 1 3 2V5Z"
+                  /></svg></span
+              ><span class="ritual-label">Recetas</span>
+            </button>
+          </div>
+          <div class="ritual-utilities" aria-label="Utilidades">
+            <button
+              class="ritual-action ritual-tool"
+              id="exportBtn"
+              aria-label="Exportar planeación"
+            >
+              <span class="ritual-icon" aria-hidden="true"
+                ><svg viewBox="0 0 24 24">
+                  <path d="M12 16V3m-5 5 5-5 5 5M5 14v7h14v-7" /></svg></span
+              ><span class="ritual-label">Exportar</span>
+            </button>
+            <button
+              class="ritual-action ritual-tool"
+              id="importBtn"
+              aria-label="Importar planeación"
+            >
+              <span class="ritual-icon" aria-hidden="true"
+                ><svg viewBox="0 0 24 24">
+                  <path d="M12 3v13m-5-5 5 5 5-5M5 14v7h14v-7" /></svg></span
+              ><span class="ritual-label">Importar</span>
+            </button>
+            <button
+              class="ritual-action ritual-tool ritual-clear"
+              id="clearBtn"
+              aria-label="Limpiar menú semanal"
+            >
+              <span class="ritual-icon" aria-hidden="true"
+                ><svg viewBox="0 0 24 24">
+                  <path d="M4 7h16M9 7V4h6v3m-8 0 1 14h8l1-14M10 11v6m4-6v6" /></svg></span
+              ><span class="ritual-label">Limpiar</span>
+            </button>
+          </div>
         </nav>
       </header>
 
