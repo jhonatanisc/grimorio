@@ -21,21 +21,55 @@
           </div>
         </div>
         <nav class="hero-actions" aria-label="Acciones del menú">
-          <button class="btn" id="autoFillBtn">
-            <span aria-hidden="true">✦</span> Crear semana
+          <button
+            class="btn icon-action"
+            id="autoFillBtn"
+            aria-label="Crear semana automáticamente"
+            title="Crear semana"
+          >
+            <span aria-hidden="true">✦</span><span class="sr-only">Crear semana</span>
           </button>
-          <button class="btn primary" id="shoppingBtn">
-            <span aria-hidden="true">✓</span> Lista de compras
+          <button
+            class="btn primary icon-action"
+            id="shoppingBtn"
+            aria-label="Abrir lista de compras"
+            title="Lista de compras"
+          >
+            <span aria-hidden="true">🛒</span><span class="sr-only">Lista de compras</span>
           </button>
-          <button class="btn" id="recipesBtn"><span aria-hidden="true">▤</span> Mis recetas</button>
+          <button
+            class="btn icon-action"
+            id="recipesBtn"
+            aria-label="Administrar mis recetas"
+            title="Mis recetas"
+          >
+            <span aria-hidden="true">▤</span><span class="sr-only">Mis recetas</span>
+          </button>
           <span class="action-separator" aria-hidden="true"></span>
-          <button class="btn quiet" id="exportBtn" aria-label="Exportar planeación">
-            Exportar
+          <button
+            class="btn quiet icon-action"
+            id="exportBtn"
+            aria-label="Exportar planeación"
+            title="Exportar"
+          >
+            <span aria-hidden="true">↑</span><span class="sr-only">Exportar</span>
           </button>
-          <button class="btn quiet" id="importBtn" aria-label="Importar planeación">
-            Importar
+          <button
+            class="btn quiet icon-action"
+            id="importBtn"
+            aria-label="Importar planeación"
+            title="Importar"
+          >
+            <span aria-hidden="true">↓</span><span class="sr-only">Importar</span>
           </button>
-          <button class="btn quiet danger" id="clearBtn">Limpiar</button>
+          <button
+            class="btn quiet danger icon-action"
+            id="clearBtn"
+            aria-label="Limpiar menú semanal"
+            title="Limpiar menú"
+          >
+            <span aria-hidden="true">⌫</span><span class="sr-only">Limpiar menú</span>
+          </button>
         </nav>
       </header>
 
@@ -47,7 +81,14 @@
               <h2 id="recipesHeading">Elige una receta</h2>
               <p class="panel-sub">Usa los filtros o asigna directamente.</p>
             </div>
-            <button class="btn compact" id="newRecipeBtn">+ Crear receta</button>
+            <button
+              class="btn compact icon-action"
+              id="newRecipeBtn"
+              aria-label="Crear una receta"
+              title="Crear receta"
+            >
+              ＋<span class="sr-only">Crear receta</span>
+            </button>
           </div>
           <div class="search-row">
             <label
@@ -93,7 +134,14 @@
                 Selecciona un espacio vacío o una receta para cambiarla.
               </p>
             </div>
-            <button class="btn compact hidden" id="undoBtn">Deshacer</button>
+            <button
+              class="btn compact icon-action hidden"
+              id="undoBtn"
+              aria-label="Deshacer último cambio"
+              title="Deshacer"
+            >
+              ↶<span class="sr-only">Deshacer</span>
+            </button>
           </div>
           <div class="mobile-days" id="mobileDays" role="tablist" aria-label="Días"></div>
           <div class="schedule" id="schedule"></div>

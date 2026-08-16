@@ -30,11 +30,11 @@ export function renderManagerList(container, recipes, customizedIds, favorites) 
         <div><div class="manager-card-title"><h3>${escapeHtml(recipe.name)}</h3>${favorites.includes(recipe.id) ? '<span aria-label="Favorita" title="Favorita">★</span>' : ""}</div><p>${recipe.mealTypes.map((meal) => MEALS.find(({ key }) => key === meal)?.label ?? meal).join(" · ")} · ${recipe.prepTime} min</p><div class="tag-row">${recipe.proteinTypes.map((protein) => `<span class="tag">${escapeHtml(protein)}</span>`).join("")}</div></div>
         <div class="manager-card-actions">
           <span class="origin-badge ${customized ? "custom" : ""}">${customized ? (isNew ? "Personal" : "Personalizada") : "Incluida"}</span>
-          <button class="btn compact" data-manager-preview="${escapeHtml(recipe.id)}">Ver</button>
-          <button class="btn compact primary" data-manager-edit="${escapeHtml(recipe.id)}">Editar</button>
-          <button class="btn compact" data-manager-duplicate="${escapeHtml(recipe.id)}">Duplicar</button>
-          ${customized && !isNew ? `<button class="btn compact" data-manager-restore="${escapeHtml(recipe.id)}">Restaurar</button>` : ""}
-          ${isNew ? `<button class="btn compact danger" data-manager-delete="${escapeHtml(recipe.id)}">Eliminar</button>` : ""}
+          <button class="btn compact icon-action" data-manager-preview="${escapeHtml(recipe.id)}" aria-label="Ver detalle" title="Ver detalle">👁</button>
+          <button class="btn compact primary icon-action" data-manager-edit="${escapeHtml(recipe.id)}" aria-label="Editar receta" title="Editar">✎</button>
+          <button class="btn compact icon-action" data-manager-duplicate="${escapeHtml(recipe.id)}" aria-label="Duplicar receta" title="Duplicar">⧉</button>
+          ${customized && !isNew ? `<button class="btn compact icon-action" data-manager-restore="${escapeHtml(recipe.id)}" aria-label="Restaurar receta incluida" title="Restaurar">↶</button>` : ""}
+          ${isNew ? `<button class="btn compact danger icon-action" data-manager-delete="${escapeHtml(recipe.id)}" aria-label="Eliminar receta" title="Eliminar">⌫</button>` : ""}
         </div>
       </article>`;
       })
