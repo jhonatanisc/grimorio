@@ -122,39 +122,47 @@ function renderSchedule() {
       const recipe = byId(state.menu[day][meal.key]);
       const selected = selectedSlot?.day === day && selectedSlot?.meal === meal.key;
       const body = recipe
-        ? `<span class="slot-title">${escapeHtml(recipe.name)}</span><span class="tag-row">${recipe.proteinTypes.map((x) => `<span class="tag">${escapeHtml(x)}</span>`).join("")}</span><span class="slot-tools"><button data-action="random" aria-label="Cambiar receta">↻</button><button data-action="remove" aria-label="Quitar receta">✕</button></span>`
+        ? `<span class="slot-title">${escapeHtml(recipe.name)}</span><span class="tag-row">${recipe.proteinTypes.map((x) => `<span class="tag">${escapeHtml(x)}</span>`).join("")}</span><span class="slot-tools"><button data-action="preview" aria-label="Ver detalle de ${escapeHtml(recipe.name)}">Ver</button><button data-action="random" aria-label="Cambiar receta">↻</button><button data-action="remove" aria-label="Quitar receta">✕</button></span>`
         : `<span>+ Agregar</span><small>${meal.label}</small>`;
       elements.schedule.insertAdjacentHTML(
         "beforeend",
-        `<div class="cell ${mobile && index !== mobileDay ? "hidden-mobile-day" : ""}"><button class="slot ${selected ? "selected" : ""}" data-day="${day}" data-meal="${meal.key}" aria-label="${recipe ? escapeHtml(recipe.name) : `Agregar ${meal.label} del ${day}`}">${body}</button></div>`,
+        `<div class="cell ${mobile && index !== mobileDay ? "hidden-mobile-day" : ""}"><div class="slot ${selected ? "selected" : ""}" role="button" tabindex="0" data-day="${day}" data-meal="${meal.key}" aria-label="${recipe ? escapeHtml(recipe.name) : `Agregar ${meal.label} del ${day}`}">${body}</div></div>`,
       );
     });
   }
-  elements.schedule.querySelectorAll(".slot").forEach(
-    (slot) =>
-      (slot.onclick = (event) => {
-        const action = event.target.closest("[data-action]")?.dataset.action;
-        const { day, meal } = slot.dataset;
-        if (action) {
-          event.stopPropagation();
-          snapshot();
-          if (action === "remove") state.menu = removeRecipe(state.menu, day, meal);
-          else {
-            const pool = recipes().filter((r) => r.mealTypes.includes(meal));
-            const recipe = pool[Math.floor(Math.random() * pool.length)];
-            if (recipe) state.menu = assignRecipe(state.menu, day, meal, recipe);
-          }
-          commit(action === "remove" ? "Receta eliminada" : "Receta cambiada");
+  elements.schedule.querySelectorAll(".slot").forEach((slot) => {
+    slot.onkeydown = (event) => {
+      if (event.target !== slot || !["Enter", " "].includes(event.key)) return;
+      event.preventDefault();
+      slot.click();
+    };
+    slot.onclick = (event) => {
+      const action = event.target.closest("[data-action]")?.dataset.action;
+      const { day, meal } = slot.dataset;
+      if (action) {
+        event.stopPropagation();
+        if (action === "preview") {
+          previewRecipe(state.menu[day][meal], false);
           return;
         }
-        selectedSlot = { day, meal };
-        elements.type.value = meal;
-        elements.hint.textContent = `Seleccionado: ${day} · ${MEALS.find((x) => x.key === meal).label}`;
-        renderSchedule();
-        renderRecipes();
-        elements.recipeList.querySelector("[data-assign]")?.focus();
-      }),
-  );
+        snapshot();
+        if (action === "remove") state.menu = removeRecipe(state.menu, day, meal);
+        else {
+          const pool = recipes().filter((r) => r.mealTypes.includes(meal));
+          const recipe = pool[Math.floor(Math.random() * pool.length)];
+          if (recipe) state.menu = assignRecipe(state.menu, day, meal, recipe);
+        }
+        commit(action === "remove" ? "Receta eliminada" : "Receta cambiada");
+        return;
+      }
+      selectedSlot = { day, meal };
+      elements.type.value = meal;
+      elements.hint.textContent = `Seleccionado: ${day} · ${MEALS.find((x) => x.key === meal).label}`;
+      renderSchedule();
+      renderRecipes();
+      elements.recipeList.querySelector("[data-assign]")?.focus();
+    };
+  });
 }
 function renderFilters() {
   const options = ["all", "favoritas", ...PROTEINS];
@@ -230,7 +238,7 @@ function assign(id) {
   }
 }
 
-function previewRecipe(id) {
+function previewRecipe(id, allowAssign = true) {
   const recipe = byId(id);
   drawer.show({
     heading: recipe.name,
@@ -242,9 +250,9 @@ function previewRecipe(id) {
       .join(
         "",
       )}</ul><h3>Preparación</h3><ol>${recipe.instructions.map((x) => `<li>${escapeHtml(x)}</li>`).join("") || "<li>Sin instrucciones.</li>"}</ol>`,
-    primaryLabel: "Asignar",
+    primaryLabel: allowAssign ? "Asignar" : "Cerrar detalle",
     onPrimary: () => {
-      assign(id);
+      if (allowAssign) assign(id);
       drawer.hide();
     },
   });
