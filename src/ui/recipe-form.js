@@ -7,7 +7,7 @@ export function renderRecipeForm(form, recipe, equivalences) {
     .sort((a, b) => a.name.localeCompare(b.name, "es"));
   form.innerHTML = `
     <label class="wide"><span>Nombre</span><input class="input" name="name" required value="${escapeHtml(recipe?.name ?? "")}"></label>
-    <fieldset class="wide"><legend>Tiempos</legend><div class="check-grid">${MEALS.map(({ key, label }) => `<label><input type="checkbox" name="mealTypes" value="${key}" ${recipe?.mealTypes.includes(key) ? "checked" : ""}>${label}</label>`).join("")}</div></fieldset>
+    <fieldset class="wide"><legend>Tiempos</legend><div class="check-grid">${MEALS.map(({ key, label }, index) => `<label><input type="checkbox" name="mealTypes" value="${key}" ${recipe?.mealTypes.includes(key) || (!recipe && index === 0) ? "checked" : ""}>${label}</label>`).join("")}</div></fieldset>
     <label><span>Proteína</span><select class="select" name="proteinType">${PROTEINS.map((x) => `<option ${recipe?.proteinTypes.includes(x) ? "selected" : ""}>${x}</option>`).join("")}</select></label>
     <label><span>Preparación (min)</span><input class="input" name="prepTime" type="number" min="0" value="${recipe?.prepTime ?? 20}"></label>
     <label><span>Velocidad</span><select class="select" name="speed">${["super-rapida", "normal", "elaborada"].map((x) => `<option ${recipe?.speed === x ? "selected" : ""}>${x}</option>`).join("")}</select></label>

@@ -1,4 +1,5 @@
 import "./styles/base.css";
+import "./styles/redesign.css";
 import baseRecipes from "../data/recipes.json";
 import equivalences from "../data/equivalences.json";
 import { DAYS, MEALS, PROTEINS } from "./domain/constants.js";
@@ -28,6 +29,7 @@ const elements = {
   undo: $("#undoBtn"),
   form: $("#recipeForm"),
   textarea: $("#jsonBox"),
+  clearSearch: $("#clearSearchBtn"),
 };
 const drawer = createDrawer({
   drawer: $("#drawer"),
@@ -144,6 +146,7 @@ function renderSchedule() {
         elements.hint.textContent = `Seleccionado: ${day} · ${MEALS.find((x) => x.key === meal).label}`;
         renderSchedule();
         renderRecipes();
+        elements.recipeList.querySelector("[data-assign]")?.focus();
       }),
   );
 }
@@ -314,6 +317,13 @@ function openRecipeManager() {
             openRecipeForm(byId(button.dataset.managerEdit), false, openRecipeManager)),
       );
     list
+      .querySelectorAll("[data-manager-duplicate]")
+      .forEach(
+        (button) =>
+          (button.onclick = () =>
+            openRecipeForm(byId(button.dataset.managerDuplicate), true, openRecipeManager)),
+      );
+    list
       .querySelectorAll("[data-manager-restore]")
       .forEach((button) => (button.onclick = () => restoreRecipe(button.dataset.managerRestore)));
     list.querySelectorAll("[data-manager-delete]").forEach((button) => {
@@ -449,7 +459,16 @@ elements.undo.onclick = () => {
     commit("Cambio deshecho");
   }
 };
-elements.search.oninput = renderRecipes;
+elements.search.oninput = () => {
+  elements.clearSearch.classList.toggle("hidden", !elements.search.value);
+  renderRecipes();
+};
+elements.clearSearch.onclick = () => {
+  elements.search.value = "";
+  elements.clearSearch.classList.add("hidden");
+  renderRecipes();
+  elements.search.focus();
+};
 elements.type.onchange = renderRecipes;
 addEventListener("resize", renderSchedule);
 

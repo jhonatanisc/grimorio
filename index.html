@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#6d28d9" />
+    <meta name="theme-color" content="#173f35" />
     <meta name="description" content="Planeador semanal de recetas y lista de compras." />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
@@ -17,16 +17,25 @@
           <div class="logo" aria-hidden="true">G</div>
           <div>
             <h1>Grimorio</h1>
-            <p>Recetas, semana y compras en un solo ritual.</p>
+            <p>Planear bien. Comprar justo. Cocinar tranquilo.</p>
           </div>
         </div>
         <nav class="hero-actions" aria-label="Acciones del menú">
-          <button class="btn primary" id="autoFillBtn">✨ Crear semana</button>
-          <button class="btn colorful" id="shoppingBtn">🛒 Compras</button>
-          <button class="btn" id="recipesBtn">✎ Mis recetas</button>
-          <button class="btn" id="exportBtn" aria-label="Exportar planeación">⤴ Exportar</button>
-          <button class="btn" id="importBtn" aria-label="Importar planeación">⤵ Importar</button>
-          <button class="btn danger" id="clearBtn">✕ Limpiar</button>
+          <button class="btn" id="autoFillBtn">
+            <span aria-hidden="true">✦</span> Crear semana
+          </button>
+          <button class="btn primary" id="shoppingBtn">
+            <span aria-hidden="true">✓</span> Lista de compras
+          </button>
+          <button class="btn" id="recipesBtn"><span aria-hidden="true">▤</span> Mis recetas</button>
+          <span class="action-separator" aria-hidden="true"></span>
+          <button class="btn quiet" id="exportBtn" aria-label="Exportar planeación">
+            Exportar
+          </button>
+          <button class="btn quiet" id="importBtn" aria-label="Importar planeación">
+            Importar
+          </button>
+          <button class="btn quiet danger" id="clearBtn">Limpiar</button>
         </nav>
       </header>
 
@@ -34,16 +43,32 @@
         <aside class="panel" aria-labelledby="recipesHeading">
           <div class="panel-heading">
             <div>
-              <h2 id="recipesHeading">Códice de recetas</h2>
-              <p class="panel-sub">Elige un espacio y asigna una receta.</p>
+              <span class="eyebrow">Paso 2</span>
+              <h2 id="recipesHeading">Elige una receta</h2>
+              <p class="panel-sub">Usa los filtros o asigna directamente.</p>
             </div>
-            <button class="btn compact" id="newRecipeBtn">+ Nueva</button>
+            <button class="btn compact" id="newRecipeBtn">+ Crear receta</button>
           </div>
           <div class="search-row">
             <label
-              ><span>Buscar</span
-              ><input class="input" id="searchInput" placeholder="Nombre o ingrediente…"
-            /></label>
+              ><span>Buscar (opcional)</span
+              ><span class="search-control"
+                ><input
+                  class="input"
+                  id="searchInput"
+                  type="search"
+                  placeholder="Nombre o ingrediente…"
+                  autocomplete="off"
+                /><button
+                  class="clear-search hidden"
+                  id="clearSearchBtn"
+                  type="button"
+                  aria-label="Borrar búsqueda"
+                >
+                  ✕
+                </button></span
+              ></label
+            >
             <label
               ><span>Tiempo</span
               ><select class="select" id="typeFilter">
@@ -62,8 +87,11 @@
         <section class="schedule-wrap" aria-labelledby="scheduleHeading">
           <div class="schedule-head">
             <div>
-              <h2 id="scheduleHeading">Ritual semanal</h2>
-              <p class="panel-sub" id="selectedHint">Elige un espacio para asignar una receta.</p>
+              <span class="eyebrow">Paso 1</span>
+              <h2 id="scheduleHeading">Tu semana</h2>
+              <p class="selection-status" id="selectedHint" role="status" aria-live="polite">
+                Selecciona un espacio vacío o una receta para cambiarla.
+              </p>
             </div>
             <button class="btn compact hidden" id="undoBtn">Deshacer</button>
           </div>

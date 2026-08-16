@@ -32,6 +32,7 @@ export function renderManagerList(container, recipes, customizedIds, favorites) 
           <span class="origin-badge ${customized ? "custom" : ""}">${customized ? (isNew ? "Personal" : "Personalizada") : "Incluida"}</span>
           <button class="btn compact" data-manager-preview="${escapeHtml(recipe.id)}">Ver</button>
           <button class="btn compact primary" data-manager-edit="${escapeHtml(recipe.id)}">Editar</button>
+          <button class="btn compact" data-manager-duplicate="${escapeHtml(recipe.id)}">Duplicar</button>
           ${customized && !isNew ? `<button class="btn compact" data-manager-restore="${escapeHtml(recipe.id)}">Restaurar</button>` : ""}
           ${isNew ? `<button class="btn compact danger" data-manager-delete="${escapeHtml(recipe.id)}">Eliminar</button>` : ""}
         </div>
