@@ -494,5 +494,7 @@ elements.type.onchange = renderRecipes;
 addEventListener("resize", renderSchedule);
 
 if ("serviceWorker" in navigator)
-  addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));
+  addEventListener("load", () =>
+    navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).catch(() => {}),
+  );
 render();
