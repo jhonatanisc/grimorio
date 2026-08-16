@@ -1,0 +1,362 @@
+import "./styles/base.css";
+import baseRecipes from "../data/recipes.json";
+import equivalences from "../data/equivalences.json";
+import { DAYS, MEALS, PROTEINS } from "./domain/constants.js";
+import { assignRecipe, createEmptyMenu, fillMenu, removeRecipe } from "./domain/menu.js";
+import { filterRecipes, makeRecipeId, validateRecipe } from "./domain/recipes.js";
+import { collectShoppingItems, formatQuantity, shoppingListText } from "./domain/shopping-list.js";
+import { exportState, loadState, parseState, saveState } from "./services/storage.js";
+import { createDrawer } from "./ui/drawer.js";
+import { readRecipeForm, renderRecipeForm } from "./ui/recipe-form.js";
+
+const $ = (selector) => document.querySelector(selector);
+const elements = {
+  schedule: $("#schedule"),
+  recipeList: $("#recipeList"),
+  search: $("#searchInput"),
+  type: $("#typeFilter"),
+  tags: $("#tagFilters"),
+  hint: $("#selectedHint"),
+  mobileDays: $("#mobileDays"),
+  toast: $("#toast"),
+  undo: $("#undoBtn"),
+  form: $("#recipeForm"),
+  textarea: $("#jsonBox"),
+};
+const drawer = createDrawer({
+  drawer: $("#drawer"),
+  backdrop: $("#backdrop"),
+  title: $("#drawerTitle"),
+  text: $("#drawerText"),
+  textarea: elements.textarea,
+  form: elements.form,
+  primary: $("#drawerPrimary"),
+  secondary: $("#drawerSecondary"),
+  close: $("#drawerClose"),
+});
+
+let state = await loadState(baseRecipes);
+let selectedSlot = null;
+let activeProtein = "all";
+let mobileDay = 0;
+let undoState = null;
+const recipes = () => [...baseRecipes, ...state.customRecipes];
+const byId = (id) => recipes().find((recipe) => recipe.id === id);
+const ingredientName = ({ ingredientId }) => equivalences[ingredientId]?.name ?? ingredientId;
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+}
+function notify(message) {
+  elements.toast.textContent = message;
+  elements.toast.classList.add("show");
+  clearTimeout(notify.timer);
+  notify.timer = setTimeout(() => elements.toast.classList.remove("show"), 2200);
+}
+function commit(message) {
+  saveState(state);
+  notify(message);
+  render();
+}
+function snapshot() {
+  undoState = structuredClone(state);
+  elements.undo.classList.remove("hidden");
+}
+
+function render() {
+  renderDays();
+  renderSchedule();
+  renderFilters();
+  renderRecipes();
+}
+function renderDays() {
+  elements.mobileDays.innerHTML = DAYS.map(
+    (day, index) =>
+      `<button class="day-tab" role="tab" aria-selected="${index === mobileDay}" data-day-index="${index}">${day}</button>`,
+  ).join("");
+  elements.mobileDays.querySelectorAll("button").forEach(
+    (button) =>
+      (button.onclick = () => {
+        mobileDay = Number(button.dataset.dayIndex);
+        renderDays();
+        renderSchedule();
+      }),
+  );
+}
+function renderSchedule() {
+  const mobile = matchMedia("(max-width:1100px)").matches;
+  elements.schedule.innerHTML =
+    '<div class="head-cell">Tiempo</div>' +
+    DAYS.map(
+      (day, index) =>
+        `<div class="head-cell ${mobile && index !== mobileDay ? "hidden-mobile-day" : ""}">${day}</div>`,
+    ).join("");
+  for (const meal of MEALS) {
+    elements.schedule.insertAdjacentHTML(
+      "beforeend",
+      `<div class="cell meal-cell ${meal.key}">${meal.label}</div>`,
+    );
+    DAYS.forEach((day, index) => {
+      const recipe = byId(state.menu[day][meal.key]);
+      const selected = selectedSlot?.day === day && selectedSlot?.meal === meal.key;
+      const body = recipe
+        ? `<span class="slot-title">${escapeHtml(recipe.name)}</span><span class="tag-row">${recipe.proteinTypes.map((x) => `<span class="tag">${escapeHtml(x)}</span>`).join("")}</span><span class="slot-tools"><button data-action="random" aria-label="Cambiar receta">↻</button><button data-action="remove" aria-label="Quitar receta">✕</button></span>`
+        : `<span>+ Agregar</span><small>${meal.label}</small>`;
+      elements.schedule.insertAdjacentHTML(
+        "beforeend",
+        `<div class="cell ${mobile && index !== mobileDay ? "hidden-mobile-day" : ""}"><button class="slot ${selected ? "selected" : ""}" data-day="${day}" data-meal="${meal.key}" aria-label="${recipe ? escapeHtml(recipe.name) : `Agregar ${meal.label} del ${day}`}">${body}</button></div>`,
+      );
+    });
+  }
+  elements.schedule.querySelectorAll(".slot").forEach(
+    (slot) =>
+      (slot.onclick = (event) => {
+        const action = event.target.closest("[data-action]")?.dataset.action;
+        const { day, meal } = slot.dataset;
+        if (action) {
+          event.stopPropagation();
+          snapshot();
+          if (action === "remove") state.menu = removeRecipe(state.menu, day, meal);
+          else {
+            const pool = recipes().filter((r) => r.mealTypes.includes(meal));
+            const recipe = pool[Math.floor(Math.random() * pool.length)];
+            if (recipe) state.menu = assignRecipe(state.menu, day, meal, recipe);
+          }
+          commit(action === "remove" ? "Receta eliminada" : "Receta cambiada");
+          return;
+        }
+        selectedSlot = { day, meal };
+        elements.type.value = meal;
+        elements.hint.textContent = `Seleccionado: ${day} · ${MEALS.find((x) => x.key === meal).label}`;
+        renderSchedule();
+        renderRecipes();
+      }),
+  );
+}
+function renderFilters() {
+  const options = ["all", "favoritas", ...PROTEINS];
+  elements.tags.innerHTML = options
+    .map(
+      (tag) =>
+        `<button class="chip ${activeProtein === tag ? "active" : ""}" data-protein="${tag}">${tag === "all" ? "Todas" : tag === "favoritas" ? "★ Favoritas" : tag.replace("sin-proteina", "sin proteína")}</button>`,
+    )
+    .join("");
+  elements.tags.querySelectorAll("button").forEach(
+    (button) =>
+      (button.onclick = () => {
+        activeProtein = button.dataset.protein;
+        renderFilters();
+        renderRecipes();
+      }),
+  );
+}
+function renderRecipes() {
+  const filtered = filterRecipes(recipes(), {
+    query: elements.search.value,
+    meal: elements.type.value,
+    protein: activeProtein,
+    favorites: state.favorites,
+  });
+  elements.recipeList.innerHTML =
+    filtered
+      .map(
+        (recipe) =>
+          `<article class="recipe-card"><div class="recipe-top"><span class="recipe-title">${escapeHtml(recipe.name)}</span><button class="btn compact favorite" data-favorite="${recipe.id}" aria-label="${state.favorites.includes(recipe.id) ? "Quitar de favoritas" : "Marcar favorita"}">${state.favorites.includes(recipe.id) ? "★" : "☆"}</button></div><div class="recipe-ingredients">${recipe.ingredients.slice(0, 5).map(ingredientName).map(escapeHtml).join(" · ")}</div><div class="tag-row">${recipe.proteinTypes.map((x) => `<span class="tag">${escapeHtml(x)}</span>`).join("")}</div><div class="card-actions"><button class="btn compact" data-preview="${recipe.id}">Ver</button><button class="btn compact primary" data-assign="${recipe.id}">Asignar</button>${recipe.id.startsWith("custom-") ? `<button class="btn compact" data-edit="${recipe.id}">Editar</button><button class="btn compact danger" data-delete="${recipe.id}">Eliminar</button>` : `<button class="btn compact" data-duplicate="${recipe.id}">Duplicar</button>`}</div></article>`,
+      )
+      .join("") || "<p>No hay recetas que coincidan.</p>";
+  elements.recipeList.querySelectorAll("[data-favorite]").forEach(
+    (button) =>
+      (button.onclick = () => {
+        const id = button.dataset.favorite;
+        state.favorites = state.favorites.includes(id)
+          ? state.favorites.filter((x) => x !== id)
+          : [...state.favorites, id];
+        commit("Favoritas actualizadas");
+      }),
+  );
+  elements.recipeList
+    .querySelectorAll("[data-preview]")
+    .forEach((button) => (button.onclick = () => previewRecipe(button.dataset.preview)));
+  elements.recipeList
+    .querySelectorAll("[data-assign]")
+    .forEach((button) => (button.onclick = () => assign(button.dataset.assign)));
+  elements.recipeList
+    .querySelectorAll("[data-edit]")
+    .forEach((button) => (button.onclick = () => openRecipeForm(byId(button.dataset.edit))));
+  elements.recipeList
+    .querySelectorAll("[data-duplicate]")
+    .forEach(
+      (button) => (button.onclick = () => openRecipeForm(byId(button.dataset.duplicate), true)),
+    );
+  elements.recipeList
+    .querySelectorAll("[data-delete]")
+    .forEach((button) => (button.onclick = () => deleteRecipe(button.dataset.delete)));
+}
+function assign(id) {
+  const recipe = byId(id);
+  if (!selectedSlot) {
+    selectedSlot = { day: DAYS[mobileDay], meal: recipe.mealTypes[0] };
+  }
+  try {
+    snapshot();
+    state.menu = assignRecipe(state.menu, selectedSlot.day, selectedSlot.meal, recipe);
+    commit("Receta asignada");
+  } catch (error) {
+    notify(error.message);
+  }
+}
+function previewRecipe(id) {
+  const recipe = byId(id);
+  drawer.show({
+    heading: recipe.name,
+    content: `<p><strong>${recipe.prepTime} min · ${escapeHtml(recipe.speed)} · ${escapeHtml(recipe.heaviness)}</strong></p><h3>Ingredientes</h3><ul>${recipe.ingredients.map((x) => `<li>${escapeHtml(ingredientName(x))}: ${formatQuantity(x.portions)} × ${escapeHtml(equivalences[x.ingredientId]?.portion ?? "porción")}</li>`).join("")}</ul><h3>Preparación</h3><ol>${recipe.instructions.map((x) => `<li>${escapeHtml(x)}</li>`).join("") || "<li>Sin instrucciones.</li>"}</ol>`,
+    primaryLabel: "Asignar",
+    onPrimary: () => {
+      assign(id);
+      drawer.hide();
+    },
+  });
+}
+function openRecipeForm(source = null, duplicate = false) {
+  renderRecipeForm(elements.form, source, equivalences);
+  const existing = source && !duplicate ? source.id : null;
+  drawer.show({
+    heading: existing ? "Editar receta" : duplicate ? "Duplicar receta" : "Nueva receta",
+    mode: "form",
+    primaryLabel: "Guardar",
+    onPrimary: () => {
+      if (!elements.form.reportValidity()) return;
+      const name = elements.form.elements.name.value;
+      const id =
+        existing ??
+        makeRecipeId(
+          name,
+          recipes().map((x) => x.id),
+        );
+      const recipe = readRecipeForm(elements.form, id);
+      const result = validateRecipe(recipe, equivalences);
+      if (!result.valid) {
+        notify(result.errors[0]);
+        return;
+      }
+      snapshot();
+      state.customRecipes = existing
+        ? state.customRecipes.map((x) => (x.id === existing ? recipe : x))
+        : [...state.customRecipes, recipe];
+      commit("Receta guardada");
+      drawer.hide();
+    },
+  });
+}
+function deleteRecipe(id) {
+  if (!confirm("¿Eliminar esta receta personalizada?")) return;
+  snapshot();
+  state.customRecipes = state.customRecipes.filter((x) => x.id !== id);
+  state.favorites = state.favorites.filter((x) => x !== id);
+  for (const day of DAYS)
+    for (const { key } of MEALS) if (state.menu[day][key] === id) state.menu[day][key] = null;
+  commit("Receta eliminada");
+}
+function openShopping() {
+  const items = collectShoppingItems(state.menu, recipes(), equivalences, state.servings);
+  const grouped = Object.groupBy(items, (item) => item.category);
+  drawer.show({
+    heading: "Lista de compras",
+    content: `<label><span>Multiplicador de porciones</span><input id="servingsInput" class="input" type="number" min="0.5" step="0.5" value="${state.servings}"></label>${
+      Object.entries(grouped)
+        .map(
+          ([category, list]) =>
+            `<section class="shopping-group"><h3>${escapeHtml(category.replaceAll("-", " "))}</h3>${list.map((item) => `<label><input type="checkbox"> ${escapeHtml(item.name)} — ${formatQuantity(item.quantity)} × ${escapeHtml(item.unit)}</label>`).join("")}</section>`,
+        )
+        .join("") || "<p>No hay recetas programadas.</p>"
+    }`,
+    primaryLabel: "Copiar",
+    onPrimary: () => copyText(shoppingListText(items)),
+  });
+  $("#servingsInput").onchange = (event) => {
+    state.servings = Math.max(0.5, Number(event.target.value) || 1);
+    saveState(state);
+    openShopping();
+  };
+}
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    notify("Copiado al portapapeles");
+    drawer.hide();
+  } catch {
+    elements.textarea.value = text;
+    elements.textarea.classList.remove("hidden");
+    elements.textarea.select();
+    notify("Selecciona el texto y cópialo manualmente");
+  }
+}
+function openJson(heading, value, onImport = null) {
+  elements.textarea.value = value;
+  drawer.show({
+    heading,
+    content: onImport
+      ? "Pega un respaldo generado por Grimorio."
+      : "Copia este respaldo para conservar menú y recetas.",
+    mode: "json",
+    primaryLabel: onImport ? "Importar" : "Copiar",
+    onPrimary: () => {
+      if (!onImport) {
+        copyText(elements.textarea.value);
+        return;
+      }
+      try {
+        const next = parseState(JSON.parse(elements.textarea.value), baseRecipes);
+        for (const recipe of next.customRecipes) {
+          const result = validateRecipe(recipe, equivalences);
+          if (!result.valid) throw new Error(result.errors[0]);
+        }
+        snapshot();
+        state = next;
+        commit("Respaldo importado");
+        drawer.hide();
+      } catch (error) {
+        notify(`No se pudo importar: ${error.message}`);
+      }
+    },
+  });
+}
+
+$("#autoFillBtn").onclick = () => {
+  snapshot();
+  state.menu = fillMenu(recipes());
+  commit("Semana creada");
+};
+$("#shoppingBtn").onclick = openShopping;
+$("#newRecipeBtn").onclick = () => openRecipeForm();
+$("#recipesBtn").onclick = () =>
+  openJson("Catálogo personalizado", JSON.stringify(state.customRecipes, null, 2));
+$("#exportBtn").onclick = () => openJson("Exportar Grimorio", exportState(state));
+$("#importBtn").onclick = () => openJson("Importar Grimorio", "", true);
+$("#clearBtn").onclick = () => {
+  if (confirm("¿Limpiar todo el menú semanal?")) {
+    snapshot();
+    state.menu = createEmptyMenu();
+    selectedSlot = null;
+    commit("Menú limpio");
+  }
+};
+elements.undo.onclick = () => {
+  if (undoState) {
+    const current = state;
+    state = undoState;
+    undoState = current;
+    commit("Cambio deshecho");
+  }
+};
+elements.search.oninput = renderRecipes;
+elements.type.onchange = renderRecipes;
+addEventListener("resize", renderSchedule);
+
+if ("serviceWorker" in navigator)
+  addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));
+render();
