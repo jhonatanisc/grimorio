@@ -330,6 +330,7 @@ body {
 }
 .schedule {
   grid-template-columns: 86px repeat(7, minmax(112px, 1fr));
+  grid-template-rows: auto repeat(4, minmax(124px, 1fr));
   border-color: #cbd6d0;
   border-radius: 12px;
 }
@@ -361,6 +362,7 @@ body {
   background: #e9e4f8;
 }
 .slot {
+  height: 100%;
   min-height: 108px;
   border: 2px dashed #b7c7be;
   border-radius: 10px;
@@ -432,6 +434,10 @@ body {
   }
   .schedule {
     grid-template-columns: 88px 1fr;
+    grid-template-rows: none;
+  }
+  .slot {
+    height: auto;
   }
   .head-cell {
     display: none;
