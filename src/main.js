@@ -278,14 +278,25 @@ function openShopping() {
   const grouped = Object.groupBy(items, (item) => item.category);
   drawer.show({
     heading: "Lista de compras",
-    content: `<label><span>Multiplicador de porciones</span><input id="servingsInput" class="input" type="number" min="0.5" step="0.5" value="${state.servings}"></label>${
+    variant: "wide",
+    content: `<div class="shopping-toolbar"><div><p class="shopping-lead">Todo lo necesario para el ritual semanal, con el origen de cada ingrediente.</p><strong>${items.length} ingredientes · ${items.reduce((total, item) => total + item.usages.length, 0)} usos programados</strong></div><label><span>Multiplicador de porciones</span><input id="servingsInput" class="input" type="number" min="0.5" step="0.5" value="${state.servings}"></label></div><div class="shopping-categories">${
       Object.entries(grouped)
         .map(
           ([category, list]) =>
-            `<section class="shopping-group"><h3>${escapeHtml(category.replaceAll("-", " "))}</h3>${list.map((item) => `<label><input type="checkbox"> ${escapeHtml(item.name)} — ${formatQuantity(item.quantity)} × ${escapeHtml(item.unit)}</label>`).join("")}</section>`,
+            `<section class="shopping-group"><div class="shopping-category-head"><h3>${escapeHtml(category.replaceAll("-", " "))}</h3><span>${list.length} ingredientes</span></div><div class="shopping-grid">${list
+              .map(
+                (item) =>
+                  `<article class="shopping-item"><div class="shopping-item-head"><label><input type="checkbox"><strong>${escapeHtml(item.name)}</strong></label><span class="quantity-badge">${formatQuantity(item.quantity)} × ${escapeHtml(item.unit)}</span></div><ul class="shopping-usages">${item.usages
+                    .map(
+                      (usage) =>
+                        `<li><span class="usage-date">${escapeHtml(usage.day)} · ${escapeHtml(MEALS.find(({ key }) => key === usage.meal)?.label ?? usage.meal)}</span><span>${escapeHtml(usage.recipeName)}</span><small>${formatQuantity(usage.quantity)} × ${escapeHtml(item.unit)}</small></li>`,
+                    )
+                    .join("")}</ul></article>`,
+              )
+              .join("")}</div></section>`,
         )
         .join("") || "<p>No hay recetas programadas.</p>"
-    }`,
+    }</div>`,
     primaryLabel: "Copiar",
     onPrimary: () => copyText(shoppingListText(items)),
   });

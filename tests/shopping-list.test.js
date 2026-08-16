@@ -10,6 +10,7 @@ describe("lista de compras", () => {
     const recipes = [
       {
         id: "r",
+        name: "Huevos preparados",
         ingredients: [
           { ingredientId: "huevo", portions: 2 },
           { ingredientId: "sal", portions: 1 },
@@ -27,7 +28,29 @@ describe("lista de compras", () => {
     };
     const items = collectShoppingItems(menu, recipes, eq, 2);
     expect(items).toEqual([
-      { id: "huevo", name: "Huevo", category: "proteínas", unit: "pieza", quantity: 16 },
+      {
+        id: "huevo",
+        name: "Huevo",
+        category: "proteínas",
+        unit: "pieza",
+        quantity: 16,
+        usages: [
+          {
+            day: "Lunes",
+            meal: "desayuno",
+            recipeId: "r",
+            recipeName: "Huevos preparados",
+            quantity: 8,
+          },
+          {
+            day: "Martes",
+            meal: "desayuno",
+            recipeId: "r",
+            recipeName: "Huevos preparados",
+            quantity: 8,
+          },
+        ],
+      },
     ]);
     expect(shoppingListText(items)).toContain("Huevo — 16 × pieza");
   });

@@ -1,8 +1,8 @@
 export function collectShoppingItems(menu, recipes, equivalences, servings = 1) {
   const byId = new Map(recipes.map((recipe) => [recipe.id, recipe]));
   const totals = new Map();
-  for (const meals of Object.values(menu))
-    for (const recipeId of Object.values(meals)) {
+  for (const [day, meals] of Object.entries(menu))
+    for (const [meal, recipeId] of Object.entries(meals)) {
       const recipe = byId.get(recipeId);
       for (const item of recipe?.ingredients ?? []) {
         const ingredient = equivalences[item.ingredientId];
@@ -15,8 +15,16 @@ export function collectShoppingItems(menu, recipes, equivalences, servings = 1) 
           category: ingredient.category,
           unit: portion.unit,
           quantity: 0,
+          usages: [],
         };
         current.quantity += item.portions * portion.amount * servings;
+        current.usages.push({
+          day,
+          meal,
+          recipeId: recipe.id,
+          recipeName: recipe.name,
+          quantity: item.portions * portion.amount * servings,
+        });
         totals.set(key, current);
       }
     }
@@ -50,7 +58,13 @@ export function shoppingListText(items) {
         item.category !== category
           ? `${(category = item.category).replaceAll("-", " ").toUpperCase()}\n`
           : "";
-      return `${heading}☐ ${item.name} — ${formatQuantity(item.quantity)} × ${item.unit}`;
+      const usages = item.usages
+        .map(
+          (usage) =>
+            `   ↳ ${usage.day} · ${usage.meal}: ${usage.recipeName} (${formatQuantity(usage.quantity)} × ${item.unit})`,
+        )
+        .join("\n");
+      return `${heading}☐ ${item.name} — ${formatQuantity(item.quantity)} × ${item.unit}\n${usages}`;
     })
     .join("\n")}`;
 }

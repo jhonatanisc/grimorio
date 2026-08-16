@@ -5,6 +5,7 @@ export function createDrawer(elements) {
   function hide() {
     drawer.hidden = true;
     backdrop.hidden = true;
+    drawer.classList.remove("drawer-wide");
     form.classList.add("hidden");
     textarea.classList.add("hidden");
     previousFocus?.focus();
@@ -13,6 +14,7 @@ export function createDrawer(elements) {
     heading,
     content = "",
     mode = "content",
+    variant = "default",
     primaryLabel = "Aceptar",
     onPrimary = hide,
   }) {
@@ -26,6 +28,7 @@ export function createDrawer(elements) {
       event.preventDefault();
       onPrimary();
     };
+    drawer.classList.toggle("drawer-wide", variant === "wide");
     drawer.hidden = false;
     backdrop.hidden = false;
     close.focus();
