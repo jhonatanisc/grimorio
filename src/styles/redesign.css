@@ -446,6 +446,8 @@ body {
   }
   body {
     background: #f4f6f3;
+    max-width: 100%;
+    overflow-x: hidden;
   }
   .app {
     padding: 0 0 calc(88px + env(safe-area-inset-bottom));
@@ -556,9 +558,18 @@ body {
     align-items: flex-start;
     padding: 2px 2px 8px;
   }
+  .schedule-head > div,
+  .schedule-wrap,
+  .panel {
+    width: 100%;
+    min-width: 0;
+  }
   .selection-status {
     width: 100%;
+    max-width: 100%;
     margin-top: 8px;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
   .mobile-days {
     position: sticky;
@@ -568,9 +579,16 @@ body {
     padding: 9px 10px;
     background: #f4f6f3ed;
     backdrop-filter: blur(8px);
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+  .mobile-days::-webkit-scrollbar {
+    display: none;
   }
   .day-tab {
     min-width: 92px;
+    scroll-snap-align: start;
   }
   .schedule {
     grid-template-columns: 1fr;
