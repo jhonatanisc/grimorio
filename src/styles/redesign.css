@@ -247,7 +247,7 @@ body {
   font-weight: 650;
 }
 .search-row {
-  grid-template-columns: 1fr 120px;
+  grid-template-columns: 1fr;
   padding: 12px;
   border-radius: 12px;
   background: var(--soft);
@@ -651,6 +651,25 @@ body {
   }
   .recipe-card {
     padding: 14px;
+  }
+  .manager-toolbar {
+    grid-template-columns: 1fr;
+  }
+  .manager-filters {
+    display: block;
+  }
+  .manager-filters summary {
+    display: block;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    color: var(--primary);
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .manager-filter-fields {
+    grid-template-columns: 1fr;
+    margin-top: 10px;
   }
   .recipe-title {
     font-size: 1rem;

@@ -11,9 +11,14 @@ export function recipeManagerTemplate() {
   return `<section class="recipe-manager" aria-labelledby="recipeManagerHelp">
     <p id="recipeManagerHelp" class="shopping-lead">Busca, filtra y administra el catálogo. Las recetas incluidas pueden personalizarse y restaurarse.</p>
     <div class="manager-toolbar">
-      <label><span>Buscar receta</span><input class="input" id="managerSearch" type="search" placeholder="Nombre o proteína…" autocomplete="off"></label>
-      <label><span>Tiempo de comida</span><select class="select" id="managerMeal"><option value="all">Todos</option>${MEALS.map(({ key, label }) => `<option value="${key}">${label}</option>`).join("")}</select></label>
-      <label><span>Origen</span><select class="select" id="managerOrigin"><option value="all">Todas</option><option value="custom">Personalizadas</option><option value="base">Incluidas</option></select></label>
+      <label class="manager-search"><span>Buscar receta</span><input class="input" id="managerSearch" type="search" placeholder="Nombre o proteína…" autocomplete="off"></label>
+      <details class="manager-filters" open>
+        <summary>Filtros</summary>
+        <div class="manager-filter-fields">
+          <label><span>Tiempo de comida</span><select class="select" id="managerMeal"><option value="all">Todos</option>${MEALS.map(({ key, label }) => `<option value="${key}">${label}</option>`).join("")}</select></label>
+          <label><span>Origen</span><select class="select" id="managerOrigin"><option value="all">Todas</option><option value="custom">Personalizadas</option><option value="base">Incluidas</option></select></label>
+        </div>
+      </details>
     </div>
     <p class="manager-count" id="managerCount" role="status" aria-live="polite"></p>
     <div class="manager-list" id="managerList"></div>
