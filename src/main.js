@@ -11,12 +11,7 @@ import {
   removeRecipe,
 } from "./domain/menu.js";
 import { filterRecipes, makeRecipeId, validateRecipe } from "./domain/recipes.js";
-import {
-  collectShoppingItems,
-  formatQuantity,
-  normalizePortion,
-  shoppingListText,
-} from "./domain/shopping-list.js";
+import { collectShoppingItems, formatQuantity, normalizePortion } from "./domain/shopping-list.js";
 import { exportState, loadState, parseState, saveState } from "./services/storage.js";
 import { createDrawer } from "./ui/drawer.js";
 import { readRecipeForm, renderRecipeForm } from "./ui/recipe-form.js";
@@ -367,32 +362,42 @@ function deleteRecipe(id) {
     for (const { key } of MEALS) if (state.menu[day][key] === id) state.menu[day][key] = null;
   commit("Receta eliminada");
 }
+function shoppingItemKey(item) {
+  return `${item.id}:${item.unit}`;
+}
+function shoppingItemTemplate(item, checked) {
+  const key = shoppingItemKey(item);
+  return `<details class="shopping-item ${checked ? "shopping-item-complete" : ""}"><summary class="shopping-item-head"><span class="shopping-check"><input type="checkbox" data-shopping-check="${escapeHtml(key)}" aria-label="${checked ? "Desmarcar" : "Marcar"} ${escapeHtml(item.name)} como comprado" ${checked ? "checked" : ""}><strong>${escapeHtml(item.name)}</strong></span><span class="shopping-summary-tools"><span class="quantity-badge">${formatQuantity(item.quantity)} × ${escapeHtml(item.unit)}</span><span class="accordion-chevron" aria-hidden="true">⌄</span></span></summary><ul class="shopping-usages">${item.usages
+    .map(
+      (usage) =>
+        `<li><span class="usage-date">${escapeHtml(usage.day)} · ${escapeHtml(MEALS.find(({ key: mealKey }) => mealKey === usage.meal)?.label ?? usage.meal)}</span><span>${escapeHtml(usage.recipeName)}</span><small>${formatQuantity(usage.quantity)} × ${escapeHtml(item.unit)}</small></li>`,
+    )
+    .join("")}</ul></details>`;
+}
+function shoppingGroupsTemplate(items, checked = false) {
+  const grouped = Object.groupBy(items, (item) => item.category);
+  return Object.entries(grouped)
+    .map(
+      ([category, list]) =>
+        `<section class="shopping-group"><div class="shopping-category-head"><h3>${escapeHtml(category.replaceAll("-", " "))}</h3><span>${list.length} ingredientes</span></div><div class="shopping-grid">${list.map((item) => shoppingItemTemplate(item, checked)).join("")}</div></section>`,
+    )
+    .join("");
+}
 function openShopping() {
   const items = collectShoppingItems(state.menu, recipes(), equivalences, state.servings);
-  const grouped = Object.groupBy(items, (item) => item.category);
+  const availableKeys = new Set(items.map(shoppingItemKey));
+  const checkedKeys = new Set(state.checkedShoppingItems.filter((key) => availableKeys.has(key)));
+  if (checkedKeys.size !== state.checkedShoppingItems.length) {
+    state.checkedShoppingItems = [...checkedKeys];
+    saveState(state);
+  }
+  const pending = items.filter((item) => !checkedKeys.has(shoppingItemKey(item)));
+  const completed = items.filter((item) => checkedKeys.has(shoppingItemKey(item)));
   drawer.show({
     heading: "Lista de compras",
     variant: "wide",
-    content: `<div class="shopping-toolbar"><div><p class="shopping-lead">Todo lo necesario para el ritual semanal, con el origen de cada ingrediente.</p><strong>${items.length} ingredientes · ${items.reduce((total, item) => total + item.usages.length, 0)} usos programados</strong></div><div class="shopping-toolbar-actions"><button class="btn compact" id="shoppingToggleAll" type="button">Mostrar detalles</button><label><span>Multiplicador de porciones</span><input id="servingsInput" class="input" type="number" min="0.5" step="0.5" value="${state.servings}"></label></div></div><div class="shopping-categories">${
-      Object.entries(grouped)
-        .map(
-          ([category, list]) =>
-            `<section class="shopping-group"><div class="shopping-category-head"><h3>${escapeHtml(category.replaceAll("-", " "))}</h3><span>${list.length} ingredientes</span></div><div class="shopping-grid">${list
-              .map(
-                (item) =>
-                  `<details class="shopping-item"><summary class="shopping-item-head"><span class="shopping-check"><input type="checkbox" data-shopping-check aria-label="Marcar ${escapeHtml(item.name)} como comprado"><strong>${escapeHtml(item.name)}</strong></span><span class="shopping-summary-tools"><span class="quantity-badge">${formatQuantity(item.quantity)} × ${escapeHtml(item.unit)}</span><span class="accordion-chevron" aria-hidden="true">⌄</span></span></summary><ul class="shopping-usages">${item.usages
-                    .map(
-                      (usage) =>
-                        `<li><span class="usage-date">${escapeHtml(usage.day)} · ${escapeHtml(MEALS.find(({ key }) => key === usage.meal)?.label ?? usage.meal)}</span><span>${escapeHtml(usage.recipeName)}</span><small>${formatQuantity(usage.quantity)} × ${escapeHtml(item.unit)}</small></li>`,
-                    )
-                    .join("")}</ul></details>`,
-              )
-              .join("")}</div></section>`,
-        )
-        .join("") || "<p>No hay recetas programadas.</p>"
-    }</div>`,
-    primaryLabel: "Copiar",
-    onPrimary: () => copyText(shoppingListText(items)),
+    content: `<div class="shopping-toolbar"><div><p class="shopping-lead">Todo lo necesario para el ritual semanal, con el origen de cada ingrediente.</p><strong>${pending.length} por comprar · ${completed.length} seleccionados</strong></div><div class="shopping-toolbar-actions"><button class="btn compact" id="shoppingToggleAll" type="button">Mostrar detalles</button><label><span>Multiplicador de porciones</span><input id="servingsInput" class="input" type="number" min="0.5" step="0.5" value="${state.servings}"></label></div></div>${pending.length ? `<section class="shopping-section" aria-labelledby="pendingShopping"><h3 id="pendingShopping">Por comprar</h3><div class="shopping-categories">${shoppingGroupsTemplate(pending)}</div></section>` : '<p class="shopping-empty">No quedan ingredientes por comprar.</p>'}${completed.length ? `<section class="shopping-section shopping-completed" aria-labelledby="completedShopping"><h3 id="completedShopping">Seleccionados</h3><p>Desmarca un ingrediente para devolverlo a su lista original.</p><div class="shopping-grid">${completed.map((item) => shoppingItemTemplate(item, true)).join("")}</div></section>` : ""}`,
+    primaryLabel: null,
   });
   $("#servingsInput").onchange = (event) => {
     state.servings = Math.max(0.5, Number(event.target.value) || 1);
@@ -407,6 +412,14 @@ function openShopping() {
   };
   document.querySelectorAll("[data-shopping-check]").forEach((checkbox) => {
     checkbox.onclick = (event) => event.stopPropagation();
+    checkbox.onchange = (event) => {
+      const key = event.currentTarget.dataset.shoppingCheck;
+      state.checkedShoppingItems = event.currentTarget.checked
+        ? [...new Set([...state.checkedShoppingItems, key])]
+        : state.checkedShoppingItems.filter((item) => item !== key);
+      saveState(state);
+      openShopping();
+    };
   });
 }
 async function copyText(text) {
@@ -453,9 +466,19 @@ function openJson(heading, value, onImport = null) {
 }
 
 $("#autoFillBtn").onclick = () => {
-  snapshot();
-  state.menu = fillMenu(recipes());
-  commit("Semana creada");
+  drawer.show({
+    heading: "¿Generar una semana nueva?",
+    content:
+      "Se reemplazarán las recetas programadas actualmente. Podrás deshacer el cambio después.",
+    primaryLabel: "Generar semana",
+    secondaryLabel: "Cancelar",
+    onPrimary: () => {
+      snapshot();
+      state.menu = fillMenu(recipes());
+      drawer.hide();
+      commit("Semana creada");
+    },
+  });
 };
 $("#shoppingBtn").onclick = openShopping;
 $("#newRecipeBtn").onclick = () => openRecipeForm();

@@ -12,6 +12,7 @@ export function defaultState(recipes) {
     menu: normalizeMenu(null, recipes),
     customRecipes: [],
     favorites: [],
+    checkedShoppingItems: [],
     servings: 1,
   };
 }
@@ -29,6 +30,9 @@ export function parseState(value, baseRecipes) {
       ]),
       customRecipes: Array.isArray(value.customRecipes) ? value.customRecipes : [],
       favorites: Array.isArray(value.favorites) ? value.favorites : [],
+      checkedShoppingItems: Array.isArray(value.checkedShoppingItems)
+        ? value.checkedShoppingItems.filter((item) => typeof item === "string")
+        : [],
     };
   return { ...defaultState(baseRecipes), menu: normalizeMenu(value.menu ?? value, baseRecipes) };
 }
