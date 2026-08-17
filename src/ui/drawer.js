@@ -16,6 +16,7 @@ export function createDrawer(elements) {
     mode = "content",
     variant = "default",
     primaryLabel = "Aceptar",
+    secondaryLabel = "Cerrar",
     onPrimary = hide,
   }) {
     previousFocus = document.activeElement;
@@ -23,7 +24,9 @@ export function createDrawer(elements) {
     text.innerHTML = content;
     textarea.classList.toggle("hidden", mode !== "json");
     form.classList.toggle("hidden", mode !== "form");
-    primary.textContent = primaryLabel;
+    primary.classList.toggle("hidden", !primaryLabel);
+    primary.textContent = primaryLabel ?? "";
+    secondary.textContent = secondaryLabel;
     primary.onclick = (event) => {
       event.preventDefault();
       onPrimary();

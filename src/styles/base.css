@@ -421,6 +421,20 @@ label > span {
 .shopping-group {
   margin: 22px 0;
 }
+.shopping-section > h3 {
+  margin: 22px 0 4px;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+.shopping-completed > p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.shopping-empty {
+  margin: 22px 0;
+  color: var(--muted);
+}
 .shopping-item label {
   display: flex;
   gap: 7px;
@@ -479,6 +493,13 @@ label > span {
   border: 1px solid var(--line);
   border-radius: 10px;
   background: var(--soft);
+}
+.shopping-item-complete {
+  opacity: 0.72;
+}
+.shopping-item-complete strong,
+.shopping-item-complete .quantity-badge {
+  text-decoration: line-through;
 }
 .shopping-item-head {
   display: flex;
