@@ -13,6 +13,7 @@ import {
 import { filterRecipes, makeRecipeId, validateRecipe } from "./domain/recipes.js";
 import { collectShoppingItems, formatQuantity, normalizePortion } from "./domain/shopping-list.js";
 import { exportState, loadState, parseState, saveState } from "./services/storage.js";
+import { createSharedMenuUrl, readSharedMenu } from "./services/shared-menu.js";
 import { createDrawer } from "./ui/drawer.js";
 import { readRecipeForm, renderRecipeForm } from "./ui/recipe-form.js";
 import { recipeManagerTemplate, renderManagerList } from "./ui/recipe-manager.js";
@@ -30,6 +31,7 @@ const elements = {
   form: $("#recipeForm"),
   textarea: $("#jsonBox"),
   clearSearch: $("#clearSearchBtn"),
+  share: $("#shareBtn"),
 };
 const drawer = createDrawer({
   drawer: $("#drawer"),
@@ -48,6 +50,7 @@ let selectedSlot = null;
 let activeProtein = "all";
 let mobileDay = 0;
 let undoState = null;
+let sharedMenu = null;
 const recipes = () => [
   ...new Map(
     [...baseRecipes, ...state.customRecipes].map((recipe) => [recipe.id, recipe]),
@@ -434,6 +437,116 @@ async function copyText(text) {
     notify("Selecciona el texto y cópialo manualmente");
   }
 }
+function clearSharedMenuUrl() {
+  if (location.hash.startsWith("#menu="))
+    history.replaceState(null, "", `${location.pathname}${location.search}`);
+}
+function sharedMenuRecipes() {
+  return new Map([...baseRecipes, ...sharedMenu.customRecipes].map((recipe) => [recipe.id, recipe]));
+}
+function sharedMenuSummary() {
+  const menuRecipes = sharedMenuRecipes();
+  const planned = DAYS.flatMap((day) =>
+    MEALS.map(({ key, label }) => {
+      const recipe = menuRecipes.get(sharedMenu.menu[day][key]);
+      return recipe ? `<li><strong>${escapeHtml(day)} · ${escapeHtml(label)}</strong>: ${escapeHtml(recipe.name)}</li>` : "";
+    }),
+  ).filter(Boolean);
+  return planned.length
+    ? `<p>Este menú tiene <strong>${planned.length} recetas programadas</strong> para ${sharedMenu.servings} porción${sharedMenu.servings === 1 ? "" : "es"}.</p><ul class="shared-menu-list">${planned.join("")}</ul>`
+    : "<p>Este menú compartido todavía no tiene recetas programadas.</p>";
+}
+function discardSharedMenu() {
+  sharedMenu = null;
+  clearSharedMenuUrl();
+  notify("Menú compartido descartado");
+}
+function saveSharedMenu() {
+  snapshot();
+  const sharedRecipes = new Map(sharedMenu.customRecipes.map((recipe) => [recipe.id, recipe]));
+  state.customRecipes = [
+    ...state.customRecipes.filter((recipe) => !sharedRecipes.has(recipe.id)),
+    ...sharedRecipes.values(),
+  ];
+  state.menu = sharedMenu.menu;
+  state.servings = sharedMenu.servings;
+  state.checkedShoppingItems = [];
+  selectedSlot = null;
+  sharedMenu = null;
+  clearSharedMenuUrl();
+  drawer.hide();
+  commit("Menú compartido guardado");
+}
+function confirmSaveSharedMenu() {
+  drawer.show({
+    heading: "¿Guardar este menú?",
+    content:
+      "<p>Se reemplazará tu menú semanal actual. Las recetas personalizadas incluidas se guardarán en tu catálogo y se reiniciarán los artículos marcados en compras.</p>",
+    primaryLabel: "Guardar menú",
+    secondaryLabel: "Volver",
+    onPrimary: saveSharedMenu,
+    onSecondary: openSharedMenuPreview,
+    onDismiss: discardSharedMenu,
+  });
+}
+function openSharedMenuPreview() {
+  if (!sharedMenu) return;
+  drawer.show({
+    heading: "Menú compartido",
+    content: `${sharedMenuSummary()}<p>Revísalo antes de guardarlo. Tu menú actual no se modificará hasta que confirmes.</p>`,
+    variant: "wide",
+    primaryLabel: "Guardar menú",
+    secondaryLabel: "Descartar",
+    onPrimary: confirmSaveSharedMenu,
+    onDismiss: discardSharedMenu,
+  });
+}
+function loadSharedMenu() {
+  if (!location.hash.startsWith("#menu=")) return;
+  try {
+    const next = readSharedMenu(location.hash, baseRecipes);
+    for (const recipe of next.customRecipes) {
+      const result = validateRecipe(recipe, equivalences);
+      if (!result.valid) throw new Error(result.errors[0]);
+    }
+    sharedMenu = next;
+  } catch (error) {
+    clearSharedMenuUrl();
+    notify(`No se pudo abrir el menú compartido: ${error.message}`);
+  }
+}
+function openShareFallback(url) {
+  drawer.show({
+    heading: "Comparte tu menú",
+    content: "Copia este enlace y envíalo a quien quieras. Al abrirlo podrá revisar y guardar el menú en Grimorio.",
+    primaryLabel: "Copiar enlace",
+    onPrimary: () => copyText(url),
+  });
+}
+async function shareMenu() {
+  let url;
+  try {
+    url = createSharedMenuUrl(state);
+  } catch (error) {
+    notify(error.message);
+    return;
+  }
+  const data = {
+    title: "Menú semanal de Grimorio",
+    text: "Te comparto este menú semanal. Ábrelo en Grimorio para revisarlo y guardarlo.",
+    url,
+  };
+  if (!navigator.share || (navigator.canShare && !navigator.canShare({ url }))) {
+    openShareFallback(url);
+    return;
+  }
+  try {
+    await navigator.share(data);
+    notify("Menú compartido");
+  } catch (error) {
+    if (error.name !== "AbortError") openShareFallback(url);
+  }
+}
 function openJson(heading, value, onImport = null) {
   elements.textarea.value = value;
   drawer.show({
@@ -483,6 +596,7 @@ $("#autoFillBtn").onclick = () => {
 $("#shoppingBtn").onclick = openShopping;
 $("#newRecipeBtn").onclick = () => openRecipeForm();
 $("#recipesBtn").onclick = openRecipeManager;
+elements.share.onclick = shareMenu;
 $("#exportBtn").onclick = () => openJson("Exportar Grimorio", exportState(state));
 $("#importBtn").onclick = () => openJson("Importar Grimorio", "", true);
 $("#clearBtn").onclick = () => {
@@ -517,4 +631,6 @@ if ("serviceWorker" in navigator)
   addEventListener("load", () =>
     navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).catch(() => {}),
   );
+loadSharedMenu();
 render();
+if (sharedMenu) openSharedMenuPreview();

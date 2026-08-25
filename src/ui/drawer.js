@@ -2,6 +2,7 @@ let previousFocus;
 
 export function createDrawer(elements) {
   const { drawer, backdrop, title, text, textarea, form, primary, secondary, close } = elements;
+  let onDismiss = () => {};
   function hide() {
     drawer.hidden = true;
     backdrop.hidden = true;
@@ -18,6 +19,8 @@ export function createDrawer(elements) {
     primaryLabel = "Aceptar",
     secondaryLabel = "Cerrar",
     onPrimary = hide,
+    onSecondary = hide,
+    onDismiss: dismiss = () => {},
   }) {
     previousFocus = document.activeElement;
     title.textContent = heading;
@@ -31,16 +34,24 @@ export function createDrawer(elements) {
       event.preventDefault();
       onPrimary();
     };
+    onDismiss = dismiss;
+    secondary.onclick = (event) => {
+      event.preventDefault();
+      onSecondary();
+    };
     drawer.classList.toggle("drawer-wide", variant === "wide");
     drawer.hidden = false;
     backdrop.hidden = false;
     close.focus();
   }
-  close.onclick = hide;
-  secondary.onclick = hide;
-  backdrop.onclick = hide;
+  const dismiss = () => {
+    onDismiss();
+    hide();
+  };
+  close.onclick = dismiss;
+  backdrop.onclick = dismiss;
   drawer.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") hide();
+    if (event.key === "Escape") dismiss();
     if (event.key === "Tab") {
       const controls = [...drawer.querySelectorAll("button,input,select,textarea")].filter(
         (el) => !el.disabled && !el.closest(".hidden"),
